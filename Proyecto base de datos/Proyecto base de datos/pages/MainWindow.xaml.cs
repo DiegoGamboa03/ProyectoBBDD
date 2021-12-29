@@ -30,6 +30,7 @@ namespace Proyecto_base_de_datos
         private static string Password = "Franklin123";
         private static string Port = "5432";
         public NpgsqlConnection conn;
+        private bool isStudent = false;
 
         public MainWindow()
         {
@@ -49,19 +50,21 @@ namespace Proyecto_base_de_datos
 
         private void singInButton_Click(object sender, RoutedEventArgs e)
         {
-
-            using (var command = new NpgsqlCommand("INSERT INTO estudiantes (\"nombre\", \"cedula\", \"telefono\", \"correoucab\", \"correoparticular\", \"otro\") VALUES (@a,@b,@c,@d,@e,@f)", conn))
-            {
-                command.Parameters.AddWithValue("a", "banana");
-                command.Parameters.AddWithValue("b", "banana2");
-                command.Parameters.AddWithValue("c", "orange");
-                command.Parameters.AddWithValue("d", "Orange2");
-                command.Parameters.AddWithValue("e", "apple");
-                command.Parameters.AddWithValue("f", "apple2");
-
-                int nRows = command.ExecuteNonQuery();
-                Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+            using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedula = '{0}' ",idTextBox.Text), conn))
+            {   
+                var reader = command.ExecuteReader();
+                if(reader.Read()){
+                    var nombre = (string)reader["nombre"]; //esto tiene que ser contraseña (se me olvio crear el campo de contraseña xd)
+                    Trace.WriteLine(nombre);
+                    isStudent = true; //Aqui va todo el codigo de abrir la pagina como estudiante
+                    Trace.WriteLine("Existe");
+                }
+                else{
+                    Trace.WriteLine("No Existe");
+                }
+                reader.Close();      
             }
         }
     }
-    }
+}
+    
