@@ -65,6 +65,11 @@ namespace Proyecto_base_de_datos
                 reader.Close();      
             }
         }
+
+        private void registerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
     
