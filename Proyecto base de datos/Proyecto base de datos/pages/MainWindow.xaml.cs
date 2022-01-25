@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using Proyecto_base_de_datos.pages;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -31,6 +32,7 @@ namespace Proyecto_base_de_datos
         private static string Port = "5432";
         public NpgsqlConnection conn;
         private bool isStudent = false;
+        private bool isTeacher = false;
 
         public MainWindow()
         {
@@ -50,19 +52,61 @@ namespace Proyecto_base_de_datos
 
         private void singInButton_Click(object sender, RoutedEventArgs e)
         {
-            using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedula = '{0}' ",idTextBox.Text), conn))
+            using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedulae = '{0}' ",idTextBox.Text), conn))
             {   
                 var reader = command.ExecuteReader();
                 if(reader.Read()){
-                    var nombre = (string)reader["nombre"]; //esto tiene que ser contraseña (se me olvio crear el campo de contraseña xd)
-                    Trace.WriteLine(nombre);
-                    isStudent = true; //Aqui va todo el codigo de abrir la pagina como estudiante
-                    Trace.WriteLine("Existe");
-                }
+                    var contrasena = (string)reader["contrasena"]; //esto tiene que ser contraseña (se me olvio crear el campo de contraseña xd)
+                    Trace.WriteLine(contrasena);
+                    if (contrasena == passwordTextBox.Text.Trim())
+                        isStudent = true; //Aqui va todo el codigo de abrir la pagina como estudiante
+                  
+                    //Aqui va otra porcion que sea lo mismo pero con la tabla de profesores
+
+                    if (isStudent)
+                    {
+                        StudentWindow window = new StudentWindow();
+                        window.Show();
+                        this.Close();
+                        Trace.WriteLine("Existe");
+                    }
+                    if (isTeacher)
+                    {
+                        //Abre otra pagina
+                    }
+
+            }
                 else{
+                    //Aqui ponemos un pop up que diga que no es un usuario o contraseña valido
                     Trace.WriteLine("No Existe");
                 }
                 reader.Close();      
+            }
+
+            using (var command = new NpgsqlCommand(string.Format("SELECT * FROM profesores WHERE cedulap = '{0}' ", idTextBox.Text), conn))
+            {
+                var reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    var contrasena = (string)reader["contrasena"];
+                    Trace.WriteLine(contrasena);
+                    if (contrasena == passwordTextBox.Text.Trim())
+                        isTeacher = true; //Aqui va todo el codigo de abrir la pagina como estudiante
+
+                    if (isTeacher){
+                        TeacherWindow window = new TeacherWindow();
+                        window.Show();
+                        this.Close();
+                        Trace.WriteLine("Existe");
+                    }
+
+                }
+                else
+                {
+                    //Aqui ponemos un pop up que diga que no es un usuario o contraseña valido
+                    Trace.WriteLine("No Existe");
+                }
+                reader.Close();
             }
         }
 

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\App.xaml
-1-695404081
+3329462022
 
-14-1381274050
+16882619907
 193-393775953
-pages\MainWindow.xaml;
+pages\MainWindow.xaml;pages\StudentWindow.xaml;pages\TeacherWindow.xaml;
 
-False
+True
 
