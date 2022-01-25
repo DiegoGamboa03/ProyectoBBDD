@@ -1,0 +1,27 @@
+﻿<Window x:Class="Proyecto_base_de_datos.pages.RegisterStudent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_base_de_datos.pages"
+        mc:Ignorable="d"
+        Title="RegisterStudent" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Height="20" Margin="479,19,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Margin="479,95,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="phoneNumberTextBox" HorizontalAlignment="Left" Margin="479,168,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ucabMailTextBox" HorizontalAlignment="Left" Margin="479,236,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="mailTextBox" HorizontalAlignment="Left" Margin="479,294,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="476,381,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="bonusAtributteTextBox" HorizontalAlignment="Left" Margin="479,342,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="369,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-ve" Text="Cedula"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="308,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-ve" Text="Nombre"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="395,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-ve" Text="Telefono"/><LineBreak/><Run Language="es-ve"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="308,236,0,0" Text="Correo Ucab" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" FontSize="16" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="302,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="18"><Run Text="Correo Particular "/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="336,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-ve" Text="Contraseña"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="349,337,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-ve" Text="Extra"/></TextBlock>
+        <Button x:Name="RegisterButton" Content="Button" HorizontalAlignment="Left" Margin="662,378,0,0" VerticalAlignment="Top" Width="80" Click="RegisterButton_Click"/>
+
+    </Grid>
+</Window>
