@@ -98,6 +98,13 @@ namespace Proyecto_base_de_datos
             window.Owner = this;
             window.ShowDialog();
         }
+
+        private void RegisterTeacherButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterTeacher window = new RegisterTeacher();
+            window.Owner = this;
+            window.ShowDialog();
+        }
     }
 }
     

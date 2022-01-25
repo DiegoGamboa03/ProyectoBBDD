@@ -1,0 +1,19 @@
+﻿<Window x:Class="Proyecto_base_de_datos.pages.RegisterTeacher"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_base_de_datos.pages"
+        mc:Ignorable="d"
+        Title="RegisterTeacher" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Margin="416,41,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="416,96,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="416,151,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="416,217,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="416,279,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="TeacherTypeListComboBox" HorizontalAlignment="Left" Margin="416,332,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="RegisterButton" Content="Button" HorizontalAlignment="Left" Margin="687,382,0,32" Click="RegisterButton_Click"/>
+
+    </Grid>
+</Window>
