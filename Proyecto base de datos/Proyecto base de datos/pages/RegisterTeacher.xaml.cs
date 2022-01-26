@@ -32,12 +32,12 @@ namespace Proyecto_base_de_datos.pages
             conn.openConnection();
             using (var command = new NpgsqlCommand("INSERT INTO profesores (cedulap, nombre, direccion, telefono, institucion, contrasena, tipo) VALUES (@n1, @q1,@n2, @q2,@n3, @q3,@n4)", conn.conn))
             {
-                command.Parameters.AddWithValue("n1", "banana");
-                command.Parameters.AddWithValue("q1", "150");
-                command.Parameters.AddWithValue("n2", "orange");
-                command.Parameters.AddWithValue("q2", "154");
-                command.Parameters.AddWithValue("n3", "apple");
-                command.Parameters.AddWithValue("q3", "100");
+                command.Parameters.AddWithValue("n1", idTextBox.Text);
+                command.Parameters.AddWithValue("q1", nameTextBox.Text);
+                command.Parameters.AddWithValue("n2", directionTextBox.Text);
+                command.Parameters.AddWithValue("q2", phoneNumberTextBox.Text);
+                command.Parameters.AddWithValue("n3", institutionTextBox.Text);
+                command.Parameters.AddWithValue("q3", passwordTextBox.Text);
                 if (TeacherTypeListComboBox.SelectedItem.Equals("Interno"))
                 {
                     command.Parameters.AddWithValue("n4", "I");
