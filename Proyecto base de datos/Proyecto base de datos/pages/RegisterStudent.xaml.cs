@@ -28,7 +28,7 @@ namespace Proyecto_base_de_datos.pages
         {
             var conn = new Connection();
             conn.openConnection();
-            using (var command = new NpgsqlCommand("INSERT INTO estudiantes (cedulae, nombre, telefono, correoucab, correoparticular, contrasena, otro) VALUES (@n1, @q1, @n2, @q2, @n3, @q3, @n4)", conn.conn))
+            using (var command = new NpgsqlCommand("INSERT INTO estudiantes (cedulae, nombre, telefono, correoucab, correoparticular, contrasena, otro, tienetg) VALUES (@n1, @q1, @n2, @q2, @n3, @q3, @n4, @n5)", conn.conn))
             {
                 command.Parameters.AddWithValue("n1", idTextBox.Text);
                 command.Parameters.AddWithValue("q1", nameTextBox.Text);
@@ -37,6 +37,8 @@ namespace Proyecto_base_de_datos.pages
                 command.Parameters.AddWithValue("n3", mailTextBox.Text);
                 command.Parameters.AddWithValue("q3", passwordTextBox.Text);
                 command.Parameters.AddWithValue("n4", bonusAtributteTextBox.Text);
+                command.Parameters.AddWithValue("n5", false); ;
+                command.Parameters.AddWithValue("n5", false); ;
 
                 int nRows = command.ExecuteNonQuery();
                 Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));

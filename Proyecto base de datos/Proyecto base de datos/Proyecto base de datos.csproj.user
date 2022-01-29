@@ -19,6 +19,9 @@
     <Compile Update="pages\TeacherWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SecundaryPage\CreateProposal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="pages\MainWindow.xaml">
@@ -34,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\TeacherWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecundaryPage\CreateProposal.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

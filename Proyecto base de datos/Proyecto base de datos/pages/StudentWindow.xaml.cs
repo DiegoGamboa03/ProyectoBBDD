@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_base_de_datos.SecundaryPage;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,8 @@ namespace Proyecto_base_de_datos.pages
         public StudentWindow()
         {
             InitializeComponent();
+            CreateProposal createProposal = new CreateProposal();
+            Frame1.Content = createProposal;
         }
     }
 }

@@ -27,12 +27,6 @@ namespace Proyecto_base_de_datos
     public partial class MainWindow : Window
     {
 
-        /*private static string Host = "proyectobasedatosfranklin.postgres.database.azure.com";
-        private static string User = "Roberson@proyectobasedatosfranklin";
-        private static string DBname = "postgres";
-        private static string Password = "Franklin123";
-        private static string Port = "5432";
-        public NpgsqlConnection conn;*/
         private bool isStudent = false;
         private bool isTeacher = false;
 
