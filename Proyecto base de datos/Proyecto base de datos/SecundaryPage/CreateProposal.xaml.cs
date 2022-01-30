@@ -27,12 +27,14 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
             var conn = new Connection();
             conn.openConnection();
-            using (var command = new NpgsqlCommand("SELECT * FROM \"estudiantes\" WHERE \"tienetg\" = false AND \"cedulae\" != '28215217'", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT * FROM \"estudiantes\" WHERE \"tienetg\" = false AND \"cedulae\" != '"+ MainWindow.student.Id.ToString() + "'", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    //teammatesComboBox.Items.Add();
+                    String StudentId = (String)reader["cedulae"];
+                    String name = (String)reader["nombre"];
+                    teammatesComboBox.Items.Add(StudentId + "," + name);
                 }
                 reader.Close();
             }

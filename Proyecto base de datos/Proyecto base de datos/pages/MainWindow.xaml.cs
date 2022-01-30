@@ -29,7 +29,7 @@ namespace Proyecto_base_de_datos
 
         private bool isStudent = false;
         private bool isTeacher = false;
-
+        public static Students student;
         public MainWindow()
         {
             InitializeComponent();
@@ -42,16 +42,27 @@ namespace Proyecto_base_de_datos
             using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedulae = '{0}' ",idTextBox.Text), conn.conn)) { //Se busca en la bbdd la cedula correspondiente   
                 var reader = command.ExecuteReader();
                 if(reader.Read()){
-                    var contrasena = (string)reader["contrasena"];
-                    Trace.WriteLine(contrasena);
-                    if (contrasena == passwordTextBox.Text.Trim()) //Se verifica si la contraseña sacada de la bd es la misma que la insertada
+
+                    var passwordaux = (string)reader["contrasena"];
+                    Trace.WriteLine(passwordaux);
+                    if (passwordaux == passwordTextBox.Text.Trim()) //Se verifica si la contraseña sacada de la bd es la misma que la insertada
                         isStudent = true; 
 
                     if (isStudent)
                     {
+                        String StudentId = (String)reader["cedulae"];
+                        String name = (String)reader["nombre"];
+                        String phoneNumber = (String)reader["telefono"];
+                        String ucabMail = (String)reader["correoucab"];
+                        String mail = (String)reader["correoparticular"];
+                        String password = passwordaux;
+                        String bonusAtribute = (String)reader["otro"];
+                        bool haveDegreeWork = (bool)reader["tienetg"];
+                        student = new Students(StudentId, name, mail, ucabMail, phoneNumber, bonusAtribute, haveDegreeWork);
                         StudentWindow window = new StudentWindow();
                         window.Show();
                         this.Close();
+                        Trace.WriteLine(StudentId + " " + name + " " + phoneNumber + " " + ucabMail + " " + mail + " " + password + " " + bonusAtribute + " " + haveDegreeWork.ToString());
                         Trace.WriteLine("Existe");
                     }
             }
