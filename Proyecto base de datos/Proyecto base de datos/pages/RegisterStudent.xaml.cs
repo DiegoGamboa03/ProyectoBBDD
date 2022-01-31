@@ -37,9 +37,7 @@ namespace Proyecto_base_de_datos.pages
                 command.Parameters.AddWithValue("n3", mailTextBox.Text);
                 command.Parameters.AddWithValue("q3", passwordTextBox.Text);
                 command.Parameters.AddWithValue("n4", bonusAtributteTextBox.Text);
-                command.Parameters.AddWithValue("n5", false); ;
-                command.Parameters.AddWithValue("n5", false); ;
-
+                command.Parameters.AddWithValue("n5", false);
                 int nRows = command.ExecuteNonQuery();
                 Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
             }
