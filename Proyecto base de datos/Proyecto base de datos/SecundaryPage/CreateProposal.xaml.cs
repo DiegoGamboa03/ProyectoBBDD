@@ -56,6 +56,15 @@ namespace Proyecto_base_de_datos.SecundaryPage
             endorsedTeacherText.Visibility = Visibility.Collapsed;
         }
 
+        private void experimentalRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            auxTextBox.Visibility = Visibility.Visible;
+            endorsedTeacherText.Visibility = Visibility.Visible;
+            businessTutorText.Visibility = Visibility.Collapsed;
+            companyName.Visibility = Visibility.Collapsed;
+            companyNameTextBox.Visibility = Visibility.Collapsed;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -118,6 +127,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                         }
 
                     }
+                   
                 }
                 else
                 {
@@ -125,7 +135,58 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 }
                 if(instrumentalRadioButton.IsChecked == true && auxTextBox.Text.Length > 0 && companyNameTextBox.Text.Length > 0)
                 {
+                    String lastID;
+                    var conn = new Connection();
+                    conn.openConnection();
+                    //
+                    using (var command = new NpgsqlCommand("INSERT INTO trabajos_de_grado (ncorrelativo, titulo, modalidad, fechacreacion,espropuesta) VALUES (nextval('secuenciatrabajosgradopk'), @n2,'I',@n4,true) RETURNING ncorrelativo", conn.conn))
+                    {
+                        String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                        DateTime dateTime = DateTime.Parse(dateTimeString);
+                        command.Parameters.AddWithValue("n2", titleTextBox.Text.Trim());
+                        command.Parameters.AddWithValue("n4", dateTime);
+                        int nRows = command.ExecuteNonQuery();
+                        Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                        var reader = command.ExecuteReader();
+                        reader.Read();
+                        lastID = (String)reader["ncorrelativo"];
+                        Trace.WriteLine(lastID.ToString());
+                        reader.Close();
+                    }
 
+                    using (var comm = new NpgsqlCommand("INSERT INTO instrumentales (ncorrelativo,nempresa,tutoremp) VALUES (@n1,@n2,@n3)", conn.conn))
+                    {
+                        comm.Parameters.AddWithValue("n1", lastID);
+                        comm.Parameters.AddWithValue("n2", companyNameTextBox.Text.Trim());
+                        comm.Parameters.AddWithValue("n3", auxTextBox.Text.Trim());
+                        int nRows = comm.ExecuteNonQuery();
+                        Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                    }
+
+                    using (var comm = new NpgsqlCommand("INSERT INTO entrega (cedulae,ncorrelativo) VALUES (@n1,@n2)", conn.conn))
+                    {
+                        comm.Parameters.AddWithValue("n1", MainWindow.student.Id.ToString());
+                        comm.Parameters.AddWithValue("n2", lastID);
+                        int nRows = comm.ExecuteNonQuery();
+                        Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                    }
+
+                    if (teammatesComboBox.SelectedIndex != 0)
+                    {
+                        String idTeammate = teammatesComboBox.SelectedItem.ToString();
+                        string output = idTeammate.Substring(idTeammate.IndexOf(',') + 1);
+                        //idTeammate.remov
+                        Trace.WriteLine(output);
+
+                        using (var comm = new NpgsqlCommand("INSERT INTO entrega (cedulae,ncorrelativo) VALUES (@n1,@n2)", conn.conn))
+                        {
+                            comm.Parameters.AddWithValue("n1", output.Trim());
+                            comm.Parameters.AddWithValue("n2", lastID);
+                            int nRows = comm.ExecuteNonQuery();
+                            Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                        }
+
+                    }
                 }
                 else
                 {
@@ -136,13 +197,5 @@ namespace Proyecto_base_de_datos.SecundaryPage
             
         }
 
-        private void experimentalRadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            auxTextBox.Visibility = Visibility.Visible;
-            endorsedTeacherText.Visibility = Visibility.Visible;
-            businessTutorText.Visibility = Visibility.Collapsed;
-            companyName.Visibility = Visibility.Collapsed;
-            companyNameTextBox.Visibility = Visibility.Collapsed;
-        }
     }
 }
