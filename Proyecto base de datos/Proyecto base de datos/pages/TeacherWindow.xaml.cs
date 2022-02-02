@@ -21,8 +21,11 @@ namespace Proyecto_base_de_datos.pages
         public TeacherWindow()
         {
             InitializeComponent();
-            PageEvaluationCriteria page = new PageEvaluationCriteria();
+            committeePage page = new committeePage();
             Frame1.Content = page;
+            PageEvaluationCriteria page2 = new PageEvaluationCriteria();
+            Frame2.Content = page2;
+
         }
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

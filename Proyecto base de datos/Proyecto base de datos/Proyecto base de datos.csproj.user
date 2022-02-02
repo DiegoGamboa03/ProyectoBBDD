@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\CommiteAprobation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="pages\RegisterStudent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,11 +22,17 @@
     <Compile Update="pages\TeacherWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SecundaryPage\committeePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SecundaryPage\CreateProposal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\CommiteAprobation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="pages\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,6 +46,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\TeacherWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecundaryPage\committeePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SecundaryPage\CreateProposal.xaml">
