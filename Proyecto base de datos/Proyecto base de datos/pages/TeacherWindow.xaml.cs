@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_base_de_datos.SecundaryPage;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,13 @@ namespace Proyecto_base_de_datos.pages
         public TeacherWindow()
         {
             InitializeComponent();
+            PageEvaluationCriteria page = new PageEvaluationCriteria();
+            Frame1.Content = page;
+        }
+        
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

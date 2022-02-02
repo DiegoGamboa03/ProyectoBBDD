@@ -60,7 +60,7 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <TabControl Style="{DynamicResource TabControlStyle1}">
+        <TabControl Style="{DynamicResource TabControlStyle1}" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Header="System Information">
                 <Frame x:Name="Frame1">
                 </Frame>
