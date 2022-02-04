@@ -26,5 +26,12 @@ namespace Proyecto_base_de_datos.Pages
             correlativeNumberTextBlock.Text = degreeWorks.CorrelativeNumber.ToString();
           
         }
+
+        private void approveButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
     }
 }

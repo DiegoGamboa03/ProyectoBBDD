@@ -64,7 +64,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 int j=0;
                 while (j < listAux.Count){
                     CommiteAprobation commite = new CommiteAprobation(listAux[j]);
-                    commite.Show();
+                    commite.ShowDialog();
                     j++;
                 }
             }
