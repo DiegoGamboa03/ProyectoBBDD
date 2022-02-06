@@ -7,14 +7,21 @@
         mc:Ignorable="d"
         Title="RegisterTeacher" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="416,41,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Margin="416,96,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="directionTextBox" HorizontalAlignment="Left" Margin="416,151,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="phoneNumberTextBox" HorizontalAlignment="Left" Margin="416,217,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="institutionTextBox" HorizontalAlignment="Left" Margin="416,279,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="TeacherTypeListComboBox" HorizontalAlignment="Left" Margin="416,370,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="RegisterButton" Content="Button" HorizontalAlignment="Left" Margin="687,382,0,32" Click="RegisterButton_Click"/>
-        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="416,331,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="286,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Margin="286,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="directionTextBox" HorizontalAlignment="Left" Margin="286,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="phoneNumberTextBox" HorizontalAlignment="Left" Margin="286,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="institutionTextBox" HorizontalAlignment="Left" Margin="286,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <ComboBox x:Name="TeacherTypeListComboBox" HorizontalAlignment="Left" Margin="286,346,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
+        <Button x:Name="RegisterButton" Content="Registrarse como Profesor" HorizontalAlignment="Left" Margin="552,256,0,143" Click="RegisterButton_Click" Width="181"/>
+        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="286,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,33,0,0" TextWrapping="Wrap" Text="Cedula" VerticalAlignment="Top" Height="30" Width="136" FontSize="14" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" Text="Nombre" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Direccion"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="134,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Telefono"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="134,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Institución"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="134,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Contraseña"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="134,346,0,0" TextWrapping="Wrap" Text="Tipo de Profesor" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"/>
 
     </Grid>
 </Window>

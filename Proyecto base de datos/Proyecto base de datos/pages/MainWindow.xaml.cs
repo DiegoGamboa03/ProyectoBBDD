@@ -37,64 +37,77 @@ namespace Proyecto_base_de_datos
 
         private void singInButton_Click(object sender, RoutedEventArgs e)
         {
-            var conn = new Connection();
-            conn.openConnection();
-            using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedulae = '{0}' ",idTextBox.Text), conn.conn)) { //Se busca en la bbdd la cedula correspondiente   
-                var reader = command.ExecuteReader();
-                if(reader.Read()){
-
-                    var passwordaux = (string)reader["contrasena"];
-                    Trace.WriteLine(passwordaux);
-                    if (passwordaux == passwordTextBox.Text.Trim()) //Se verifica si la contraseña sacada de la bd es la misma que la insertada
-                        isStudent = true; 
-
-                    if (isStudent)
+            if((idTextBox.Text != "") && (passwordTextBox.Text != ""))
+            {
+                var conn = new Connection();
+                conn.openConnection();
+                using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedulae = '{0}' ", idTextBox.Text), conn.conn))
+                { //Se busca en la bbdd la cedula correspondiente   
+                    var reader = command.ExecuteReader();
+                    if (reader.Read())
                     {
-                        String StudentId = (String)reader["cedulae"];
-                        String name = (String)reader["nombre"];
-                        String phoneNumber = (String)reader["telefono"];
-                        String ucabMail = (String)reader["correoucab"];
-                        String mail = (String)reader["correoparticular"];
-                        String password = passwordaux;
-                        String bonusAtribute = (String)reader["otro"];
-                        bool haveDegreeWork = (bool)reader["tienetg"];
-                        student = new Students(StudentId, name, mail, ucabMail, phoneNumber, bonusAtribute, haveDegreeWork);
-                        StudentWindow window = new StudentWindow();
-                        window.Show();
-                        this.Close();
-                        Trace.WriteLine(StudentId + " " + name + " " + phoneNumber + " " + ucabMail + " " + mail + " " + password + " " + bonusAtribute + " " + haveDegreeWork.ToString());
-                        Trace.WriteLine("Existe");
-                    }
-            }
-                else{
-                    //Aqui ponemos un pop up que diga que no es un usuario o contraseña valido
-                    Trace.WriteLine("No Existe");
-                }
-                reader.Close();      
-            }
 
-            using (var command = new NpgsqlCommand(string.Format("SELECT * FROM profesores WHERE cedulap = '{0}' ", idTextBox.Text), conn.conn)){ //Se busca en la bbdd la cedula correspondiente
-                var reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    var contrasena = (string)reader["contrasena"];
-                    Trace.WriteLine(contrasena);
-                    if (contrasena == passwordTextBox.Text.Trim()) //Se verifica si la contraseña sacada de la bd es la misma que la insertada
-                        isTeacher = true; 
+                        var passwordaux = (string)reader["contrasena"];
+                        Trace.WriteLine(passwordaux);
+                        if (passwordaux == passwordTextBox.Text.Trim()) //Se verifica si la contraseña sacada de la bd es la misma que la insertada
+                            isStudent = true;
 
-                    if (isTeacher){
-                        TeacherWindow window = new TeacherWindow();
-                        window.Show();
-                        this.Close();
-                        Trace.WriteLine("Existe");
+                        if (isStudent)
+                        {
+                            String StudentId = (String)reader["cedulae"];
+                            String name = (String)reader["nombre"];
+                            String phoneNumber = (String)reader["telefono"];
+                            String ucabMail = (String)reader["correoucab"];
+                            String mail = (String)reader["correoparticular"];
+                            String password = passwordaux;
+                            String bonusAtribute = (String)reader["otro"];
+                            bool haveDegreeWork = (bool)reader["tienetg"];
+                            student = new Students(StudentId, name, mail, ucabMail, phoneNumber, bonusAtribute, haveDegreeWork);
+                            StudentWindow window = new StudentWindow();
+                            window.Show();
+                            this.Close();
+                            Trace.WriteLine(StudentId + " " + name + " " + phoneNumber + " " + ucabMail + " " + mail + " " + password + " " + bonusAtribute + " " + haveDegreeWork.ToString());
+                            Trace.WriteLine("Existe");
+                        }
                     }
+                    else
+                    {
+                        //Aqui ponemos un pop up que diga que no es un usuario o contraseña valido
+                        Trace.WriteLine("No Existe");
+                    }
+                    reader.Close();
                 }
-                else{
-                    //Aqui ponemos un pop up que diga que no es un usuario o contraseña valido
-                    Trace.WriteLine("No Existe");
+
+                using (var command = new NpgsqlCommand(string.Format("SELECT * FROM profesores WHERE cedulap = '{0}' ", idTextBox.Text), conn.conn))
+                { //Se busca en la bbdd la cedula correspondiente
+                    var reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        var contrasena = (string)reader["contrasena"];
+                        Trace.WriteLine(contrasena);
+                        if (contrasena == passwordTextBox.Text.Trim()) //Se verifica si la contraseña sacada de la bd es la misma que la insertada
+                            isTeacher = true;
+
+                        if (isTeacher)
+                        {
+                            TeacherWindow window = new TeacherWindow();
+                            window.Show();
+                            this.Close();
+                            Trace.WriteLine("Existe");
+                        }
+                    }
+                    else
+                    {
+                        //Aqui ponemos un pop up que diga que no es un usuario o contraseña valido
+                        Trace.WriteLine("No Existe");
+                    }
+                    reader.Close();
                 }
-                reader.Close();
+            } else
+            {
+                //Se debe poner un pop up de que hay que llenar los campos con lo necesario
             }
+            
         }
 
         private void registerButton_Click(object sender, RoutedEventArgs e)
