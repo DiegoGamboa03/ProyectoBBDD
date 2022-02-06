@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Rafael A Muñoz\Source\Repos\DiegoGamboa03\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\
 Proyecto_base_de_datos
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Rafael A Muñoz\Source\Repos\DiegoGamboa03\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\App.xaml
-71073526233
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\App.xaml
+932036
 
-191893251061
-193418916256
-pages\MainWindow.xaml;pages\RegisterStudent.xaml;pages\RegisterTeacher.xaml;pages\StudentWindow.xaml;pages\TeacherWindow.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\LoadTDGList.xaml;
+212076399669
+193-393775953
+Pages\CommiteAprobation.xaml;Pages\MainWindow.xaml;Pages\RegisterStudent.xaml;Pages\RegisterTeacher.xaml;Pages\StudentWindow.xaml;Pages\TeacherWindow.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\PageEvaluationCriteria.xaml;
 
-True
+False
 
