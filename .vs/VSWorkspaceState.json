@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Proyecto base de datos"
+    "\\Proyecto base de datos",
+    "\\Proyecto base de datos\\Proyecto base de datos",
+    "\\Proyecto base de datos\\Proyecto base de datos\\pages",
+    "\\Proyecto base de datos\\Proyecto base de datos\\SecundaryPage"
   ],
+  "SelectedNode": "\\Proyecto base de datos\\Proyecto base de datos\\pages\\RegisterTeacher.xaml",
   "PreviewInSolutionExplorer": false
 }
