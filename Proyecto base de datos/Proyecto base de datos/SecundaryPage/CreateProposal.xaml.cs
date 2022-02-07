@@ -145,8 +145,6 @@ namespace Proyecto_base_de_datos.SecundaryPage
                         DateTime dateTime = DateTime.Parse(dateTimeString);
                         command.Parameters.AddWithValue("n2", titleTextBox.Text.Trim());
                         command.Parameters.AddWithValue("n4", dateTime);
-                        int nRows = command.ExecuteNonQuery();
-                        Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                         var reader = command.ExecuteReader();
                         reader.Read();
                         lastID = (String)reader["ncorrelativo"];

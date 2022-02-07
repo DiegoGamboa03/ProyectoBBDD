@@ -54,19 +54,35 @@ namespace Proyecto_base_de_datos.SecundaryPage
             List<DegreeWorks> listAux = new List<DegreeWorks>();
             if (ProposalListView.SelectedItems.Count> 0)
             {
+                String lastID;
+                var conn = new Connection();
+                conn.openConnection();
+                Trace.WriteLine("Aqui");
+                //Error aqui por alguna razon al ejecutar el query lo ejecuta dos veces
+                using (var command = new NpgsqlCommand("INSERT INTO comites (codigoc, fechap) VALUES (nextval('comiteSequenciaPK'), @n2) RETURNING codigoc", conn.conn))
+                {
+                    String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                    DateTime dateTime = DateTime.Parse(dateTimeString);
+                    command.Parameters.AddWithValue("n2", dateTime);
+                    var reader = command.ExecuteReader();
+                    reader.Read();
+                    lastID = (String)reader["codigoc"];
+                    Trace.WriteLine(lastID.ToString());
+                    reader.Close();
+                }
+                /*
                 for (int i = 0; i < ProposalListView.SelectedItems.Count; i++)
                 {
                     var selectedItem = ProposalListView.Items.IndexOf(ProposalListView.SelectedItems[i]);
                     listAux.Add(list[selectedItem]);
-                    Trace.WriteLine(selectedItem);
                 }
                 Trace.WriteLine(listAux.Count);
                 int j=0;
                 while (j < listAux.Count){
-                    CommiteAprobation commite = new CommiteAprobation(listAux[j]);
+                    CommiteAprobation commite = new CommiteAprobation(listAux[j],lastID);
                     commite.ShowDialog();
                     j++;
-                }
+                }*/
             }
         }
     }
