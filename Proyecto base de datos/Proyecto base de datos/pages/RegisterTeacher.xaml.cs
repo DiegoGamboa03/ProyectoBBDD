@@ -55,6 +55,7 @@ namespace Proyecto_base_de_datos.pages
                 using (var command = new NpgsqlCommand("INSERT INTO internos (cedulap) VALUES (@n1)", conn.conn))
                 {
                     command.Parameters.AddWithValue("n1", idTextBox.Text);
+                    command.ExecuteNonQuery();
                 }
             }
             else if (TeacherTypeListComboBox.SelectedItem.Equals("Externo"))
@@ -62,6 +63,7 @@ namespace Proyecto_base_de_datos.pages
                 using (var command = new NpgsqlCommand("INSERT INTO externos (cedulap) VALUES (@n1)", conn.conn))
                 {
                     command.Parameters.AddWithValue("n1", idTextBox.Text);
+                    command.ExecuteNonQuery();
                 }
             }
         }

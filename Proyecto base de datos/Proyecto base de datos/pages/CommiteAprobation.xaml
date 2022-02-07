@@ -14,7 +14,7 @@
         <TextBlock x:Name="modalityTextBlock" HorizontalAlignment="Left" Height="31" Margin="649,60,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
         <TextBlock x:Name="correlativeNumberTextBlock" HorizontalAlignment="Left" Height="41" Margin="192,116,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
         <Button x:Name="approveButton" Content="Aprobar" HorizontalAlignment="Left" Height="58" Margin="525,320,0,0" VerticalAlignment="Top" Width="165" Click="approveButton_Click"/>
-        <Button x:Name="DisapproveButton_" Content="Desaprobar" HorizontalAlignment="Left" Margin="159,320,0,0" VerticalAlignment="Top" Height="49" Width="184"/>
+        <Button x:Name="DisapproveButton_" Content="Desaprobar" HorizontalAlignment="Left" Margin="159,320,0,0" VerticalAlignment="Top" Height="49" Width="184" Click="DisapproveButton__Click"/>
         <ComboBox x:Name="InternalTeacherList" HorizontalAlignment="Left" Height="23" Margin="79,175,0,0" VerticalAlignment="Top" Width="172"/>
 
     </Grid>
