@@ -123,6 +123,21 @@ namespace Proyecto_base_de_datos
             window.Owner = this;
             window.ShowDialog();
         }
+
+        private void idTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void passwordTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
     

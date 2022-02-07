@@ -38,3 +38,5 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\committeePage.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\CommiteAprobation.g.cs
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\CommiteAprobation.baml
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\LoadTDGList.g.cs
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\LoadTDGList.baml
