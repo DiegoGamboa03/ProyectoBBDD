@@ -57,8 +57,6 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 String lastID;
                 var conn = new Connection();
                 conn.openConnection();
-                Trace.WriteLine("Aqui");
-                //Error aqui por alguna razon al ejecutar el query lo ejecuta dos veces
                 using (var command = new NpgsqlCommand("INSERT INTO comites (codigoc, fechap) VALUES (nextval('comiteSequenciaPK'), @n2) RETURNING codigoc", conn.conn))
                 {
                     String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
@@ -70,7 +68,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     Trace.WriteLine(lastID.ToString());
                     reader.Close();
                 }
-                /*
+                
                 for (int i = 0; i < ProposalListView.SelectedItems.Count; i++)
                 {
                     var selectedItem = ProposalListView.Items.IndexOf(ProposalListView.SelectedItems[i]);
@@ -82,7 +80,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     CommiteAprobation commite = new CommiteAprobation(listAux[j],lastID);
                     commite.ShowDialog();
                     j++;
-                }*/
+                }
             }
         }
     }

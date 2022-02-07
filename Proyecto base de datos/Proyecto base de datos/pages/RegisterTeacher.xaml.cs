@@ -50,6 +50,20 @@ namespace Proyecto_base_de_datos.pages
                 int nRows = command.ExecuteNonQuery();
                 Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
             }
+            if (TeacherTypeListComboBox.SelectedItem.Equals("Interno"))
+            {
+                using (var command = new NpgsqlCommand("INSERT INTO internos (cedulap) VALUES (@n1)", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", idTextBox.Text);
+                }
+            }
+            else if (TeacherTypeListComboBox.SelectedItem.Equals("Externo"))
+            {
+                using (var command = new NpgsqlCommand("INSERT INTO externos (cedulap) VALUES (@n1)", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", idTextBox.Text);
+                }
+            }
         }
     }
 }

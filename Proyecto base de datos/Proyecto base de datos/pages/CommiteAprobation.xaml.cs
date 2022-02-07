@@ -20,29 +20,59 @@ namespace Proyecto_base_de_datos.Pages
     /// </summary>
     public partial class CommiteAprobation : Window
     {
-        public CommiteAprobation(DegreeWorks degreeWorks, String correlativeNumber)
+        DegreeWorks degreeWorks;
+        String commiteId;
+        private List<String> TeacherIDlist;
+        public CommiteAprobation(DegreeWorks degreeWorks, String commiteId)
         {
             InitializeComponent();
+            TeacherIDlist = new List<string>();
+            this.degreeWorks = degreeWorks;
+            this.commiteId = commiteId;
             titleTextBlock.Text = degreeWorks.Title;
             modalityTextBlock.Text = degreeWorks.Title;
             correlativeNumberTextBlock.Text = degreeWorks.CorrelativeNumber.ToString();
-          
+
+            var conn = new Connection();
+            conn.openConnection();
+            using (var command = new NpgsqlCommand("SELECT * FROM \"profesores\" WHERE \"tipo\" = 'I'", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    String teacherId = (String)reader["cedulap"];
+                    String name = (String)reader["nombre"];
+                    InternalTeacherList.Items.Add(teacherId + ',' + name);
+                    TeacherIDlist.Add(teacherId);
+                }
+                reader.Close();
+            }
+
         }
 
         private void approveButton_Click(object sender, RoutedEventArgs e)
         {
-            var conn = new Connection();
-            conn.openConnection();
-            using (var command = new NpgsqlCommand("INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi, fechasig,estatus,fecharev) VALUES (@n1,@n2,@n3)", conn.conn))
+            if (InternalTeacherList.SelectedIndex != -1)
             {
-                String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
-                DateTime dateTime = DateTime.Parse(dateTimeString);
-                command.Parameters.AddWithValue("n4", dateTime);
-                int nRows = command.ExecuteNonQuery();
-                Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                var conn = new Connection();
+                conn.openConnection();
+                //INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi, fechasig,estatus,fecharev) VALUES (@n1,@n2,@n3,@n4,@n5) query completa
+                using (var command = new NpgsqlCommand("INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi) VALUES (@n1,@n2,@n3)", conn.conn))
+                {
+
+                    String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                    DateTime dateTime = DateTime.Parse(dateTimeString);
+                    command.Parameters.AddWithValue("n1", degreeWorks.CorrelativeNumber);
+                    command.Parameters.AddWithValue("n2", commiteId);
+                    command.Parameters.AddWithValue("n3", TeacherIDlist[InternalTeacherList.SelectedIndex]);
+                    int nRows = command.ExecuteNonQuery();
+                    Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                }
+            }
+            else
+            {
+                //Mensaje aqui 
             }
         }
-
-
     }
 }
