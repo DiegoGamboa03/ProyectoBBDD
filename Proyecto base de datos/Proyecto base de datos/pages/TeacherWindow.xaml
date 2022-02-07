@@ -41,8 +41,8 @@
                             <Border Grid.Column="0" Padding="5">
                                 <Border.Background>
                                     <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
-                                        <GradientStop Color="#FFC7C7C7" Offset="0"/>
-                                        <GradientStop Color="#FFECECEC" Offset="1"/>
+                                        <GradientStop Color="#0C907D" Offset="0"/>
+                                        <GradientStop Color="#0D627A" Offset="1"/>
                                     </LinearGradientBrush>
                                 </Border.Background>
                                 <DockPanel>
@@ -61,12 +61,16 @@
     </Window.Resources>
     <Grid>
         <TabControl Style="{DynamicResource TabControlStyle1}" SelectionChanged="TabControl_SelectionChanged">
-            <TabItem Header="System Information">
+            <TabItem Header="System Information" FontFamily="Segou UI">
                 <Frame x:Name="Frame1">
                 </Frame>
             </TabItem>
             <TabItem Header="Something else">
                 <Frame x:Name="Frame2">
+                </Frame>
+            </TabItem>
+            <TabItem Header="3era opcion" Height="44" VerticalAlignment="Top" Width="222" Margin="0,11,0,0">
+                <Frame x:Name="Frame3">
                 </Frame>
             </TabItem>
         </TabControl>

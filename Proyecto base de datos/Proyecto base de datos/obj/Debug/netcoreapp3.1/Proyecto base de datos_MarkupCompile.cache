@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\App.xaml
-102049598859
+11-836920606
 
-22-1819077545
+23-1423099963
 193-393775953
-Pages\CommiteAprobation.xaml;Pages\MainWindow.xaml;Pages\RegisterStudent.xaml;Pages\RegisterTeacher.xaml;Pages\StudentWindow.xaml;Pages\TeacherWindow.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\LoadTDGList.xaml;SecundaryPage\PageEvaluationCriteria.xaml;
+Pages\CommiteAprobation.xaml;Pages\MainWindow.xaml;Pages\RegisterStudent.xaml;Pages\RegisterTeacher.xaml;Pages\StudentWindow.xaml;Pages\TeacherWindow.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\CreateSpecialty.xaml;SecundaryPage\LoadTDGList.xaml;SecundaryPage\PageEvaluationCriteria.xaml;
 
 False
 

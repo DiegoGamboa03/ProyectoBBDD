@@ -9,13 +9,14 @@
     <Grid>
         <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="468,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="35" FontSize="14" TextChanged="idTextBox_TextChanged"/>
         <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="468,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="35" TextChanged="passwordTextBox_TextChanged" FontSize="14" TextAlignment="Left" MaxLines="2147483640"/>
-        <Button x:Name="singInButton" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="468,276,0,0" VerticalAlignment="Top" Click="singInButton_Click" Height="41" Width="185" FontSize="16"/>
-        <Button x:Name="registerStudentButton" Content="Registrarse" HorizontalAlignment="Left" Margin="104,141,0,0" VerticalAlignment="Top" Click="registerButton_Click" Width="185" Height="41" FontSize="16"/>
-        <Button x:Name="RegisterTeacherButton" Content="Registrarse" HorizontalAlignment="Left" Margin="104,251,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,-3.427" Click="RegisterTeacherButton_Click" Height="41" Width="185" FontSize="16"/>
-        <TextBox x:Name="StudentTextBox" HorizontalAlignment="Left" Margin="104,111,0,0" TextWrapping="Wrap" Text="Regístrate como Estudiante." VerticalAlignment="Top" Width="185" Height="30" TextChanged="TextBox_TextChanged" TextAlignment="Center" FontSize="14" BorderBrush="{x:Null}"/>
-        <TextBox x:Name="TeacherTextBox" HorizontalAlignment="Left" Margin="104,221,0,0" TextWrapping="Wrap" Text="Regístrate como Profesor." VerticalAlignment="Top" Width="185" Height="30" TextChanged="TextBox_TextChanged" TextAlignment="Center" FontSize="14" BorderBrush="{x:Null}"/>
+        <Button x:Name="singInButton" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="468,295,0,98" Click="singInButton_Click" Width="185" FontSize="16" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
         <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="468,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="22" TextChanged="TextBox_TextChanged" TextAlignment="Left" FontSize="16" BorderBrush="{x:Null}" Text="Contraseña"/>
-        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="468,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="22" TextChanged="TextBox_TextChanged" TextAlignment="Left" FontSize="16" BorderBrush="{x:Null}" Text="Cedula"/>
+        <Rectangle HorizontalAlignment="Left" Height="443" Margin="-29,-9,0,0" Stroke="Black" VerticalAlignment="Top" Width="429" Fill="#FF0C907D"/>
+        <Button x:Name="RegisterTeacherButton" Content="Profesor" HorizontalAlignment="Left" Margin="139,365,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,-3.427" Click="RegisterTeacherButton_Click" Height="41" Width="108" FontSize="16" FontWeight="Bold" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
+        <Button x:Name="registerStudentButton" Content="Estudiante" HorizontalAlignment="Left" Margin="0,364,0,0" VerticalAlignment="Top" Click="registerButton_Click" Width="118" Height="42" FontSize="16" FontWeight="Bold" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
+        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="468,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="22" TextChanged="TextBox_TextChanged" TextAlignment="Left" FontSize="16" BorderBrush="{x:Null}" Text="Cedula"/>
+        <Label Content="¿No tienes una cuenta? Registrate como:" HorizontalAlignment="Left" Height="36" Margin="-6,296,0,0" VerticalAlignment="Top" Width="398" FontWeight="Normal" FontSize="20" Foreground="#FFF2F4B2"/>
+        <Label Content="Sistema &#xD;&#xA;De &#xD;&#xA;BBDD&#xD;&#xA; &#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Height="227" Margin="21,37,0,0" VerticalAlignment="Top" Width="226" Foreground="#FFF2F4B2" FontSize="48" FontWeight="Bold" FontFamily="Segoe UI Black"/>
 
     </Grid>
 </Window>

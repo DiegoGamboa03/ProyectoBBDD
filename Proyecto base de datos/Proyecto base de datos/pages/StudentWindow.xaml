@@ -41,8 +41,8 @@
                             <Border Grid.Column="0" Padding="5">
                                 <Border.Background>
                                     <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
-                                        <GradientStop Color="#FFC7C7C7" Offset="0"/>
-                                        <GradientStop Color="#FFECECEC" Offset="1"/>
+                                        <GradientStop Color="#0C907D" Offset="0"/>
+                                        <GradientStop Color="#0D627A" Offset="1"/>
                                     </LinearGradientBrush>
                                 </Border.Background>
                                 <DockPanel>

@@ -28,6 +28,9 @@
     <Compile Update="SecundaryPage\CreateProposal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SecundaryPage\CreateSpecialty.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SecundaryPage\LoadTDGList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SecundaryPage\CreateProposal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecundaryPage\CreateSpecialty.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SecundaryPage\LoadTDGList.xaml">
