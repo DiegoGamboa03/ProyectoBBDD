@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.Pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,13 +22,15 @@ namespace Proyecto_base_de_datos.SecundaryPage
     /// </summary>
     public partial class CreateCouncil : Page
     {
+        private List<DegreeWorks> listDegreeWorks = new List<DegreeWorks>();
+
         public CreateCouncil()
         {
             InitializeComponent();
             var conn = new Connection();
             conn.openConnection();
             List<String> listCorrelativeNumber = new List<string>();
-            List<DegreeWorks> listDegreeWorks = new List<DegreeWorks>();
+            listDegreeWorks = new List<DegreeWorks>();
 
             using (var command = new NpgsqlCommand("SELECT ncorrelativo FROM \"esrevisor\" WHERE \"estatus\" = 'PAR'", conn.conn))
             {
@@ -62,5 +65,39 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 }
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            String lastID;
+            var conn = new Connection();
+            conn.openConnection();
+            using (var command = new NpgsqlCommand("INSERT INTO consejos_de_escuela (nconsejo, fechap) VALUES (nextval('consejosSequenciaPK'), @n2) RETURNING nconsejo", conn.conn))
+            {
+                String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                DateTime dateTime = DateTime.Parse(dateTimeString);
+                command.Parameters.AddWithValue("n2", dateTime);
+                var reader = command.ExecuteReader();
+                reader.Read();
+                int lastIDaux = (int)reader["nconsejo"];
+                lastID = lastIDaux.ToString();
+                Trace.WriteLine(lastID.ToString());
+                reader.Close();
+            }
+
+            List<DegreeWorks> listAux = new List<DegreeWorks>();
+            for (int i = 0; i < proposalListBox.SelectedItems.Count; i++)
+            {
+                var selectedItem = proposalListBox.Items.IndexOf(proposalListBox.SelectedItems[i]);
+                listAux.Add(listDegreeWorks[selectedItem]);
+            }
+            Trace.WriteLine(listAux.Count);
+            int j = 0;
+            while (j < listAux.Count)
+            {
+                CouncilAprobation council = new CouncilAprobation(listAux[j], lastID);
+                council.ShowDialog();
+                j++;
+            }
+        }
     }
-}
+ }
