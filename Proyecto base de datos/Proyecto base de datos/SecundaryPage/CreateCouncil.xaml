@@ -9,8 +9,12 @@
       Title="CreateCouncil">
 
     <Grid Background="White">
-        <ListBox x:Name="proposalListBox" HorizontalAlignment="Left" Height="320" Margin="45,37,0,0" VerticalAlignment="Top" Width="634"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="619,378,0,0" VerticalAlignment="Top" Width="148"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="679*"/>
+            <ColumnDefinition Width="121*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="proposalListBox" HorizontalAlignment="Left" Height="320" Margin="45,37,0,0" VerticalAlignment="Top" Width="634" Grid.ColumnSpan="2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="619,378,0,0" VerticalAlignment="Top" Width="148" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>

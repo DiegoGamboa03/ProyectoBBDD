@@ -2,6 +2,7 @@
 using Proyecto_base_de_datos.Class;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,7 +34,9 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
+                    String correlativeNumber = (String)reader["ncorrelativo"];
+                    listCorrelativeNumber.Add(correlativeNumber);
+                    Trace.WriteLine(correlativeNumber.ToString());
                 }
                 reader.Close();
             }
@@ -41,12 +44,11 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
             for (int i = 0; i < listCorrelativeNumber.Count; i++)
             {
-                using (var command = new NpgsqlCommand("SELECT * FROM \"trabajos_de_grado\" WHERE \"ncorrelativo\" =" + listCorrelativeNumber[i] + "", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"trabajos_de_grado\" WHERE \"ncorrelativo\" = '" + listCorrelativeNumber[i] + "'", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-
                         int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
                         String title = (String)reader["titulo"];
                         String modality = (String)reader["modalidad"];
