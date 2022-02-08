@@ -34,6 +34,7 @@ namespace Proyecto_base_de_datos.Pages
 
             var conn = new Connection();
             conn.openConnection();
+            //Se recompilan todas las especialidades en una lista interna
             using (var command = new NpgsqlCommand("SELECT * FROM \"especialidades\"", conn.conn))
             {
                 var reader = command.ExecuteReader();
@@ -46,7 +47,7 @@ namespace Proyecto_base_de_datos.Pages
                 }
                 reader.Close();
             }
-
+            //Se sacan todos los profesores disponibles
             using (var command = new NpgsqlCommand("SELECT * FROM \"profesores\" WHERE \"tipo\" = 'I'", conn.conn))
             {
                 var reader = command.ExecuteReader();
@@ -54,11 +55,16 @@ namespace Proyecto_base_de_datos.Pages
                 {
                     String teacherId = (String)reader["cedulap"];
                     String name = (String)reader["nombre"];
+                    firstJuryComboBox.Items.Add(teacherId + ',' + name);
+                    firstsubstituteComboBox.Items.Add(teacherId + ',' + name);
+                    secondJuryComboBox.Items.Add(teacherId + ',' + name);
+                    secondSubstituteComboBox.Items.Add(teacherId + ',' + name);
                     Teachers teachers = new Teachers(teacherId,name);
                     Teacherlist.Add(teachers);
                 }
                 reader.Close();
             }
+            //Luego se rellana la lista de tutores con la informacion del profesor y sus especialidades
             for(int i = 0; i< Teacherlist.Count; i++)
             {
                 String specialtiesTeacher = null;
@@ -75,8 +81,8 @@ namespace Proyecto_base_de_datos.Pages
                     reader.Close();
                 }
                 tutorList.Items.Add(Teacherlist[i].Id + ',' + Teacherlist[i].Name + specialtiesTeacher);
-
             }
+
         }
 
         private void approveButton_Click(object sender, RoutedEventArgs e)
