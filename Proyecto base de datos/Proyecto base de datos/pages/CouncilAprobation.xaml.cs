@@ -21,6 +21,7 @@ namespace Proyecto_base_de_datos.Pages
     {
         DegreeWorks degreeWorks;
         String councilId;
+        List<Teachers> Teacherlist;
         public CouncilAprobation(DegreeWorks degreeWorks, String councilID)
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace Proyecto_base_de_datos.Pages
             titleTextBlock.Text = degreeWorks.Title;
             modalityTextBlock.Text = degreeWorks.Title;
             correlativeNumberTextBlock.Text = degreeWorks.CorrelativeNumber.ToString();
-            List<Teachers> Teacherlist = new List<Teachers>();
+            Teacherlist = new List<Teachers>();
             List<Specialty> specialtyList = new List<Specialty>();
 
             var conn = new Connection();
@@ -87,12 +88,107 @@ namespace Proyecto_base_de_datos.Pages
 
         private void approveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tutorList.SelectedIndex != -1 && firstJuryComboBox.SelectedIndex != -1 && firstsubstituteComboBox.SelectedIndex != -1 && secondJuryComboBox.SelectedIndex != -1 && secondSubstituteComboBox.SelectedIndex != -1)
+            {
+                var conn = new Connection();
+                conn.openConnection();
+                //Se inserta tutor y se cambia el estado de espropuesta en la tabla trabajos de grado
+                using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET nconsejo = @n1, cedulapi = @n2, espropuesta = false WHERE ncorrelativo = @n3", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
+                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n3",degreeWorks.CorrelativeNumber.ToString());
+                    int nRows = command.ExecuteNonQuery();
+                    Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                }
+                //Inserta primer jurado
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
+                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n3", Teacherlist[firstJuryComboBox.SelectedIndex].Id);
+                    int nRows = command.ExecuteNonQuery();
+                    Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                }
+                //Inserta primer suplente
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
+                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n3", Teacherlist[firstsubstituteComboBox.SelectedIndex].Id);
+                    int nRows = command.ExecuteNonQuery();
+                    Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                }
+                //Inserta segundo jurado
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
+                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n3", Teacherlist[secondJuryComboBox.SelectedIndex].Id);
+                    int nRows = command.ExecuteNonQuery();
+                    Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                }
+                //Inserta segundo suplente
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
+                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n3", Teacherlist[secondSubstituteComboBox.SelectedIndex].Id);
+                    int nRows = command.ExecuteNonQuery();
+                    Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                }
+                //Rellenamos una lista con los estudiantes involucrados en esta tg
+                List<String> studentIdList = new List<string>();
+                using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" WHERE \"ncorrelativo\" = " + degreeWorks.CorrelativeNumber + "", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        String studentId = (String)reader["cedulae"];
+                        studentIdList.Add(studentId);
+                    }
+                    reader.Close();
+                }
+                for(int i = 0; i < studentIdList.Count; i++)
+                {
+                    //Buscamos el resto de sus propuestas menos la que se ha aprobado
+                    List<String> correlativeNumberList = new List<string>();
+                    using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" WHERE \"cedulae\" = " + studentIdList[i] + " AND ncorrelativo != " + degreeWorks.CorrelativeNumber + "", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            String correlativeNumber = (String)reader["ncorrelativo"];
+                            correlativeNumberList.Add(correlativeNumber);
+                        }
+                        reader.Close();
+                    }
+                    for (int j = 0; j< correlativeNumberList.Count; j++)
+                    {
+                        using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta = null WHERE ncorrelativo = @n1", conn.conn))
+                        {
+                            command.Parameters.AddWithValue("n1", correlativeNumberList[j]);
+                            int nRows = command.ExecuteNonQuery();  
+                            Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                        }
+                    }
+                }
+                
+                this.Close();
+            }
         }
 
         private void DisapproveButton__Click(object sender, RoutedEventArgs e)
         {
-
+            var conn = new Connection();
+            conn.openConnection();
+            using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta = null WHERE ncorrelativo = @n2", conn.conn))
+            {
+                command.Parameters.AddWithValue("n2", degreeWorks.CorrelativeNumber.ToString());
+                int nRows = command.ExecuteNonQuery();
+                Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
+            }
+            this.Close();
         }
     }
 }

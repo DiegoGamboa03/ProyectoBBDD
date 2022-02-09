@@ -30,6 +30,7 @@ namespace Proyecto_base_de_datos
         private bool isStudent = false;
         private bool isTeacher = false;
         public static Students student;
+        public static Teachers teachers;
         public MainWindow()
         {
             InitializeComponent();
@@ -90,6 +91,7 @@ namespace Proyecto_base_de_datos
 
                         if (isTeacher)
                         {
+
                             TeacherWindow window = new TeacherWindow();
                             window.Show();
                             this.Close();

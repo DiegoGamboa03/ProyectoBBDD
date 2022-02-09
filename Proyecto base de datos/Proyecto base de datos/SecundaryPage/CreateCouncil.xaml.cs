@@ -31,7 +31,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             conn.openConnection();
             List<String> listCorrelativeNumber = new List<string>();
             listDegreeWorks = new List<DegreeWorks>();
-
+            //Tengo que encontrar una query que no ponga los que ya son trabajo de grado
             using (var command = new NpgsqlCommand("SELECT ncorrelativo FROM \"esrevisor\" WHERE \"estatus\" = 'PAR'", conn.conn))
             {
                 var reader = command.ExecuteReader();
