@@ -42,3 +42,50 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\LoadTDGList.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.g.cs
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.exe
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.dll.config
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.deps.json
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.runtimeconfig.json
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.runtimeconfig.dev.json
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.dll
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.pdb
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.csproj.AssemblyReference.cache
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\CommiteAprobation.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\MainWindow.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterStudent.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterTeacher.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\StudentWindow.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\TeacherWindow.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\committeePage.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateProposal.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\LoadTDGList.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\PageEvaluationCriteria.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos_MarkupCompile.cache
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos_MarkupCompile.lref
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\CommiteAprobation.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\MainWindow.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterStudent.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterTeacher.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\StudentWindow.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\TeacherWindow.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\committeePage.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateProposal.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\LoadTDGList.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\PageEvaluationCriteria.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.g.resources
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.AssemblyInfoInputs.cache
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.AssemblyInfo.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.csproj.CoreCompileInputs.cache
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.csproj.CopyComplete
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.dll
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.pdb
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.genruntimeconfig.cache
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewProposals.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewProposals.baml

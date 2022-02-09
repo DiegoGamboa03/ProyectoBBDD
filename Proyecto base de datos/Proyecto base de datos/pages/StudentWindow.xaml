@@ -69,6 +69,10 @@
                 <Frame x:Name="Frame2">
                 </Frame>
             </TabItem>
+            <TabItem Header="View proposals">
+                <Frame x:Name="Frame3">
+                </Frame>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

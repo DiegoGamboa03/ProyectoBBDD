@@ -21,6 +21,7 @@
         <TextBlock x:Name="businessTutorText" HorizontalAlignment="Left" Height="21" Margin="32,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"><Run Language="es-ve" Text="Tutor empresarial"/></TextBlock>
         <TextBlock x:Name="companyName" HorizontalAlignment="Left" Margin="32,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nombre compa"/><Run Language="es-ve" Text="ñia"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="companyNameTextBox" HorizontalAlignment="Left" Height="16" Margin="221,297,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.61,0.712"/>
+        <StackPanel/>
 
     </Grid>
 </Page>
