@@ -14,10 +14,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding CorrelativeNumber}" FontSize="20" />
-                        <TextBlock Text="{Binding Title}" FontSize="20" />
-                        <TextBlock Text="{Binding Modality}" FontSize="20" />
-                        <TextBlock Text="{Binding CreationDate}" FontSize="20"/>
+                        <TextBlock FontSize="20"><LineBreak></LineBreak><Run Text="{Binding CorrelativeNumber}"></Run><Run Text=". "></Run><Run Text="{Binding Title}"></Run></TextBlock>
+                        <TextBlock FontSize="20"><Run Text="Modalidad: "></Run><Run Text="{Binding Modality}"></Run><Run Language="es-ve" Text="        Fecha de Creación: "></Run><Run Text="{Binding CreationDate}"></Run><LineBreak></LineBreak></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

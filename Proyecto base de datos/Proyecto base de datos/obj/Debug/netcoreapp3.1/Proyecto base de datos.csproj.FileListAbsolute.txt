@@ -93,3 +93,5 @@ C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto 
 C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailProposal.baml
 C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewAllProposalsSt.g.cs
 C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewAllProposalsSt.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewCouncils.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewCouncils.baml

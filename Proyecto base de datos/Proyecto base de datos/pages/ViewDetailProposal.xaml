@@ -7,13 +7,17 @@
         mc:Ignorable="d"
         Title="ViewDetailProposal" Height="450" Width="800">
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="center" Margin="0,35,0,0" Text="Trabajo de grado" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="452,201,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Fecha de creación: "></Run><Run Name="date"></Run></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="49,201,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Modalidad: "></Run><Run Name="modality"></Run></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="50,100,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-ve" Text="Título: "></Run><Run Name="titlepro"></Run></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="582,43,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nro Correlativo: "></Run><Run Name="nrocorr"></Run></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="49,320,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Observaciones: "></Run><Run Name="observations"></Run></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="49,262,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nro Consejo: "></Run><Run Name="ncouncil"></Run></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="452,267,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nro Comite: "></Run><Run Name="ncomitte"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,16,0,0" Text="Trabajo de grado" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="452,139,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Fecha de creación: "></Run><Run Name="date"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="49,139,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Modalidad: "></Run><Run Name="modality"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="49,87,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-ve" Text="Título: "></Run><Run Name="titlepro"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="580,25,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nro Correlativo: "></Run><Run Name="nrocorr"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="49,325,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Observaciones: "></Run><Run Name="observations"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="49,193,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nro Consejo: "></Run><Run Name="ncouncil"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="452,193,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nro Comite: "></Run><Run Name="ncomitte"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="452,254,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Profesor Revisor: "></Run><Run Name="teacher"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="49,254,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Name="student"><Run Text="Estudiante: "></Run><Run Name="studentName"></Run></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="49,254,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Name="students"><Run Text="Estudiantes: "></Run><Run Name="studentName1"></Run><LineBreak></LineBreak><Run Text="                    "></Run><Run Name="studentName2"></Run></TextBlock>
+
     </Grid>
 </Window>

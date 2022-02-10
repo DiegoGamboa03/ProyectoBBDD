@@ -40,7 +40,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     int ncorre = Int32.Parse(ncorrelativo);
                     String title = (String)reader["titulo"];
                     DateTime creationDate = (DateTime)reader["fechacreacion"];
-                    String stCreationDate = creationDate.ToString();
+                    String stCreationDate = creationDate.ToString("dd-MM-yyyy");
                     String modality = (String)reader["modalidad"];
 
                     //Pueden ser Null

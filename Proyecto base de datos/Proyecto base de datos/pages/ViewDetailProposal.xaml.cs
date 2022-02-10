@@ -31,6 +31,9 @@ namespace Proyecto_base_de_datos.pages
             observations.Text = degreeWorks.Observations;
             ncouncil.Text = degreeWorks.CouncilNumber;
             ncomitte.Text = degreeWorks.IdCouncil;
+            student.Visibility = Visibility.Collapsed;
+            studentName1.Text = "Nombre de prueba";
+            studentName2.Text = "Nombre de prueba";
 
         }
     }

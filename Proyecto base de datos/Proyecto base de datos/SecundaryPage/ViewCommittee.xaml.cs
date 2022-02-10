@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using Proyecto_base_de_datos.Class;
 using Npgsql;
 using System.Collections.Generic;
@@ -16,30 +17,29 @@ using System.Windows.Shapes;
 namespace Proyecto_base_de_datos.SecundaryPage
 {
     /// <summary>
-    /// Interaction logic for ViewCouncils.xaml
+    /// Interaction logic for ViewCommittee.xaml
     /// </summary>
-    public partial class ViewCouncils : Page
+    public partial class ViewCommittee : Page
     {
-        public ViewCouncils()
+        public ViewCommittee()
         {
             InitializeComponent();
         }
-
-        private void SearchCouncils() 
+        private void SearchCommittee()
         {
             var conn = new Connection();
             conn.openConnection();
-            using (var command = new NpgsqlCommand("SELECT * FROM \"consejos_de_escuela\" ORDER BY \"nconsejo\"", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT * FROM \"comites\" ORDER BY \"codigoc\"", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    String ncouncil = (String)reader["nconsejo"];
-                    int ncounc = Int32.Parse(ncouncil);
+                    String ccommitte = (String)reader["codigoc"];
+                    int codeCommitte = Int32.Parse(ccommitte);
                     DateTime datep = (DateTime)reader["fechap"];
                     String datepp = datep.ToString("dd-MM-yyyy");
                 }
-                reader.Close();               
+                reader.Close();
             }
         }
     }
