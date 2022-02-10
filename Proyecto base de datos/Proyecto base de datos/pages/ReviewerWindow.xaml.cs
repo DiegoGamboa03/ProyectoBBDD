@@ -36,7 +36,6 @@ namespace Proyecto_base_de_datos.pages
             // This is your selected item
             int item = list.SelectedIndex;
 
-            Trace.WriteLine("AAAAA");
         }
     }
 }

@@ -8,21 +8,21 @@
     ".NETCoreApp,Version=v3.1": {
       "Proyecto base de datos/1.0.0": {
         "dependencies": {
-          "Npgsql": "6.0.2"
+          "Npgsql": "6.0.3"
         },
         "runtime": {
           "Proyecto base de datos.dll": {}
         }
       },
-      "Npgsql/6.0.2": {
+      "Npgsql/6.0.3": {
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "6.0.0",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/netcoreapp3.1/Npgsql.dll": {
-            "assemblyVersion": "6.0.2.0",
-            "fileVersion": "6.0.2.0"
+            "assemblyVersion": "6.0.3.0",
+            "fileVersion": "6.0.3.0"
           }
         }
       },
@@ -55,12 +55,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Npgsql/6.0.2": {
+    "Npgsql/6.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-j/BJY/1lqtu5ssfGEi9D+qJ/3OMrK8ZdicsW4SldV49CahRVXVHldj636ucVcEqJPNDI0h+/PWJD7oHsQ/cFAQ==",
-      "path": "npgsql/6.0.2",
-      "hashPath": "npgsql.6.0.2.nupkg.sha512"
+      "sha512": "sha512-yt/3XFRhHsJ01a4+qHM9+0mtitQ3DY2wJLyGP9vtvZa1cB1nSAw762GJGdSX3Bbc7wZKzeo4dc4drD3yvQe7gA==",
+      "path": "npgsql/6.0.3",
+      "hashPath": "npgsql.6.0.3.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/6.0.0": {
       "type": "package",

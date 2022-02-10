@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Npgsql/6.0.2": {
+      "Npgsql/6.0.3": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "6.0.0",
@@ -55,10 +55,10 @@
     }
   },
   "libraries": {
-    "Npgsql/6.0.2": {
-      "sha512": "j/BJY/1lqtu5ssfGEi9D+qJ/3OMrK8ZdicsW4SldV49CahRVXVHldj636ucVcEqJPNDI0h+/PWJD7oHsQ/cFAQ==",
+    "Npgsql/6.0.3": {
+      "sha512": "yt/3XFRhHsJ01a4+qHM9+0mtitQ3DY2wJLyGP9vtvZa1cB1nSAw762GJGdSX3Bbc7wZKzeo4dc4drD3yvQe7gA==",
       "type": "package",
-      "path": "npgsql/6.0.2",
+      "path": "npgsql/6.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -73,7 +73,7 @@
         "lib/netstandard2.0/Npgsql.xml",
         "lib/netstandard2.1/Npgsql.dll",
         "lib/netstandard2.1/Npgsql.xml",
-        "npgsql.6.0.2.nupkg.sha512",
+        "npgsql.6.0.3.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
       ]
@@ -154,23 +154,23 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Npgsql >= 6.0.2"
+      "Npgsql >= 6.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\": {}
+    "C:\\Users\\diego\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rafael A Muñoz\\Desktop\\Programación\\CSHARP\\ProyectoBBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
+      "projectUniqueName": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
       "projectName": "Proyecto base de datos",
-      "projectPath": "C:\\Users\\Rafael A Muñoz\\Desktop\\Programación\\CSHARP\\ProyectoBBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
-      "packagesPath": "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rafael A Muñoz\\Desktop\\Programación\\CSHARP\\ProyectoBBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\obj\\",
+      "projectPath": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
+      "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
+      "outputPath": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rafael A Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -198,7 +198,7 @@
         "dependencies": {
           "Npgsql": {
             "target": "Package",
-            "version": "[6.0.2, )"
+            "version": "[6.0.3, )"
           }
         },
         "imports": [
@@ -211,24 +211,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.10, 3.1.10]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.22, 3.1.22]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -237,7 +219,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

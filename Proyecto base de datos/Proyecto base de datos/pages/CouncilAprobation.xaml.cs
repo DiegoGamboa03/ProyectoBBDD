@@ -22,6 +22,7 @@ namespace Proyecto_base_de_datos.Pages
         DegreeWorks degreeWorks;
         String councilId;
         List<Teachers> Teacherlist;
+        List<Teachers> allTeacherList;
         public CouncilAprobation(DegreeWorks degreeWorks, String councilID)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Proyecto_base_de_datos.Pages
             modalityTextBlock.Text = degreeWorks.Title;
             correlativeNumberTextBlock.Text = degreeWorks.CorrelativeNumber.ToString();
             Teacherlist = new List<Teachers>();
+            allTeacherList = new List<Teachers>();
             List<Specialty> specialtyList = new List<Specialty>();
 
             var conn = new Connection();
@@ -56,17 +58,30 @@ namespace Proyecto_base_de_datos.Pages
                 {
                     String teacherId = (String)reader["cedulap"];
                     String name = (String)reader["nombre"];
-                    firstJuryComboBox.Items.Add(teacherId + ',' + name);
-                    firstsubstituteComboBox.Items.Add(teacherId + ',' + name);
-                    secondJuryComboBox.Items.Add(teacherId + ',' + name);
-                    secondSubstituteComboBox.Items.Add(teacherId + ',' + name);
                     Teachers teachers = new Teachers(teacherId,name);
                     Teacherlist.Add(teachers);
                 }
                 reader.Close();
             }
+            //Se sacan todos los profesores disponibles
+            using (var command = new NpgsqlCommand("SELECT * FROM \"profesores\"", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    String teacherId = (String)reader["cedulap"];
+                    String name = (String)reader["nombre"];
+                    firstJuryComboBox.Items.Add(teacherId + ',' + name);
+                    firstsubstituteComboBox.Items.Add(teacherId + ',' + name);
+                    secondJuryComboBox.Items.Add(teacherId + ',' + name);
+                    secondSubstituteComboBox.Items.Add(teacherId + ',' + name);
+                    Teachers teachers = new Teachers(teacherId, name);
+                    allTeacherList.Add(teachers);
+                }
+                reader.Close();
+            }
             //Luego se rellana la lista de tutores con la informacion del profesor y sus especialidades
-            for(int i = 0; i< Teacherlist.Count; i++)
+            for (int i = 0; i< Teacherlist.Count; i++)
             {
                 String specialtiesTeacher = null;
                 using (var comm = new NpgsqlCommand("SELECT * FROM \"tiene\" WHERE \"cedulap\" = '" + Teacherlist[i].Id + "'", conn.conn))
@@ -102,44 +117,44 @@ namespace Proyecto_base_de_datos.Pages
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                 }
                 //Inserta primer jurado
-                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, ncorrelativo, cedulap) VALUES(@n1, @n2,@n3)", conn.conn))
                 {
                     command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
-                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
-                    command.Parameters.AddWithValue("n3", Teacherlist[firstJuryComboBox.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n2", degreeWorks.CorrelativeNumber.ToString());
+                    command.Parameters.AddWithValue("n3", allTeacherList[firstJuryComboBox.SelectedIndex].Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                 }
                 //Inserta primer suplente
-                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, ncorrelativo, cedulap) VALUES(@n1, @n2,@n3)", conn.conn))
                 {
                     command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
-                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
-                    command.Parameters.AddWithValue("n3", Teacherlist[firstsubstituteComboBox.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n2", degreeWorks.CorrelativeNumber.ToString());
+                    command.Parameters.AddWithValue("n3", allTeacherList[firstsubstituteComboBox.SelectedIndex].Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                 }
                 //Inserta segundo jurado
-                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, ncorrelativo, cedulap) VALUES(@n1, @n2,@n3)", conn.conn))
                 {
                     command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
-                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
-                    command.Parameters.AddWithValue("n3", Teacherlist[secondJuryComboBox.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n2", degreeWorks.CorrelativeNumber.ToString());
+                    command.Parameters.AddWithValue("n3", allTeacherList[secondJuryComboBox.SelectedIndex].Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                 }
                 //Inserta segundo suplente
-                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, cedulapji, cedulapje) VALUES(@n1, @n2,@n3)", conn.conn))
+                using (var command = new NpgsqlCommand("INSERT INTO asignaj(nconsejo, ncorrelativo, cedulap) VALUES(@n1, @n2,@n3)", conn.conn))
                 {
                     command.Parameters.AddWithValue("n1", Int32.Parse(councilId));
-                    command.Parameters.AddWithValue("n2", Teacherlist[tutorList.SelectedIndex].Id);
-                    command.Parameters.AddWithValue("n3", Teacherlist[secondSubstituteComboBox.SelectedIndex].Id);
+                    command.Parameters.AddWithValue("n2", degreeWorks.CorrelativeNumber.ToString());
+                    command.Parameters.AddWithValue("n3", allTeacherList[secondSubstituteComboBox.SelectedIndex].Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                 }
                 //Rellenamos una lista con los estudiantes involucrados en esta tg
                 List<String> studentIdList = new List<string>();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" WHERE \"ncorrelativo\" = " + degreeWorks.CorrelativeNumber + "", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" WHERE \"ncorrelativo\" = '" + degreeWorks.CorrelativeNumber.ToString() + "'", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
@@ -165,7 +180,7 @@ namespace Proyecto_base_de_datos.Pages
                     }
                     for (int j = 0; j< correlativeNumberList.Count; j++)
                     {
-                        using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta = null WHERE ncorrelativo = @n1", conn.conn))
+                        using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta is null WHERE ncorrelativo = @n1", conn.conn))
                         {
                             command.Parameters.AddWithValue("n1", correlativeNumberList[j]);
                             int nRows = command.ExecuteNonQuery();  

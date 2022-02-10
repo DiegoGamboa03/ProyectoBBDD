@@ -38,8 +38,6 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\committeePage.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\CommiteAprobation.g.cs
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\CommiteAprobation.baml
-D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\LoadTDGList.g.cs
-D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\LoadTDGList.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.g.cs
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateCouncil.g.cs
@@ -101,3 +99,11 @@ C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewPage.g.cs
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewPage.baml
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewerWindow.baml
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\ReviewerWindow.g.cs
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\ReviewPage.g.cs
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\Page1.g.cs
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewerTeacherPage.g.cs
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\ReviewerWindow.baml
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\ReviewPage.baml
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\Page1.baml
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewerTeacherPage.baml
