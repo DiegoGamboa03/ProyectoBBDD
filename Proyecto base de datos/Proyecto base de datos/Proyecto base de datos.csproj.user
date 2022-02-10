@@ -19,6 +19,9 @@
     <Compile Update="pages\RegisterTeacher.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="pages\ReviewerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="pages\StudentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,7 +37,7 @@
     <Compile Update="SecundaryPage\CreateSpecialty.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SecundaryPage\LoadTDGList.xaml.cs">
+    <Compile Update="SecundaryPage\ViewerTeacherPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -54,6 +57,12 @@
     <Page Update="pages\RegisterTeacher.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="pages\ReviewerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\ReviewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="pages\StudentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -69,7 +78,7 @@
     <Page Update="SecundaryPage\CreateSpecialty.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SecundaryPage\LoadTDGList.xaml">
+    <Page Update="SecundaryPage\ViewerTeacherPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

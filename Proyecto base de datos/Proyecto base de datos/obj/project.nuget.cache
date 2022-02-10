@@ -1,13 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "YsTZTYLtkMJsGfeBNGGbXRI/tAAOooJi4Uq2rm+9HRignhtbQvq+YWSsd9Svi52UozMqh6DLW1KZzcOa5iQzJA==",
+  "dgSpecHash": "/9MTp9qJlYqLORJIjvOkI0KGElDLsaceFL0KoCJm20E8Pvt7kQWENSq1TT2DY7wlHLrYhNtkrBjvSMGlgXUhKg==",
   "success": true,
-  "projectFilePath": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
+  "projectFilePath": "C:\\Users\\Rafael A Muñoz\\Desktop\\Programación\\CSHARP\\ProyectoBBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\diego\\.nuget\\packages\\npgsql\\6.0.2\\npgsql.6.0.2.nupkg.sha512",
-    "C:\\Users\\diego\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\diego\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\diego\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\npgsql\\6.0.2\\npgsql.6.0.2.nupkg.sha512",
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512",
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Rafael A Muñoz\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -91,7 +91,12 @@ namespace Proyecto_base_de_datos
 
                         if (isTeacher)
                         {
-
+                            String TeacherID = (String)reader["cedulap"];
+                            String TeacherName = (String)reader["nombre"];
+                            String TeacherAddress = (String)reader["direccion"];
+                            String TeacherPhone = (String)reader["telefono"];
+                            String TeacherInstitution = (String)reader["institucion"];
+                            teachers = new Teachers(TeacherID, TeacherName, TeacherAddress, TeacherPhone, TeacherInstitution);
                             TeacherWindow window = new TeacherWindow();
                             window.Show();
                             this.Close();

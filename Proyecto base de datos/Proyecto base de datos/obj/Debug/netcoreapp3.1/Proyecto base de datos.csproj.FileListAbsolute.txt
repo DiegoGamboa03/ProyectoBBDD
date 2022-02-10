@@ -46,3 +46,58 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateCouncil.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\CouncilAprobation.g.cs
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\CouncilAprobation.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.exe
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.dll.config
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.deps.json
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.runtimeconfig.json
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.runtimeconfig.dev.json
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.dll
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Proyecto base de datos.pdb
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.csproj.AssemblyReference.cache
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\CommiteAprobation.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\CouncilAprobation.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\MainWindow.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterStudent.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterTeacher.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\StudentWindow.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\TeacherWindow.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\committeePage.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateCouncil.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateProposal.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\Page1.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\PageEvaluationCriteria.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewerTeacherPage.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos_MarkupCompile.cache
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos_MarkupCompile.lref
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\CommiteAprobation.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\CouncilAprobation.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\MainWindow.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterStudent.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\RegisterTeacher.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\StudentWindow.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\TeacherWindow.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\committeePage.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateCouncil.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateProposal.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\CreateSpecialty.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\Page1.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\PageEvaluationCriteria.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewerTeacherPage.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.g.resources
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.AssemblyInfoInputs.cache
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.AssemblyInfo.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.csproj.CoreCompileInputs.cache
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.csproj.CopyComplete
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.dll
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.pdb
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.genruntimeconfig.cache
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewerWindow.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewPage.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewPage.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewerWindow.baml
