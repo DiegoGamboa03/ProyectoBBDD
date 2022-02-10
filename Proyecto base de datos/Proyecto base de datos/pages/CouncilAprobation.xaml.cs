@@ -2,6 +2,7 @@
 using Proyecto_base_de_datos.Class;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,11 +24,13 @@ namespace Proyecto_base_de_datos.Pages
         String councilId;
         List<Teachers> Teacherlist;
         List<Teachers> allTeacherList;
-        public CouncilAprobation(DegreeWorks degreeWorks, String councilID)
+        ListBox councilListBox;
+        public CouncilAprobation(DegreeWorks degreeWorks, String councilID, ListBox councilListBox)
         {
             InitializeComponent();
             this.degreeWorks = degreeWorks;
             this.councilId = councilID;
+            this.councilListBox = councilListBox;
             titleTextBlock.Text = degreeWorks.Title;
             modalityTextBlock.Text = degreeWorks.Title;
             correlativeNumberTextBlock.Text = degreeWorks.CorrelativeNumber.ToString();
@@ -98,6 +101,20 @@ namespace Proyecto_base_de_datos.Pages
                 }
                 tutorList.Items.Add(Teacherlist[i].Id + ',' + Teacherlist[i].Name + specialtiesTeacher);
             }
+
+            List<String> listCorrelativeNumber = new List<string>();
+            //Tengo que encontrar una query que no ponga los que ya son trabajo de grado
+            using (var command = new NpgsqlCommand("SELECT ER.ncorrelativo FROM esrevisor as ER, trabajos_de_grado as TG WHERE ER.estatus = 'PAR' AND TG.espropuesta = true AND ER.ncorrelativo = TG.ncorrelativo", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    String correlativeNumber = (String)reader["ncorrelativo"];
+                    listCorrelativeNumber.Add(correlativeNumber);
+                }
+                reader.Close();
+            }
+
 
         }
 
@@ -178,6 +195,7 @@ namespace Proyecto_base_de_datos.Pages
                         }
                         reader.Close();
                     }
+                    
                     for (int j = 0; j< correlativeNumberList.Count; j++)
                     {
                         using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta is null WHERE ncorrelativo = @n1", conn.conn))
@@ -188,7 +206,42 @@ namespace Proyecto_base_de_datos.Pages
                         }
                     }
                 }
-                
+
+                List<String> listCorrelativeNumber = new List<string>();
+                var listDegreeWorks = new List<DegreeWorks>();
+                using (var command = new NpgsqlCommand("SELECT ER.ncorrelativo FROM esrevisor as ER, trabajos_de_grado as TG WHERE ER.estatus = 'PAR' AND TG.espropuesta = true AND ER.ncorrelativo = TG.ncorrelativo", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        String correlativeNumber = (String)reader["ncorrelativo"];
+                        listCorrelativeNumber.Add(correlativeNumber);
+                        Trace.WriteLine(correlativeNumber.ToString());
+                    }
+                    reader.Close();
+                }
+
+                for (int i = 0; i < listCorrelativeNumber.Count; i++)
+                {
+                    using (var command = new NpgsqlCommand("SELECT * FROM \"trabajos_de_grado\" WHERE \"ncorrelativo\" = '" + listCorrelativeNumber[i] + "'", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
+                            String title = (String)reader["titulo"];
+                            String modality = (String)reader["modalidad"];
+                            DateTime dateTime = (DateTime)reader["fechacreacion"];
+
+                            DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
+                            listDegreeWorks.Add(degreeWorks);
+                            councilListBox.Items.Clear();
+                            councilListBox.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
+                        }
+                        reader.Close();
+                    }
+                }
+
                 this.Close();
             }
         }

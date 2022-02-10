@@ -32,7 +32,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             List<String> listCorrelativeNumber = new List<string>();
             listDegreeWorks = new List<DegreeWorks>();
             //Tengo que encontrar una query que no ponga los que ya son trabajo de grado
-            using (var command = new NpgsqlCommand("SELECT ncorrelativo FROM \"esrevisor\" WHERE \"estatus\" = 'PAR'", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT ER.ncorrelativo FROM esrevisor as ER, trabajos_de_grado as TG WHERE ER.estatus = 'PAR' AND TG.espropuesta = true AND ER.ncorrelativo = TG.ncorrelativo", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -94,7 +94,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             int j = 0;
             while (j < listAux.Count)
             {
-                CouncilAprobation council = new CouncilAprobation(listAux[j], lastID);
+                CouncilAprobation council = new CouncilAprobation(listAux[j], lastID,proposalListBox);
                 council.ShowDialog();
                 j++;
             }
