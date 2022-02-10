@@ -28,6 +28,9 @@
     <Compile Update="pages\TeacherWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="pages\ViewDetailProposal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SecundaryPage\committeePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,7 +40,19 @@
     <Compile Update="SecundaryPage\CreateSpecialty.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SecundaryPage\ViewAllProposalsSt.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SecundaryPage\ViewCommittee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SecundaryPage\ViewCouncils.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SecundaryPage\ViewerTeacherPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SecundaryPage\ViewProposals.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -69,6 +84,9 @@
     <Page Update="pages\TeacherWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="pages\ViewDetailProposal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="SecundaryPage\committeePage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -78,7 +96,19 @@
     <Page Update="SecundaryPage\CreateSpecialty.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="SecundaryPage\ViewAllProposalsSt.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecundaryPage\ViewCommittee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecundaryPage\ViewCouncils.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="SecundaryPage\ViewerTeacherPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecundaryPage\ViewProposals.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
