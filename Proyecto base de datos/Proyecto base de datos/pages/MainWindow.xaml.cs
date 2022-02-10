@@ -42,7 +42,7 @@ namespace Proyecto_base_de_datos
             {
                 var conn = new Connection();
                 conn.openConnection();
-                using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedulae = '{0}' ", idTextBox.Text), conn.conn))
+                using (var command = new NpgsqlCommand(string.Format("SELECT * FROM estudiantes WHERE cedulae = '{0}' ", idTextBox.Text.Trim()), conn.conn))
                 { //Se busca en la bbdd la cedula correspondiente   
                     var reader = command.ExecuteReader();
                     if (reader.Read())
