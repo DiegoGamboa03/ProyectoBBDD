@@ -1,5 +1,6 @@
 ﻿using System;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.pages;
 using Npgsql;
 using System.Collections.Generic;
 using System.Text;
@@ -20,9 +21,11 @@ namespace Proyecto_base_de_datos.SecundaryPage
     /// </summary>
     public partial class ViewCouncils : Page
     {
+        private List<Council> councils = new List<Council>();
         public ViewCouncils()
         {
             InitializeComponent();
+            SearchCouncils();
         }
 
         private void SearchCouncils()
@@ -34,13 +37,20 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    String ncouncil = (String)reader["nconsejo"];
-                    int ncounc = Int32.Parse(ncouncil);
+                    int ncouncil = (int)reader["nconsejo"];
+                    String ncoun = ncouncil.ToString();
                     DateTime datep = (DateTime)reader["fechap"];
-                    String datepp = datep.ToString("dd-MM-yyyy");
+                    councils.Add(new Council(ncoun,datep));
                 }
                 reader.Close();
+                councilsList.ItemsSource = councils;
             }
+        }
+        private void DetailCouncils(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = councilsList.Items.IndexOf(councilsList.SelectedItem);
+             ViewDetailCouncil detailCouncil = new ViewDetailCouncil(councils[selectedItem]);
+            detailCouncil.ShowDialog();
         }
     }
 }

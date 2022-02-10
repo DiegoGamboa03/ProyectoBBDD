@@ -1,9 +1,8 @@
 ﻿using System;
+using Proyecto_base_de_datos.Class;
+using Npgsql;
 using System.Collections.Generic;
 using System.Text;
-using Npgsql;
-using Proyecto_base_de_datos.Class;
-using Proyecto_base_de_datos.pages;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,27 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Proyecto_base_de_datos.SecundaryPage
+namespace Proyecto_base_de_datos.pages
 {
     /// <summary>
-    /// Interaction logic for ViewAllProposalsSt.xaml
+    /// Interaction logic for ViewDetailCouncil.xaml
     /// </summary>
-    public partial class ViewAllProposalsSt : Page
+    public partial class ViewDetailCouncil : Window
     {
         private List<DegreeWorks> proposals = new List<DegreeWorks>();
-        public ViewAllProposalsSt()
+        public ViewDetailCouncil(Council coun)
         {
+            String codec = coun.CouncilID;  
             InitializeComponent();
-            SearchProposals();
+            SearchProposals(codec);
         }
-        private void SearchProposals() // Search proposals of a Student
+        private void SearchProposals(string codec)
         {
             var conn = new Connection();
             conn.openConnection();
-            using (var command = new NpgsqlCommand("SELECT * FROM \"trabajos_de_grado\" ORDER BY \"ncorrelativo\"", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT * FROM \"trabajos_de_grado\" WHERE \"nconsejo\" = '" + codec + "' ORDER BY \"ncorrelativo\"", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -51,11 +50,12 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     proposals.Add(new DegreeWorks(ncorre, title, observations.ToString(), stCreationDate, modality, councilNumber.ToString(), idInternTeacher.ToString(), idCouncil.ToString()));
                 }
                 reader.Close();
-                if(proposals.Count>0)
+                if (proposals.Count > 0)
                     proposalsList.ItemsSource = proposals;
             }
         }
-        private void OnClickItems(object sender, RoutedEventArgs e)
+
+        private void OnClickItem(object sender, RoutedEventArgs e)
         {
             var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
             ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);

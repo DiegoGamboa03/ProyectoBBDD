@@ -1,5 +1,6 @@
 ﻿using System;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.pages;
 using Npgsql;
 using System.Collections.Generic;
 using System.Text;
@@ -20,9 +21,11 @@ namespace Proyecto_base_de_datos.SecundaryPage
     /// </summary>
     public partial class ViewCommittee : Page
     {
+        private List<Commite> committes = new List<Commite>();
         public ViewCommittee()
         {
             InitializeComponent();
+            SearchCommittee();
         }
         private void SearchCommittee()
         {
@@ -33,13 +36,20 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    String ccommitte = (String)reader["codigoc"];
-                    int codeCommitte = Int32.Parse(ccommitte);
+                    String ccommitte = (String)reader["codigoc"];                    
                     DateTime datep = (DateTime)reader["fechap"];
-                    String datepp = datep.ToString("dd-MM-yyyy");
+                    committes.Add(new Commite(ccommitte,datep));
                 }
                 reader.Close();
+                committeList.ItemsSource = committes;
             }
+        }
+
+        private void DetailCommitte(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = committeList.Items.IndexOf(committeList.SelectedItem);
+            ViewDetailCommitte detailccommitte = new ViewDetailCommitte(committes[selectedItem]);
+            detailccommitte.ShowDialog();
         }
     }
 }

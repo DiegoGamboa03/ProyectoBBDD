@@ -28,6 +28,12 @@
     <Compile Update="pages\TeacherWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="pages\ViewDetailCommitte.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\ViewDetailCouncil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="pages\ViewDetailProposal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,6 +88,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\TeacherWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\ViewDetailCommitte.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\ViewDetailCouncil.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\ViewDetailProposal.xaml">

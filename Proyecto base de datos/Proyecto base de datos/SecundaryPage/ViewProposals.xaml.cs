@@ -53,7 +53,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     proposals.Add(new DegreeWorks(ncorre, title, observations.ToString(), stCreationDate, modality, councilNumber.ToString(), idInternTeacher.ToString(), idCouncil.ToString()));
                 }
                 reader.Close();
-                proposalsList.ItemsSource = proposals;
+                if (proposals.Count > 0)
+                    proposalsList.ItemsSource = proposals;
             }
         }
         private void AddExample()  // Add example proposals for test ui

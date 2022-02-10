@@ -172,3 +172,7 @@ C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de
 C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.dll
 C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.pdb
 C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.genruntimeconfig.cache
+C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCommitte.g.cs
+C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCommitte.baml
+C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCouncil.g.cs
+C:\Users\rober\Desktop\N BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCouncil.baml

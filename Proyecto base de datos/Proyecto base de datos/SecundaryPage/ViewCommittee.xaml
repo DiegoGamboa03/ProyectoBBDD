@@ -10,12 +10,12 @@
 
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"><Run Language="es-ve" Text="Lista de los Comités de trabajo de grado"/><LineBreak/><Run/></TextBlock>
-        <ListView x:Name="councilsList" Margin="0,80,0,0" SelectionMode="Single">
+        <ListView x:Name="committeList" Margin="0,80,0,0" SelectionMode="Single" MouseDoubleClick="DetailCommitte">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="codigo comite" FontSize="20" />
-                        <TextBlock Text="Fecha de comite" FontSize="20" />
+                        <TextBlock Text="{Binding CommiteID}" FontSize="20" />
+                        <TextBlock Text="{Binding StDate}" FontSize="20" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
