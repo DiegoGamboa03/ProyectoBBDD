@@ -125,7 +125,7 @@ namespace Proyecto_base_de_datos.SecundaryPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;V1.0.0.0;component/secundarypage/createproposal.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;component/secundarypage/createproposal.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SecundaryPage\CreateProposal.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

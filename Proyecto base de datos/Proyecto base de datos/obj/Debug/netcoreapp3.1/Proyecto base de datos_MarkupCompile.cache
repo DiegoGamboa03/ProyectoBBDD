@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\App.xaml
-121228843723
+141725774198
 
-24467716558
+26-1262386670
 193-1127030765
-pages\CommiteAprobation.xaml;pages\MainWindow.xaml;pages\RegisterStudent.xaml;pages\RegisterTeacher.xaml;pages\StudentWindow.xaml;pages\TeacherWindow.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\CreateSpecialty.xaml;SecundaryPage\LoadTDGList.xaml;SecundaryPage\PageEvaluationCriteria.xaml;SecundaryPage\ViewProposals.xaml;
+pages\CommiteAprobation.xaml;pages\MainWindow.xaml;pages\RegisterStudent.xaml;pages\RegisterTeacher.xaml;pages\StudentWindow.xaml;pages\TeacherWindow.xaml;pages\ViewDetailProposal.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\CreateSpecialty.xaml;SecundaryPage\LoadTDGList.xaml;SecundaryPage\PageEvaluationCriteria.xaml;SecundaryPage\ViewAllProposalsSt.xaml;SecundaryPage\ViewProposals.xaml;
 
 False
 

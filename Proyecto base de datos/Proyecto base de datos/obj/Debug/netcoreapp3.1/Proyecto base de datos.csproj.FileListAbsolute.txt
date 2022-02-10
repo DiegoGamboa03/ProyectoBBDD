@@ -89,3 +89,7 @@ C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto 
 C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Proyecto base de datos.genruntimeconfig.cache
 C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewProposals.g.cs
 C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewProposals.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailProposal.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailProposal.baml
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewAllProposalsSt.g.cs
+C:\Users\rober\Desktop\Proyecto BD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\ViewAllProposalsSt.baml

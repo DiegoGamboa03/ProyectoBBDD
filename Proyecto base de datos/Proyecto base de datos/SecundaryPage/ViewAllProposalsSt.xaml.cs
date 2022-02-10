@@ -1,10 +1,9 @@
-﻿using Npgsql;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Npgsql;
 using Proyecto_base_de_datos.Class;
 using Proyecto_base_de_datos.pages;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,22 +17,21 @@ using System.Windows.Shapes;
 namespace Proyecto_base_de_datos.SecundaryPage
 {
     /// <summary>
-    /// Interaction logic for ViewProposals.xaml
+    /// Interaction logic for ViewAllProposalsSt.xaml
     /// </summary>
-    public partial class ViewProposals : Page
+    public partial class ViewAllProposalsSt : Page
     {
         private List<DegreeWorks> proposals = new List<DegreeWorks>();
-        public ViewProposals()
+        public ViewAllProposalsSt()
         {
             InitializeComponent();
-            //AddExample();
             SearchProposals();
         }
         private void SearchProposals() // Search proposals of a Student
         {
             var conn = new Connection();
             conn.openConnection();
-            using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" \"e\",\"trabajos_de_grado\" \"tg\" WHERE \"cedulae\" = '" + MainWindow.student.Id.ToString() + "' AND e.\"ncorrelativo\" = tg.\"ncorrelativo\" ORDER BY tg.\"ncorrelativo\"", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT * FROM \"trabajos_de_grado\" ORDER BY \"ncorrelativo\"", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -44,32 +42,23 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     DateTime creationDate = (DateTime)reader["fechacreacion"];
                     String stCreationDate = creationDate.ToString();
                     String modality = (String)reader["modalidad"];
-             
+
                     //Pueden ser Null
                     var observations = reader["observaciones"];
                     var councilNumber = reader["nconsejo"];
                     var idInternTeacher = reader["cedulapi"];
                     var idCouncil = reader["codigoc"];
-                    proposals.Add(new DegreeWorks(ncorre, title, observations.ToString(),stCreationDate, modality,councilNumber.ToString(),idInternTeacher.ToString(),idCouncil.ToString()));
+                    proposals.Add(new DegreeWorks(ncorre, title, observations.ToString(), stCreationDate, modality, councilNumber.ToString(), idInternTeacher.ToString(), idCouncil.ToString()));
                 }
                 reader.Close();
                 proposalsList.ItemsSource = proposals;
             }
         }
-        private void AddExample()  // Add example proposals for test ui
-        {
-            for (int i = 1; i <= 10; i++)
-            {
-                proposals.Add(new DegreeWorks(i, "Propuesta de prueba ", "02-07-2022", "Instrumental"));
-            }
-            proposalsList.ItemsSource = proposals;
-        }
-
-        private void OnClickItem(object sender, RoutedEventArgs e)
+        private void OnClickItems(object sender, RoutedEventArgs e)
         {
             var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
             ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
             detailProposal.ShowDialog();
         }
     }
-    }
+}
