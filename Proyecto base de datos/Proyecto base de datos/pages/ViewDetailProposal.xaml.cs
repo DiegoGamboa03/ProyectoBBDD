@@ -32,8 +32,18 @@ namespace Proyecto_base_de_datos.pages
             ncouncil.Text = degreeWorks.CouncilNumber;
             ncomitte.Text = degreeWorks.IdCouncil;
             student.Visibility = Visibility.Collapsed;
-            studentName1.Text = "Nombre de prueba";
-            studentName2.Text = "Nombre de prueba";
+            students.Visibility = Visibility.Collapsed;
+
+            if (degreeWorks.IdInternTeacher == "")
+                teacher.Text = "No asignado";
+        }
+        private void SearchTeacher()
+        {
+
+        }
+
+        private void SearchStudents()
+        {
 
         }
     }
