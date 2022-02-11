@@ -13,8 +13,9 @@
             <ColumnDefinition Width="679*"/>
             <ColumnDefinition Width="121*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="proposalListBox" HorizontalAlignment="Left" Height="320" Margin="45,37,0,0" VerticalAlignment="Top" Width="634" Grid.ColumnSpan="2"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="44" Margin="619,378,0,0" VerticalAlignment="Top" Width="148" Grid.ColumnSpan="2" Click="Button_Click"/>
+        <ListBox x:Name="proposalListBox" HorizontalAlignment="Left" Height="286" Margin="45,71,0,0" VerticalAlignment="Top" Width="634" FontSize="22" BorderBrush="#FF0C907D"/>
+        <Button Content="Siguiente" HorizontalAlignment="Left" Height="44" Margin="619,378,0,0" VerticalAlignment="Top" Width="148" Grid.ColumnSpan="2" Click="Button_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
+        <Label Content="Creacion de Consejo de escuela" HorizontalAlignment="Center" Height="44" Margin="0,22,0,0" VerticalAlignment="Top" Width="354" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
 
     </Grid>
 </Page>

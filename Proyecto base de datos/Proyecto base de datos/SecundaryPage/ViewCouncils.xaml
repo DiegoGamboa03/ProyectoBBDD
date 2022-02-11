@@ -9,7 +9,7 @@
       Title="ViewCouncils">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"><Run Text="Lista de los Consejos de Escuela"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"><Run Text="Lista de los Consejos de Escuela"/><LineBreak/><Run/></TextBlock>
         <ListView x:Name="councilsList" Margin="0,80,0,0" SelectionMode="Single" MouseDoubleClick="DetailCouncils">
             <ListView.ItemTemplate>
                 <DataTemplate>

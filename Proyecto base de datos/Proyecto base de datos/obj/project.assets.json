@@ -158,19 +158,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rober\\.nuget\\packages\\": {}
+    "C:\\Users\\diego\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rober\\Desktop\\N BD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
+      "projectUniqueName": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
       "projectName": "Proyecto base de datos",
-      "projectPath": "C:\\Users\\rober\\Desktop\\N BD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
-      "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rober\\Desktop\\N BD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\obj\\",
+      "projectPath": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
+      "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
+      "outputPath": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rober\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -219,7 +219,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

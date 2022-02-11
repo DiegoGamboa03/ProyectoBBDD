@@ -9,7 +9,7 @@
       Title="ViewAllProposalsSt">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"><Run Text="Lista de Todas las Propuestas"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Semibold" Foreground="#FF0C907D"><Run Text="Lista de Todas las Propuestas"/><LineBreak/><Run/></TextBlock>
         <ListView x:Name="proposalsList" Margin="0,80,0,0" SelectionMode="Single" MouseDoubleClick="OnClickItems">
             <ListView.ItemTemplate>
                 <DataTemplate>

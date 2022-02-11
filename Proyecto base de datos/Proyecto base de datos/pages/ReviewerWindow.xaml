@@ -7,22 +7,24 @@
         mc:Ignorable="d"
         Title="ReviewerWindow" Height="450" Width="800">
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="116" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="752"/>
-        <Label Content="Tema propuesto:" HorizontalAlignment="Left" Margin="38,34,0,0" VerticalAlignment="Top" Width="117" FontSize="14" HorizontalContentAlignment="Left" RenderTransformOrigin="0.45,0.338"/>
-        <Label Content="Tesista:" HorizontalAlignment="Left" Margin="38,103,0,0" VerticalAlignment="Top" Width="49"/>
-        <Label Content="Cedula:&#xA;" HorizontalAlignment="Left" Margin="254,103,0,0" VerticalAlignment="Top" Width="46" Height="26"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="478,103,0,0" VerticalAlignment="Top" Width="42"/>
-        <Label Content="Datos del tesista." HorizontalAlignment="Left" Margin="38,68,0,0" VerticalAlignment="Top" Width="117" FontSize="14"/>
-        <TextBlock x:Name="StudentName" HorizontalAlignment="Left" Margin="92,108,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="145"/>
-        <TextBlock x:Name="idStudent" HorizontalAlignment="Left" Margin="305,108,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="151"/>
-        <TextBlock x:Name="StudentEmail" HorizontalAlignment="Left" Margin="525,108,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="246"/>
-        <TextBlock x:Name="TitleTDG" HorizontalAlignment="Left" Margin="160,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="611" Height="29" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Margin="461,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="310" Height="176"/>
-        <Label Content="Observaciones" HorizontalAlignment="Left" Margin="461,164,0,0" VerticalAlignment="Top" Width="114" Height="31" FontSize="14"/>
-        <Label Content="Decisión final: " HorizontalAlignment="Left" Margin="24,397,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox HorizontalAlignment="Left" Margin="160,401,0,0" VerticalAlignment="Top" Width="164"/>
-        <Button Content="Enviar revisión" HorizontalAlignment="Left" Margin="529,391,0,0" VerticalAlignment="Top" Height="39" Width="180" Click="Button_Click" FontSize="16"/>
-        <ListBox HorizontalAlignment="Left" Height="212" Margin="24,164,0,0" VerticalAlignment="Top" Width="408" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OnMouseDoubleClick"/>
+        <Rectangle HorizontalAlignment="Center" Height="116" Margin="0,52,0,0" Stroke="#FF0C907D" VerticalAlignment="Top" Width="752"/>
+        <Label Content="Tema propuesto:" HorizontalAlignment="Left" Margin="38,63,0,0" VerticalAlignment="Top" Width="136" FontSize="16" HorizontalContentAlignment="Left" RenderTransformOrigin="0.45,0.338" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Tesista::" HorizontalAlignment="Left" Margin="38,132,0,0" VerticalAlignment="Top" Width="63" FontFamily="Segoe UI Semibold" FontSize="16"/>
+        <Label Content="Cedula:&#xA;" HorizontalAlignment="Left" Margin="230,131,0,0" VerticalAlignment="Top" Width="70" Height="27" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="476,131,0,0" VerticalAlignment="Top" Width="58" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Datos del tesista:" HorizontalAlignment="Left" Margin="38,97,0,0" VerticalAlignment="Top" Width="136" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <TextBlock x:Name="StudentName" HorizontalAlignment="Left" Margin="101,136,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="145" FontSize="16"/>
+        <TextBlock x:Name="idStudent" HorizontalAlignment="Left" Margin="305,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="151" FontSize="16"/>
+        <TextBlock x:Name="StudentEmail" HorizontalAlignment="Left" Margin="534,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="246" FontSize="16"/>
+        <TextBlock x:Name="TitleTDG" HorizontalAlignment="Left" Margin="160,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="611" Height="29" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Margin="461,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="310" Height="176" BorderBrush="#FF0C907D" FontSize="18"/>
+        <Label Content="Observaciones" HorizontalAlignment="Left" Margin="461,170,0,0" VerticalAlignment="Top" Width="137" Height="30" FontSize="17" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Decisión final: " HorizontalAlignment="Left" Margin="24,387,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Semibold"/>
+        <ComboBox HorizontalAlignment="Left" Margin="160,385,0,0" VerticalAlignment="Top" Width="164" Height="39"/>
+        <Button Content="Enviar revisión" HorizontalAlignment="Left" Margin="534,385,0,0" VerticalAlignment="Top" Height="39" Width="180" Click="Button_Click" FontSize="16" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
+        <ListBox HorizontalAlignment="Left" Height="176" Margin="24,200,0,0" VerticalAlignment="Top" Width="408" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OnMouseDoubleClick" BorderBrush="#FF0C907D" FontSize="20"/>
+        <Label Content="Evaluacion de Consejo" HorizontalAlignment="Left" Height="50" Margin="228,0,0,0" VerticalAlignment="Top" Width="357" FontFamily="Segoe UI Semibold" FontSize="30" FontWeight="Normal"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="24,173,0,0" Text="Criterios de evaluacion:" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="17" FontFamily="Segoe UI Semibold"/>
 
     </Grid>
 </Window>
