@@ -41,19 +41,17 @@ namespace Proyecto_base_de_datos.Pages
             if (degreeWorks.Modality == "I")
             {
                 Trace.WriteLine("En reviwerAprobationwindow: " + degreeWorks.CorrelativeNumber.ToString());
-                using (var command = new NpgsqlCommand("UPDATE evaluacriterioi SET aprueba = true WHERE ncorrelativo = @n1 AND codigo = @n2", conn.conn))
+                using (var command = new NpgsqlCommand("UPDATE evaluacriterioi SET aprueba = true WHERE ncorrelativo = '"+ degreeWorks.CorrelativeNumber.ToString() + "' AND codigo = @n2", conn.conn))
                 {
-                    command.Parameters.AddWithValue("n1", degreeWorks.CouncilNumber.ToString());
                     command.Parameters.AddWithValue("n2", evaluationCriteria.Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
                 }
             }else if(degreeWorks.Modality == "E")
             {
-                using (var command = new NpgsqlCommand("UPDATE evaluacriterioe SET aprueba = true WHERE ncorrelativo = @n1 AND codigo = @n2", conn.conn))
+                using (var command = new NpgsqlCommand("UPDATE evaluacriterioe SET aprueba = true WHERE ncorrelativo = '"+ degreeWorks.CorrelativeNumber.ToString() + "' AND codigo = @n2", conn.conn))
                 {
-                    command.Parameters.AddWithValue("n1", this.degreeWorks.CouncilNumber);
-                    command.Parameters.AddWithValue("n2", this.evaluationCriteria.Id);
+                    command.Parameters.AddWithValue("n2", evaluationCriteria.Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
                 }
@@ -66,9 +64,8 @@ namespace Proyecto_base_de_datos.Pages
             conn.openConnection();
             if (degreeWorks.Modality == "I")
             {
-                using (var command = new NpgsqlCommand("UPDATE evaluacriterioi SET aprueba = false WHERE ncorrelativo = @n1 AND codigo = @n2", conn.conn))
+                using (var command = new NpgsqlCommand("UPDATE evaluacriterioi SET aprueba = false WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber.ToString() +"' AND codigo = @n2", conn.conn))
                 {
-                    command.Parameters.AddWithValue("n1", degreeWorks.CouncilNumber);
                     command.Parameters.AddWithValue("n2", evaluationCriteria.Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
@@ -76,9 +73,8 @@ namespace Proyecto_base_de_datos.Pages
             }
             else if (degreeWorks.Modality == "E")
             {
-                using (var command = new NpgsqlCommand("UPDATE evaluacriterioe SET aprueba = false WHERE ncorrelativo = @n1 AND codigo = @n2", conn.conn))
+                using (var command = new NpgsqlCommand("UPDATE evaluacriterioe SET aprueba = false WHERE ncorrelativo = '"+ degreeWorks.CorrelativeNumber.ToString() +"' AND codigo = @n2", conn.conn))
                 {
-                    command.Parameters.AddWithValue("n1", degreeWorks.CouncilNumber);
                     command.Parameters.AddWithValue("n2", evaluationCriteria.Id);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));

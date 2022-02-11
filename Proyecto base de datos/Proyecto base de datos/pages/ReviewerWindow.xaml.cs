@@ -63,7 +63,7 @@ namespace Proyecto_base_de_datos.pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            //Aqui tengo que revisar en las tablas de evaluacriterioi y evaluacriterioe, que todos los criterios de este tg sean aprobados
         }
         void OnMouseDoubleClick(object sender, MouseEventArgs e)
         {
