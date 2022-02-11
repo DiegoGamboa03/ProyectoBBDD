@@ -9,18 +9,20 @@
       Title="CreateProposal">
 
     <Grid Background="White">
-        <ComboBox x:Name="teammatesComboBox" HorizontalAlignment="Left" Margin="221,46,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="32,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Text="Lista de compa"/><Run Language="es-ve" Text="ñeros"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Margin="221,112,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Height="29" Margin="32,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="18" FontStyle="Normal" FontWeight="Bold"><Run Language="es-ve" Text="Titulo"/></TextBlock>
-        <RadioButton x:Name="instrumentalRadioButton" Content="Instrumental" HorizontalAlignment="Left" Margin="221,169,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-        <RadioButton x:Name="experimentalRadioButton" Content="Experimental" HorizontalAlignment="Left" Margin="333,169,0,0" VerticalAlignment="Top" Checked="experimentalRadioButton_Checked"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="38" Margin="400,324,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click"/>
-        <TextBox x:Name="auxTextBox" HorizontalAlignment="Left" Height="19" Margin="221,240,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="endorsedTeacherText" HorizontalAlignment="Left" Height="19" Margin="32,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"><Run Language="es-ve" Text="profesor avalado"/></TextBlock>
-        <TextBlock x:Name="businessTutorText" HorizontalAlignment="Left" Height="21" Margin="32,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"><Run Language="es-ve" Text="Tutor empresarial"/></TextBlock>
-        <TextBlock x:Name="companyName" HorizontalAlignment="Left" Margin="32,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nombre compa"/><Run Language="es-ve" Text="ñia"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="companyNameTextBox" HorizontalAlignment="Left" Height="16" Margin="221,297,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.61,0.712"/>
+        <ComboBox x:Name="teammatesComboBox" HorizontalAlignment="Left" Margin="334,108,0,0" VerticalAlignment="Top" Width="180" Height="24" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="145,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Semibold"><Run Text="Lista de compa"/><Run Language="es-ve" Text="ñeros"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Margin="334,170,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="24" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="29" Margin="145,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="18" FontStyle="Normal" FontWeight="Normal" FontFamily="Segoe UI Semibold"><Run Language="es-ve" Text="Titulo"/></TextBlock>
+        <RadioButton x:Name="instrumentalRadioButton" Content="Instrumental" HorizontalAlignment="Left" Margin="334,231,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" FontSize="16"/>
+        <RadioButton x:Name="experimentalRadioButton" Content="Experimental" HorizontalAlignment="Left" Margin="446,231,0,0" VerticalAlignment="Top" Checked="experimentalRadioButton_Checked" FontSize="16"/>
+        <Button Content="Crear " HorizontalAlignment="Left" Height="38" Margin="583,375,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click" FontFamily="Segoe UI Semibold" FontSize="18" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
+        <TextBox x:Name="auxTextBox" HorizontalAlignment="Left" Height="24" Margin="334,300,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontSize="16"/>
+        <TextBlock x:Name="endorsedTeacherText" HorizontalAlignment="Left" Height="29" Margin="145,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Segoe UI Semibold" FontSize="18" Text="Profesor avalado"/>
+        <TextBlock x:Name="businessTutorText" HorizontalAlignment="Left" Height="21" Margin="145,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Semibold"><Run Language="es-ve" Text="Tutor empresarial"/></TextBlock>
+        <TextBlock x:Name="companyName" HorizontalAlignment="Left" Margin="145,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="18"><Run Text="Nombre compa"/><Run Language="es-ve" Text="ñia"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="companyNameTextBox" HorizontalAlignment="Left" Height="24" Margin="334,351,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.61,0.712" FontSize="16"/>
+        <Label Content="Crear Propuesta" HorizontalAlignment="Center" Height="54" Margin="0,32,0,0" VerticalAlignment="Top" Width="202" FontSize="24" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Tipo de propuesta" HorizontalAlignment="Left" Height="34" Margin="137,221,0,0" VerticalAlignment="Top" Width="184" FontFamily="Segoe UI Semibold" FontSize="18"/>
 
     </Grid>
 </Page>

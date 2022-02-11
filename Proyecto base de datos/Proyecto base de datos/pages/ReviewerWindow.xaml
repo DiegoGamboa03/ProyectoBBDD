@@ -23,7 +23,7 @@
         <ComboBox HorizontalAlignment="Left" Margin="160,385,0,0" VerticalAlignment="Top" Width="164" Height="39"/>
         <Button Content="Enviar revisión" HorizontalAlignment="Left" Margin="534,385,0,0" VerticalAlignment="Top" Height="39" Width="180" Click="Button_Click" FontSize="16" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
         <ListBox HorizontalAlignment="Left" Height="176" Margin="24,200,0,0" VerticalAlignment="Top" Width="408" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OnMouseDoubleClick" BorderBrush="#FF0C907D" FontSize="20"/>
-        <Label Content="Evaluacion de Consejo" HorizontalAlignment="Left" Height="50" Margin="228,0,0,0" VerticalAlignment="Top" Width="357" FontFamily="Segoe UI Semibold" FontSize="30" FontWeight="Normal"/>
+        <Label Content="Evaluacion de Consejo" HorizontalAlignment="Left" Height="50" Margin="228,0,0,0" VerticalAlignment="Top" Width="357" FontFamily="Segoe UI Semibold" FontSize="30" FontWeight="Normal" Foreground="#FF0C907D"/>
         <TextBlock HorizontalAlignment="Left" Height="24" Margin="24,173,0,0" Text="Criterios de evaluacion:" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="17" FontFamily="Segoe UI Semibold"/>
 
     </Grid>

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Proyecto_base_de_datos.pages;
+using System.Diagnostics;
 
 namespace Proyecto_base_de_datos.SecundaryPage
 {
@@ -39,7 +40,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     String title = (String)reader["titulo"];
                     String modality = (String)reader["modalidad"];
                     DateTime dateTime = (DateTime)reader["fechacreacion"];
-
+                    Trace.WriteLine(title);
+                    Trace.WriteLine("AAAAAAA");
                     DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
                     list.Add(degreeWorks);
                     ViewerTeacherList.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
@@ -57,6 +59,18 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
         private void ViewerTeacherList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        void OnMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var list = (ListBox)sender;
+
+            // This is your selected item
+            int item = list.SelectedIndex;
+            Trace.WriteLine(item);
+            AddEvaluationCriteriaReviewer page = new AddEvaluationCriteriaReviewer(this.list[item]);
+            page.ShowDialog();
 
         }
     }

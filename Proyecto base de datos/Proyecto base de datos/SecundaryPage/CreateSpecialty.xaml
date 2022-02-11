@@ -8,10 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CreateSpecialty">
 
-    <Grid Background="White">
-        <Button x:Name="createButton" Content="Crear" HorizontalAlignment="Left" Height="74" Margin="510,329,0,0" VerticalAlignment="Top" Width="205" Click="createButton_Click"/>
-        <TextBox x:Name="specialtyNameTextBox" HorizontalAlignment="Left" Height="47" Margin="239,101,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
-        <TextBlock HorizontalAlignment="Left" Height="47" Margin="27,101,0,0" Text="Nombre de especialidad" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+    <Grid Background="White" Margin="313,61,-147,68">
+        <Button x:Name="createButton" Content="Crear" HorizontalAlignment="Left" Height="50" Margin="431,201,0,0" VerticalAlignment="Top" Width="169" Click="createButton_Click" FontFamily="Segoe UI Semibold" FontSize="18" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
+        <TextBox x:Name="specialtyNameTextBox" HorizontalAlignment="Left" Height="23" Margin="338,113,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="47" Margin="68,113,0,0" Text="Nombre de especialidad:" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" FontSize="18" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Crear Especialidad" HorizontalAlignment="Center" Height="54" Margin="0,32,0,0" VerticalAlignment="Top" Width="202" FontSize="24" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"/>
 
     </Grid>
 </Page>

@@ -25,7 +25,7 @@ namespace Proyecto_base_de_datos.pages
             Frame1.Content = page;
             PageEvaluationCriteria page2 = new PageEvaluationCriteria();
             Frame2.Content = page2;
-            CreateCouncil page3 = new CreateCouncil();
+            ViewerTeacherPage page3 = new ViewerTeacherPage();
             Frame3.Content = page3;
 
         }

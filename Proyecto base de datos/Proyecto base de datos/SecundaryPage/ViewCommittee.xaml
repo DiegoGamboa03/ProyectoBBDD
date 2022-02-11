@@ -9,7 +9,7 @@
       Title="ViewCommittee">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"><Run Language="es-ve" Text="Lista de los Comités de trabajo de grado"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"><Run Language="es-ve" Text="Lista de los Comités de trabajo de grado"/><LineBreak/><Run/></TextBlock>
         <ListView x:Name="committeList" Margin="0,80,0,0" SelectionMode="Single" MouseDoubleClick="DetailCommitte">
             <ListView.ItemTemplate>
                 <DataTemplate>

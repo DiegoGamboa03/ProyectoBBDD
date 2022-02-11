@@ -23,6 +23,7 @@ namespace Proyecto_base_de_datos.pages
         {
             InitializeComponent();
             this.degreeWorks = DegreeWork;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -69,7 +69,7 @@ namespace Proyecto_base_de_datos.SecundaryPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;V1.0.0.0;component/secundarypage/createspecialty.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;component/secundarypage/createspecialty.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SecundaryPage\CreateSpecialty.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

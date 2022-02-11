@@ -9,7 +9,7 @@
       Title="ViewerTeacherPage">
 
     <Grid Background="White">
-        <ListBox x:Name="ViewerTeacherList" HorizontalAlignment="Left" Height="312" Margin="51,33,0,0" VerticalAlignment="Top" Width="644" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ViewerTeacherList_SelectionChanged" BorderBrush="#FF0C907D" FontSize="20"/>
+        <ListBox x:Name="ViewerTeacherList" HorizontalAlignment="Left" Height="312" Margin="51,33,0,0" VerticalAlignment="Top" Width="644" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ViewerTeacherList_SelectionChanged" BorderBrush="#FF0C907D" FontSize="20" MouseDoubleClick="OnMouseDoubleClick"/>
         <Button x:Name="RevisionButton" Content="Revisar" HorizontalAlignment="Left" Margin="630,374,0,0" VerticalAlignment="Top" Height="42" Width="129" FontSize="16" Click="RevisionButton_Click" Background="#FF0C907D" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2"/>
 
     </Grid>

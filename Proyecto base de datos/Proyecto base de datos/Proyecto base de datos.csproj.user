@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\AddEvaluationCriteriaReviewer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CommiteAprobation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -63,6 +66,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\AddEvaluationCriteriaReviewer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\CommiteAprobation.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -79,9 +85,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\ReviewerWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="pages\ReviewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\StudentWindow.xaml">

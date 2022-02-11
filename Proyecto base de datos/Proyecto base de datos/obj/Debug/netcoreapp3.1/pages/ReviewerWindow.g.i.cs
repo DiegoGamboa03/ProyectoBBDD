@@ -85,7 +85,7 @@ namespace Proyecto_base_de_datos.pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;V1.0.0.0;component/pages/reviewerwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;component/pages/reviewerwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\ReviewerWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -101,7 +101,7 @@ namespace Proyecto_base_de_datos.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;V1.0.0.0;component/pages/commiteaprobation.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;component/pages/commiteaprobation.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\CommiteAprobation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
