@@ -4,12 +4,18 @@ using System.Text;
 
 namespace Proyecto_base_de_datos.Class
 {
-    class EvaluationCriteria
+    public class EvaluationCriteria
     {
         string id;
         string description;
         int topNote;
         string status;
+
+        public EvaluationCriteria(string id, string description)
+        {
+            this.id = id;
+            this.description = description;
+        }
 
         public EvaluationCriteria(string id, string description, int topNote, string status)
         {

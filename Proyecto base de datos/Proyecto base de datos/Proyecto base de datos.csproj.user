@@ -22,6 +22,9 @@
     <Compile Update="pages\RegisterTeacher.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\ReviewerAprobationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="pages\ReviewerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\RegisterTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ReviewerAprobationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\ReviewerWindow.xaml">

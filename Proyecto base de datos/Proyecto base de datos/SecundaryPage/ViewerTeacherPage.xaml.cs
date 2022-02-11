@@ -53,6 +53,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
         private void RevisionButton_Click(object sender, RoutedEventArgs e)
         {
             var SelectedItem = ViewerTeacherList.Items.IndexOf(ViewerTeacherList.SelectedItem);
+            Trace.WriteLine("En ViewerTeacherPage: " + this.list[SelectedItem].CorrelativeNumber.ToString());
             ReviewerWindow reviewPage = new ReviewerWindow(list[SelectedItem]);
             reviewPage.ShowDialog();
         }
