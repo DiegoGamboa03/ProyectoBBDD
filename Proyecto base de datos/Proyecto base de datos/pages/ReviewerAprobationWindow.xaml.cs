@@ -56,6 +56,7 @@ namespace Proyecto_base_de_datos.Pages
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
                 }
             }
+            this.Close();
         }
 
         private void disapprovalButton_Click(object sender, RoutedEventArgs e)
@@ -80,6 +81,7 @@ namespace Proyecto_base_de_datos.Pages
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
                 }
             }
+            this.Close();
         }
     }
 }
