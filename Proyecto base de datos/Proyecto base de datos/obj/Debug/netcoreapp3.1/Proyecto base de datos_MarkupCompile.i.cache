@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\App.xaml
-231533371336
+241966424279
 
-411851873319
+42-591600086
 193303771276
-Pages\AddEvaluationCriteriaReviewer.xaml;Pages\CommiteAprobation.xaml;Pages\CouncilAprobation.xaml;Pages\MainWindow.xaml;Pages\RegisterStudent.xaml;Pages\RegisterTeacher.xaml;Pages\ReviewerAprobationWindow.xaml;Pages\ReviewerWindow.xaml;Pages\StudentWindow.xaml;Pages\TeacherWindow.xaml;Pages\ViewDetailCommitte.xaml;Pages\ViewDetailCouncil.xaml;Pages\ViewDetailProposal.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateCouncil.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\CreateSpecialty.xaml;SecundaryPage\PageEvaluationCriteria.xaml;SecundaryPage\ViewAllProposalsSt.xaml;SecundaryPage\ViewCommittee.xaml;SecundaryPage\ViewCouncils.xaml;SecundaryPage\ViewerTeacherPage.xaml;SecundaryPage\ViewProposals.xaml;
+Pages\AddEvaluationCriteriaReviewer.xaml;Pages\CommiteAprobation.xaml;Pages\CouncilAprobation.xaml;Pages\MainWindow.xaml;Pages\RegisterStudent.xaml;Pages\RegisterTeacher.xaml;Pages\ReviewerAprobationWindow.xaml;Pages\ReviewerWindow.xaml;Pages\StudentWindow.xaml;Pages\TeacherWindow.xaml;Pages\ViewDetailCommitte.xaml;Pages\ViewDetailCouncil.xaml;Pages\ViewDetailProposal.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateCouncil.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\CreateSpecialty.xaml;SecundaryPage\EvaluateDegreeWorkxaml.xaml;SecundaryPage\PageEvaluationCriteria.xaml;SecundaryPage\ViewAllProposalsSt.xaml;SecundaryPage\ViewCommittee.xaml;SecundaryPage\ViewCouncils.xaml;SecundaryPage\ViewerTeacherPage.xaml;SecundaryPage\ViewProposals.xaml;
 
-False
+True
 

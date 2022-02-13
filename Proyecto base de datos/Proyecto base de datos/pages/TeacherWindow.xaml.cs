@@ -25,7 +25,7 @@ namespace Proyecto_base_de_datos.pages
             Frame1.Content = page;
             PageEvaluationCriteria page2 = new PageEvaluationCriteria();
             Frame2.Content = page2;
-            ViewerTeacherPage page3 = new ViewerTeacherPage();
+            EvaluateDegreeWorkxaml page3 = new EvaluateDegreeWorkxaml();
             Frame3.Content = page3;
 
         }
