@@ -22,7 +22,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="20,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="18" Text="Correo Particular"/>
         <TextBlock HorizontalAlignment="Left" Margin="62,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Text="Contraseña"/>
         <TextBlock HorizontalAlignment="Left" Margin="80,363,0,41" TextWrapping="Wrap" FontSize="16" FontWeight="Normal" Text="Opcional"/>
-        <TextBlock HorizontalAlignment="Left" Margin="18,21,0,0" TextWrapping="Wrap" Text="Campos obligatorios( * )" VerticalAlignment="Top" Height="32" Width="168" TextAlignment="Center" FontSize="14"/>
         <Rectangle HorizontalAlignment="Left" Height="434" Margin="522,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="290" Fill="#FF0C907D"/>
         <Label Content="Registrar &#xD;&#xA;estudiante&#xD;&#xA;" HorizontalAlignment="Left" Height="121" Margin="568,27,0,0" VerticalAlignment="Top" Width="198" Foreground="#FFF2F4B2" FontFamily="Segoe UI Black" FontSize="36"/>
 

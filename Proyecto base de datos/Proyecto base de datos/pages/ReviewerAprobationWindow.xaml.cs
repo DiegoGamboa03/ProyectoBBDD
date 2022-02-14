@@ -61,6 +61,7 @@ namespace Proyecto_base_de_datos.Pages
 
         private void disapprovalButton_Click(object sender, RoutedEventArgs e)
         {
+            var conn = new Connection();
             conn.openConnection();
             if (degreeWorks.Modality == "I")
             {

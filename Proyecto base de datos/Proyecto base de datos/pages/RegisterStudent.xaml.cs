@@ -41,6 +41,7 @@ namespace Proyecto_base_de_datos.pages
                 int nRows = command.ExecuteNonQuery();
                 Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
             }
+            this.Close();
         }
 
         private void idTextBox_TextChanged(object sender, TextChangedEventArgs e)

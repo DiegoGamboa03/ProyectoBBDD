@@ -31,6 +31,7 @@ namespace Proyecto_base_de_datos
         private bool isTeacher = false;
         public static Students student;
         public static Teachers teachers;
+        public static string ErrorMessage;
         public MainWindow()
         {
             InitializeComponent();
@@ -73,7 +74,9 @@ namespace Proyecto_base_de_datos
                     }
                     else
                     {
-                        //Aqui ponemos un pop up que diga que no es un usuario o contraseña valido
+                        ErrorMessage = "Usuario o contraseña invalido.";
+                        FailedSequenceWindow window = new FailedSequenceWindow(ErrorMessage);
+                        window.ShowDialog();
                         Trace.WriteLine("No Existe");
                     }
                     reader.Close();
