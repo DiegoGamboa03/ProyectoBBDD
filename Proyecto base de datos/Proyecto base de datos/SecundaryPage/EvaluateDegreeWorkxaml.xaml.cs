@@ -71,15 +71,50 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            if(degreeWorkJuryListBox.SelectedIndex != -1)
+            List<String> listIDStudents = new List<string>();
+            var conn = new Connection();
+            conn.openConnection();
+            EvaluateDegreeWorkWindow page;
+            if (degreeWorkJuryListBox.SelectedIndex != -1)
             {
+                using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE ncorrelativo = '" + listJury[degreeWorkJuryListBox.SelectedIndex].CorrelativeNumber + "'", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        String id = (String)reader["cedulae"];
+                        listIDStudents.Add(id);
+                    }
+                    reader.Close();
+                }
+                for(int i = 0; i < listIDStudents.Count; i++)
+                {
+                    page = new EvaluateDegreeWorkWindow(listTutor[degreeWorkTutorListBox.SelectedIndex], false, listIDStudents[i]);
+                    page.ShowDialog();
+                }
                 Trace.WriteLine("Se metio en jurado");
             }else if(degreeWorkTutorListBox.SelectedIndex != -1)
             {
+                using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE ncorrelativo = '" + listTutor[degreeWorkTutorListBox.SelectedIndex].CorrelativeNumber + "'", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        String id = (String)reader["cedulae"];
+                        listIDStudents.Add(id);
+                    }
+                    reader.Close();
+                }
+                for (int i = 0; i < listIDStudents.Count; i++)
+                {
+                    page = new EvaluateDegreeWorkWindow(listTutor[degreeWorkTutorListBox.SelectedIndex], true, listIDStudents[i]);
+                    page.ShowDialog();
+                }
                 Trace.WriteLine("Se metio en tutor");
             }
         }
 
+       
         void OnMouseDoubleClickTutor(object sender, MouseEventArgs e)
         {
             var list = (ListBox)sender;
