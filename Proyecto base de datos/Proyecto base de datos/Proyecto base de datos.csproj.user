@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\AddEvaluationCriteriaJury.xaml.cs">
+    <Compile Update="Pages\AddEvaluationCriteriaDegreeWork.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\AddEvaluationCriteriaReviewer.xaml.cs">
@@ -78,7 +78,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\AddEvaluationCriteriaJury.xaml">
+    <Page Update="Pages\AddEvaluationCriteriaDegreeWork.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\AddEvaluationCriteriaReviewer.xaml">

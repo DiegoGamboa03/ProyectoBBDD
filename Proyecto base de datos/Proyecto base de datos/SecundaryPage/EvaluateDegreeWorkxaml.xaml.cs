@@ -86,8 +86,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
             // This is your selected item
             int item = list.SelectedIndex;
-            //AddEvaluationCriteriaJury page = new AddEvaluationCriteriaJury(this.list[item]);
-            //page.ShowDialog();
+            AddEvaluationCriteriaDegreeWork page = new AddEvaluationCriteriaDegreeWork(this.listTutor[item],true);
+            page.ShowDialog();
         }
 
         void OnMouseDoubleClickJury(object sender, MouseEventArgs e)
@@ -96,8 +96,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
             // This is your selected item
             int item = list.SelectedIndex;
-            //AddEvaluationCriteriaJury page = new AddEvaluationCriteriaJury(this.list[item]);
-            //page.ShowDialog();
+            AddEvaluationCriteriaDegreeWork page = new AddEvaluationCriteriaDegreeWork(this.listTutor[item],false);
+            page.ShowDialog();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Proyecto_base_de_datos.Pages
             conn.openConnection();
             if (degreeWorks.Modality == "I")
             {
-                using (var command = new NpgsqlCommand("SELECT * FROM trabajos_de_grado WHERE cedulapi = '"+ MainWindow.teachers.Id +"'", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM criteriosevpr_i WHERE estatus = 'A'", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
@@ -49,7 +49,7 @@ namespace Proyecto_base_de_datos.Pages
             else if (degreeWorks.Modality == "E")
             {
 
-                using (var command = new NpgsqlCommand("SELECT * FROM criteriosevpr_i WHERE estatus = 'A'", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM criteriosevpr_e WHERE estatus = 'A'", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
