@@ -18,10 +18,10 @@ namespace Proyecto_base_de_datos.pages
     /// </summary>
     public partial class FailedSequenceWindow : Window
     {
-        public FailedSequenceWindow(string ErrorMessage)
+        public FailedSequenceWindow(string MessageToShow)
         {
             InitializeComponent();
-            ErrorText.Text = ErrorMessage;
+            ErrorText.Text = MessageToShow;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
