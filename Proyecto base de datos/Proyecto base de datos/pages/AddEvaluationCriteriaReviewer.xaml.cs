@@ -26,20 +26,19 @@ namespace Proyecto_base_de_datos.Pages
         {
             InitializeComponent();
             this.degreeWorks = degreeWorks;
+            var conn = new Connection();
+            conn.openConnection();
             if (degreeWorks.Modality == "I")
             {
-                var conn = new Connection();
-                conn.openConnection();
-                listIDCriteria = new List<string>();
-                using (var command = new NpgsqlCommand("SELECT * FROM criteriosevpr_i WHERE estatus = 'A'", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM trabajos_de_grado WHERE cedulapi = '"+ MainWindow.teachers.Id +"'", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         String id = (String)reader["codigo"];
+                        int topNote = Int32.Parse((String)reader["puntajemax"]);
                         String description = (String)reader["descripcion"];
                         String status = (String)reader["estatus"];
-                        Trace.WriteLine(id);
                         listIDCriteria.Add(id);
                         evaluationCriteriaComboBox.Items.Add(id + ", " + description + ", " + status);
 
@@ -49,8 +48,6 @@ namespace Proyecto_base_de_datos.Pages
             }
             else if (degreeWorks.Modality == "E")
             {
-                var conn = new Connection();
-                conn.openConnection();
 
                 using (var command = new NpgsqlCommand("SELECT * FROM criteriosevpr_i WHERE estatus = 'A'", conn.conn))
                 {

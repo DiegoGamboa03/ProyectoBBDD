@@ -23,7 +23,7 @@ namespace Proyecto_base_de_datos.pages
             InitializeComponent();
             committeePage page = new committeePage();
             Frame1.Content = page;
-            PageEvaluationCriteria page2 = new PageEvaluationCriteria();
+            ViewerTeacherPage page2 = new ViewerTeacherPage();
             Frame2.Content = page2;
             EvaluateDegreeWorkxaml page3 = new EvaluateDegreeWorkxaml();
             Frame3.Content = page3;

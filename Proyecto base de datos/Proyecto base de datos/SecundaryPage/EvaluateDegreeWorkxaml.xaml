@@ -9,9 +9,10 @@
       Title="EvaluateDegreeWorkxaml">
 
     <Grid Background="White">
-        <ListBox x:Name="degreeWorkListBox" HorizontalAlignment="Left" Height="295" Margin="55,55,0,0" VerticalAlignment="Top" Width="618" SelectionMode="Multiple" FontSize="22" BorderBrush="#FF0C907D"/>
+        <ListBox x:Name="degreeWorkTutorListBox" HorizontalAlignment="Left" Height="244" Margin="55,106,0,0" VerticalAlignment="Top" Width="306" SelectionMode="Single" FontSize="22" BorderBrush="#FF0C907D" MouseDoubleClick="OnMouseDoubleClickTutor"/>
         <Button x:Name="nextButton" Content="Siguiente" HorizontalAlignment="Left" Margin="629,380,0,0" VerticalAlignment="Top" Height="40" Width="116" Click="nextButton_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" IsCancel="True" Background="#FF0C907D"/>
-        <Label Content="Creacion de comite" HorizontalAlignment="Left" Height="44" Margin="246,6,0,0" VerticalAlignment="Top" Width="236" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
+        <Label Content="Evaluar trabajo de grado" HorizontalAlignment="Left" Height="44" Margin="246,6,0,0" VerticalAlignment="Top" Width="287" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
+        <ListBox x:Name="degreeWorkJuryListBox" HorizontalAlignment="Left" Height="244" Margin="400,106,0,0" VerticalAlignment="Top" Width="306" SelectionMode="Single" FontSize="22" BorderBrush="#FF0C907D" MouseDoubleClick="OnMouseDoubleClickJury"/>
 
     </Grid>
 </Page>

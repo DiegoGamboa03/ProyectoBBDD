@@ -80,7 +80,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     var conn = new Connection();
                     conn.openConnection();
                     //
-                    using (var command = new NpgsqlCommand("INSERT INTO trabajos_de_grado (ncorrelativo, titulo, modalidad, fechacreacion,espropuesta) VALUES (nextval('secuenciatrabajosgradopk'), @n2,'I',@n4,true) RETURNING ncorrelativo", conn.conn))
+                    using (var command = new NpgsqlCommand("INSERT INTO trabajos_de_grado (ncorrelativo, titulo, modalidad, fechacreacion,espropuesta) VALUES (nextval('secuenciatrabajosgradopk'), @n2,'E',@n4,true) RETURNING ncorrelativo", conn.conn))
                     {
                         String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
                         DateTime dateTime = DateTime.Parse(dateTimeString);

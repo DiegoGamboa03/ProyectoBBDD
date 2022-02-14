@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\AddEvaluationCriteriaJury.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\AddEvaluationCriteriaReviewer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -14,6 +17,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\CouncilAprobation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\EvaluateDegreeWorkWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="pages\RegisterStudent.xaml.cs">
@@ -72,6 +78,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\AddEvaluationCriteriaJury.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\AddEvaluationCriteriaReviewer.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -79,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CouncilAprobation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\EvaluateDegreeWorkWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\MainWindow.xaml">

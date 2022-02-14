@@ -100,8 +100,6 @@ namespace Proyecto_base_de_datos.pages
             }
             if (flag)
             {
-                using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta = null WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
-                    command.ExecuteNonQuery();
                 using (var command = new NpgsqlCommand("UPDATE esrevisor SET estatus = 'PAR', fecharev = @n2 WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
                 {
                     String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;

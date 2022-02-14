@@ -185,7 +185,7 @@ namespace Proyecto_base_de_datos.Pages
                 {
                     //Buscamos el resto de sus propuestas menos la que se ha aprobado
                     List<String> correlativeNumberList = new List<string>();
-                    using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" WHERE \"cedulae\" = " + studentIdList[i] + " AND ncorrelativo != " + degreeWorks.CorrelativeNumber + "", conn.conn))
+                    using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" WHERE \"cedulae\" = '" + studentIdList[i] + "' AND ncorrelativo != " + degreeWorks.CorrelativeNumber + "", conn.conn))
                     {
                         var reader = command.ExecuteReader();
                         while (reader.Read())
@@ -195,7 +195,7 @@ namespace Proyecto_base_de_datos.Pages
                         }
                         reader.Close();
                     }
-                    
+                    //Se desactivan el resto de propuestas del estudiante
                     for (int j = 0; j< correlativeNumberList.Count; j++)
                     {
                         using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta is null WHERE ncorrelativo = @n1", conn.conn))
@@ -220,7 +220,7 @@ namespace Proyecto_base_de_datos.Pages
                     }
                     reader.Close();
                 }
-
+                //Lista de trabajos disponibles para el consejo se actualiza
                 for (int i = 0; i < listCorrelativeNumber.Count; i++)
                 {
                     using (var command = new NpgsqlCommand("SELECT * FROM \"trabajos_de_grado\" WHERE \"ncorrelativo\" = '" + listCorrelativeNumber[i] + "'", conn.conn))

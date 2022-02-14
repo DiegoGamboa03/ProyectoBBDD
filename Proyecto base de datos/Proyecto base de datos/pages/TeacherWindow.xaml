@@ -73,6 +73,9 @@
                 <Frame x:Name="Frame3">
                 </Frame>
             </TabItem>
+            <TabItem Header="4ta Opcion" Height="44" VerticalAlignment="Center" Width="218">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

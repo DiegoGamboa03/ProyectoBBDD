@@ -1,7 +1,9 @@
 ﻿using Npgsql;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.Pages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,11 +22,33 @@ namespace Proyecto_base_de_datos.SecundaryPage
     /// </summary>
     public partial class EvaluateDegreeWorkxaml : Page
     {
+        private List<DegreeWorks> listTutor;
+        private List<DegreeWorks> listJury;
         public EvaluateDegreeWorkxaml()
         {
             InitializeComponent();
+            listTutor = new List<DegreeWorks>();
+            listJury = new List<DegreeWorks>();
             var conn = new Connection();
             conn.openConnection();
+            //Saco una lista donde el profesor es tutor
+            using (var command = new NpgsqlCommand("SELECT * FROM trabajos_de_grado WHERE cedulapi = '" + MainWindow.teachers.Id + "'", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
+                    String title = (String)reader["titulo"];
+                    String modality = (String)reader["modalidad"];
+                    DateTime dateTime = (DateTime)reader["fechacreacion"];
+
+                    DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
+                    listTutor.Add(degreeWorks);
+                    degreeWorkTutorListBox.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
+                }
+                reader.Close();
+            }
+            //Saco una lista donde el profesor es jurado
             using (var command = new NpgsqlCommand("SELECT TG.* FROM asignaj as AJ, trabajos_de_grado as TG WHERE AJ.cedulap = '" + MainWindow.teachers.Id + "' AND TG.ncorrelativo = AJ.ncorrelativo;", conn.conn))
             {
                 var reader = command.ExecuteReader();
@@ -36,15 +60,44 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     DateTime dateTime = (DateTime)reader["fechacreacion"];
 
                     DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
-                    degreeWorkListBox.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
+                    listJury.Add(degreeWorks);
+                    degreeWorkJuryListBox.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
                 }
                 reader.Close();
             }
+
+
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
+            if(degreeWorkJuryListBox.SelectedIndex != -1)
+            {
+                Trace.WriteLine("Se metio en jurado");
+            }else if(degreeWorkTutorListBox.SelectedIndex != -1)
+            {
+                Trace.WriteLine("Se metio en tutor");
+            }
+        }
 
+        void OnMouseDoubleClickTutor(object sender, MouseEventArgs e)
+        {
+            var list = (ListBox)sender;
+
+            // This is your selected item
+            int item = list.SelectedIndex;
+            //AddEvaluationCriteriaJury page = new AddEvaluationCriteriaJury(this.list[item]);
+            //page.ShowDialog();
+        }
+
+        void OnMouseDoubleClickJury(object sender, MouseEventArgs e)
+        {
+            var list = (ListBox)sender;
+
+            // This is your selected item
+            int item = list.SelectedIndex;
+            //AddEvaluationCriteriaJury page = new AddEvaluationCriteriaJury(this.list[item]);
+            //page.ShowDialog();
         }
     }
 }

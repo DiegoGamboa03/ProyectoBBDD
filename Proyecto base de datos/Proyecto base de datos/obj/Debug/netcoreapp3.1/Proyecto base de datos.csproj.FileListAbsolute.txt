@@ -192,3 +192,7 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\ReviewerAprobationWindow.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\EvaluateDegreeWorkxaml.g.cs
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\EvaluateDegreeWorkxaml.baml
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\EvaluateDegreeWorkWindow.g.cs
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\EvaluateDegreeWorkWindow.baml
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\AddEvaluationCriteriaJury.g.cs
+D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\AddEvaluationCriteriaJury.baml
