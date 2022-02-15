@@ -26,6 +26,7 @@ namespace Proyecto_base_de_datos.Pages
         public CommiteAprobation(DegreeWorks degreeWorks, String commiteId)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             TeacherIDlist = new List<string>();
             this.degreeWorks = degreeWorks;
             this.commiteId = commiteId;

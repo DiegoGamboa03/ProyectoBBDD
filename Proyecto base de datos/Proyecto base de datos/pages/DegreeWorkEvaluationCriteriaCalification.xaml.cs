@@ -36,6 +36,7 @@ namespace Proyecto_base_de_datos.Pages
         public DegreeWorkEvaluationCriteriaCalification(DegreeWorks degreeWorks, EvaluationCriteria evaluationCriteria, String idStudent, bool isTutor)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             numberupdownTextBox.Text = _numValue.ToString();
             this.degreeWorks = degreeWorks;
             this.evaluationCriteria = evaluationCriteria;

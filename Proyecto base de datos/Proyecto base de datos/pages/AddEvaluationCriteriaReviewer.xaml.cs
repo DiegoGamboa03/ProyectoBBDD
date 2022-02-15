@@ -25,6 +25,7 @@ namespace Proyecto_base_de_datos.Pages
         public AddEvaluationCriteriaReviewer(DegreeWorks degreeWorks)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             this.degreeWorks = degreeWorks;
             var conn = new Connection();
             conn.openConnection();

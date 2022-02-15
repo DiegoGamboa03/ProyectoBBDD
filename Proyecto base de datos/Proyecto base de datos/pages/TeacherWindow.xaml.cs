@@ -21,12 +21,15 @@ namespace Proyecto_base_de_datos.pages
         public TeacherWindow()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             committeePage page = new committeePage();
             Frame1.Content = page;
             ViewerTeacherPage page2 = new ViewerTeacherPage();
             Frame2.Content = page2;
-            EvaluateDegreeWorkxaml page3 = new EvaluateDegreeWorkxaml();
+            CreateCouncil page3 = new CreateCouncil();
             Frame3.Content = page3;
+            EvaluateDegreeWorkxaml page4 = new EvaluateDegreeWorkxaml();
+            Frame4.Content = page4;
 
         }
         

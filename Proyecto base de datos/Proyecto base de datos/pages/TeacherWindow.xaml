@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_base_de_datos.pages"
         mc:Ignorable="d"
-        Title="TeacherWindow" Height="450" Width="800">
+        Title="TeacherWindow" Height="500" Width="1200">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <Style x:Key="ItemContainerStyle" TargetType="{x:Type TabItem}">
@@ -61,20 +61,21 @@
     </Window.Resources>
     <Grid>
         <TabControl Style="{DynamicResource TabControlStyle1}" SelectionChanged="TabControl_SelectionChanged">
-            <TabItem Header="System Information" FontFamily="Segou UI">
+            <TabItem Header="Comite" FontFamily="Segou UI">
                 <Frame x:Name="Frame1">
                 </Frame>
             </TabItem>
-            <TabItem Header="Something else">
+            <TabItem Header="Profesor Revisor">
                 <Frame x:Name="Frame2">
                 </Frame>
             </TabItem>
-            <TabItem Header="3era opcion" Height="44" VerticalAlignment="Top" Width="222" Margin="0,11,0,0">
+            <TabItem Header="Consejo de escuela" Height="44" VerticalAlignment="Top" Width="222" Margin="0,11,0,0">
                 <Frame x:Name="Frame3">
                 </Frame>
             </TabItem>
-            <TabItem Header="4ta Opcion" Height="44" VerticalAlignment="Center" Width="218">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Evaluacion trabajo de grado" Height="44" VerticalAlignment="Center" Width="218">
+                <Frame x:Name="Frame4">
+                </Frame>
             </TabItem>
         </TabControl>
         <Image HorizontalAlignment="Left" Height="207" Margin="10,291,0,0" VerticalAlignment="Top" Width="207" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>

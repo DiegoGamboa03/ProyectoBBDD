@@ -21,6 +21,7 @@ namespace Proyecto_base_de_datos.pages
         public StudentWindow()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             CreateProposal createProposal = new CreateProposal();
             Frame1.Content = createProposal;
             ViewCouncils v = new ViewCouncils();

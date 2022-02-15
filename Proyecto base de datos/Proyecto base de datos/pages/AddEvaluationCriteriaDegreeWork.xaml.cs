@@ -27,6 +27,7 @@ namespace Proyecto_base_de_datos.Pages
         public AddEvaluationCriteriaDegreeWork(DegreeWorks degreeWorks,bool isTutor)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             this.degreeWorks = degreeWorks;
             this.isTutor = isTutor;
             listIDCriteria = new List<string>();

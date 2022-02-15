@@ -23,6 +23,7 @@ namespace Proyecto_base_de_datos.pages
         public RegisterStudent()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)

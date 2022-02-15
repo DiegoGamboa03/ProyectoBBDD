@@ -28,6 +28,7 @@ namespace Proyecto_base_de_datos.Pages
         public CouncilAprobation(DegreeWorks degreeWorks, String councilID, ListBox councilListBox)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             this.degreeWorks = degreeWorks;
             this.councilId = councilID;
             this.councilListBox = councilListBox;

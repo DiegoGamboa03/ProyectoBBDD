@@ -35,6 +35,7 @@ namespace Proyecto_base_de_datos
         public MainWindow()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
         }
 
         private void singInButton_Click(object sender, RoutedEventArgs e)

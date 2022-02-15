@@ -25,6 +25,7 @@ namespace Proyecto_base_de_datos.Pages
         public ReviewerAprobationWindow(DegreeWorks degreeWorks, EvaluationCriteria evaluationCriteria)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             this.degreeWorks = degreeWorks;
             Trace.WriteLine("En reviwerAprobationwindow: " + degreeWorks.CorrelativeNumber.ToString());
             this.evaluationCriteria = evaluationCriteria;

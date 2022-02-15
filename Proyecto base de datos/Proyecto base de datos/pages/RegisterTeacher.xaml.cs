@@ -25,6 +25,7 @@ namespace Proyecto_base_de_datos.pages
             InitializeComponent();
             TeacherTypeListComboBox.Items.Add("Interno");
             TeacherTypeListComboBox.Items.Add("Externo");
+            this.ResizeMode = ResizeMode.NoResize;
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)

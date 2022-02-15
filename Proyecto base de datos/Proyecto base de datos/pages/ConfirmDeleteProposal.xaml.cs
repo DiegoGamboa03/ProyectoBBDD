@@ -22,6 +22,7 @@ namespace Proyecto_base_de_datos.pages
         public ConfirmDeleteProposal(DegreeWorks degreeWorks)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             proposal.Text = degreeWorks.CorrelativeNumber.ToString();
         }
         private void Button_Click_No(object sender, RoutedEventArgs e)
