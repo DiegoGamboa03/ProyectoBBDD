@@ -68,9 +68,21 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
         private void OnClickItem(object sender, RoutedEventArgs e)
         {
+            if (proposals.Count > 0)
+            {
+                proposalsList.ItemsSource = proposals; var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
+                ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
+                detailProposal.ShowDialog();
+            }
+        }
+
+        private void Button_Click_Delete_Proposal(object sender, RoutedEventArgs e)
+        {
             var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
-            ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
-            detailProposal.ShowDialog();
+            ConfirmDeleteProposal confirmPage = new ConfirmDeleteProposal(proposals[selectedItem]);
+            confirmPage.ShowDialog();
+            proposals.Clear();
+            SearchProposals();
         }
     }
 }

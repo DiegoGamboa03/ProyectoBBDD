@@ -19,8 +19,4 @@
     <Folder Include="Resources\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="pages\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png" />
-  </ItemGroup>
-
 </Project>

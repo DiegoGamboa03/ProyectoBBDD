@@ -143,14 +143,13 @@ namespace Proyecto_base_de_datos.SecundaryPage {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.6.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.12.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;V1.0.0.0;component/secundarypage/pageevaluationcriteria.x" +
-                    "aml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;component/secundarypage/pageevaluationcriteria.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SecundaryPage\PageEvaluationCriteria.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -160,7 +159,7 @@ namespace Proyecto_base_de_datos.SecundaryPage {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.6.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.12.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]

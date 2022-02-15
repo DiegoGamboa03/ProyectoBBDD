@@ -16,6 +16,9 @@
     <Compile Update="Pages\CommiteAprobation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="pages\ConfirmDeleteProposal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CouncilAprobation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +91,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CommiteAprobation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\ConfirmDeleteProposal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CouncilAprobation.xaml">
