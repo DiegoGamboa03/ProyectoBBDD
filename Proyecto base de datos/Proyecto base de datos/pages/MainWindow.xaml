@@ -17,7 +17,7 @@
         <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="468,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="22" TextChanged="TextBox_TextChanged" TextAlignment="Left" FontSize="16" BorderBrush="{x:Null}" Text="Cedula"/>
         <Label Content="¿No tienes una cuenta? Registrate como:" HorizontalAlignment="Left" Height="36" Margin="-6,296,0,0" VerticalAlignment="Top" Width="398" FontWeight="Normal" FontSize="20" Foreground="#FFF2F4B2"/>
         <Label Content="Sistema &#xD;&#xA;De &#xD;&#xA;BBDD&#xD;&#xA; &#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Height="227" Margin="21,37,0,0" VerticalAlignment="Top" Width="226" Foreground="#FFF2F4B2" FontSize="48" FontWeight="Bold" FontFamily="Segoe UI Black"/>
-        <Image HorizontalAlignment="Left" Height="207" Margin="193,99,0,0" VerticalAlignment="Top" Width="207" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        <Image HorizontalAlignment="Left" Height="207" Margin="193,99,0,0" VerticalAlignment="Top" Width="207" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
 
     </Grid>
 </Window>

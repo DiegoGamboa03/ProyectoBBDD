@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="AddEvaluationCriteriaReviewer" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="evaluationCriteriaComboBox" HorizontalAlignment="Left" Height="36" Margin="174,108,0,0" VerticalAlignment="Top" Width="319"/>
-        <Label Content="Criterio de evaluacion" HorizontalAlignment="Left" Margin="44,113,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="nextButton" Content="Button" HorizontalAlignment="Left" Height="52" Margin="462,217,0,0" VerticalAlignment="Top" Width="198" Click="nextButton_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="114*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="evaluationCriteriaComboBox" HorizontalAlignment="Left" Height="36" Margin="294,113,0,0" VerticalAlignment="Top" Width="319"/>
+        <Label Content="Criterio de evaluacion" HorizontalAlignment="Left" Margin="42,107,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Semibold"/>
+        <Button x:Name="nextButton" Content="Agregar" HorizontalAlignment="Left" Height="52" Margin="462,217,0,0" VerticalAlignment="Top" Width="198" Click="nextButton_Click" Foreground="#FFF2F4B2" FontSize="24" Background="#FF0C907D"/>
 
     </Grid>
 </Window>

@@ -24,7 +24,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,346,0,0" TextWrapping="Wrap" Text="Tipo de Profesor" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"/>
         <Rectangle HorizontalAlignment="Left" Height="443" Margin="518,-9,0,0" Stroke="Black" VerticalAlignment="Top" Width="287" Fill="#FF0C907D"/>
         <Label Content="Registrar &#xD;&#xA;Profesor" HorizontalAlignment="Left" Height="119" Margin="571,24,0,0" VerticalAlignment="Top" Width="181" FontFamily="Segoe UI Black" FontSize="36" Foreground="#FFF2F4B2" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Left" Height="207" Margin="558,278,0,0" VerticalAlignment="Top" Width="207" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        <Image HorizontalAlignment="Left" Height="207" Margin="558,278,0,0" VerticalAlignment="Top" Width="207" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
 
     </Grid>
 </Window>

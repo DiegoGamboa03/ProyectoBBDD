@@ -70,6 +70,6 @@
                 </Frame>
             </TabItem>
         </TabControl>
-        <Image HorizontalAlignment="Left" Height="207" Margin="24,293,0,0" VerticalAlignment="Top" Width="207" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        <Image HorizontalAlignment="Left" Height="207" Margin="24,293,0,0" VerticalAlignment="Top" Width="207" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
     </Grid>
 </Window>

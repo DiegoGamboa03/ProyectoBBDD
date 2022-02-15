@@ -24,7 +24,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="80,363,0,41" TextWrapping="Wrap" FontSize="16" FontWeight="Normal" Text="Opcional"/>
         <Rectangle HorizontalAlignment="Left" Height="434" Margin="522,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="290" Fill="#FF0C907D"/>
         <Label Content="Registrar &#xD;&#xA;estudiante&#xD;&#xA;" HorizontalAlignment="Left" Height="121" Margin="568,27,0,0" VerticalAlignment="Top" Width="198" Foreground="#FFF2F4B2" FontFamily="Segoe UI Black" FontSize="36"/>
-        <Image HorizontalAlignment="Left" Height="207" Margin="564,285,0,0" VerticalAlignment="Top" Width="206" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        <Image HorizontalAlignment="Left" Height="207" Margin="564,285,0,0" VerticalAlignment="Top" Width="206" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
 
     </Grid>
 </Window>

@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="AddEvaluationCriteriaDegreeWork" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="evaluationCriteriaComboBox" HorizontalAlignment="Left" Height="36" Margin="174,108,0,0" VerticalAlignment="Top" Width="319"/>
-        <Label Content="Criterio de evaluacion" HorizontalAlignment="Left" Margin="44,113,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="nextButton" Content="Button" HorizontalAlignment="Left" Height="52" Margin="462,217,0,0" VerticalAlignment="Top" Width="198" Click="nextButton_Click"/>
+        <ComboBox x:Name="evaluationCriteriaComboBox" HorizontalAlignment="Left" Height="36" Margin="318,119,0,0" VerticalAlignment="Top" Width="319"/>
+        <Label Content="Criterio de evaluacion" HorizontalAlignment="Left" Margin="44,113,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="24"/>
+        <Button x:Name="nextButton" Content="Agregar" HorizontalAlignment="Left" Height="52" Margin="462,217,0,0" VerticalAlignment="Top" Width="198" Click="nextButton_Click" Background="#FF0C907D" Foreground="#FFF2F4B2" FontFamily="Segoe UI Semibold" FontSize="18"/>
 
     </Grid>
 </Window>
