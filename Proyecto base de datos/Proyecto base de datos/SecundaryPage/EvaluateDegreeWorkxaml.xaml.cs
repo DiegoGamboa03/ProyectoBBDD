@@ -71,7 +71,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            List<String> listIDStudents = new List<string>();
+            List<Students> listIDStudents = new List<Students>();
             var conn = new Connection();
             conn.openConnection();
             EvaluateDegreeWorkWindow page;
@@ -84,7 +84,9 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     while (reader.Read())
                     {
                         String id = (String)reader["cedulae"];
-                        listIDStudents.Add(id);
+                        String name = (String)reader["nombre"];
+                        Students students = new Students(id, name);
+                        listIDStudents.Add(students);
                     }
                     reader.Close();
                 }
@@ -103,8 +105,9 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     while (reader.Read())
                     {
                         String id = (String)reader["cedulae"];
-                        listIDStudents.Add(id);
-                        Trace.WriteLine(listIDStudents[0]);
+                        String name = (String)reader["nombre"];
+                        Students students = new Students(id, name);
+                        listIDStudents.Add(students);
                     }
                     reader.Close();
                 }

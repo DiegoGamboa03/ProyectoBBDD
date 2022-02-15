@@ -7,15 +7,13 @@
         mc:Ignorable="d"
         Title="EvaluateDegreeWorkWindow" Height="450" Width="800">
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="116" Margin="0,52,0,0" Stroke="#FF0C907D" VerticalAlignment="Top" Width="752"/>
+        <Rectangle HorizontalAlignment="Left" Height="116" Margin="19,54,0,0" Stroke="#FF0C907D" VerticalAlignment="Top" Width="752"/>
         <Label Content="Tema propuesto:" HorizontalAlignment="Left" Margin="38,63,0,0" VerticalAlignment="Top" Width="136" FontSize="16" HorizontalContentAlignment="Left" RenderTransformOrigin="0.45,0.338" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Tesista::" HorizontalAlignment="Left" Margin="38,132,0,0" VerticalAlignment="Top" Width="63" FontFamily="Segoe UI Semibold" FontSize="16"/>
-        <Label Content="Cedula:&#xA;" HorizontalAlignment="Left" Margin="230,131,0,0" VerticalAlignment="Top" Width="70" Height="27" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="476,131,0,0" VerticalAlignment="Top" Width="58" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Tesista::" HorizontalAlignment="Left" Margin="180,97,0,0" VerticalAlignment="Top" Width="63" FontFamily="Segoe UI Semibold" FontSize="16"/>
+        <Label Content="Cedula:&#xA;" HorizontalAlignment="Left" Margin="372,96,0,0" VerticalAlignment="Top" Width="70" Height="27" FontSize="16" FontFamily="Segoe UI Semibold"/>
         <Label Content="Datos del tesista:" HorizontalAlignment="Left" Margin="38,97,0,0" VerticalAlignment="Top" Width="136" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <TextBlock x:Name="StudentName" HorizontalAlignment="Left" Margin="101,136,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="145" FontSize="16"/>
-        <TextBlock x:Name="idStudent" HorizontalAlignment="Left" Margin="305,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="151" FontSize="16"/>
-        <TextBlock x:Name="StudentEmail" HorizontalAlignment="Left" Margin="534,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="246" FontSize="16"/>
+        <TextBlock x:Name="StudentName" HorizontalAlignment="Left" Margin="243,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="145" FontSize="16"/>
+        <TextBlock x:Name="idStudent" HorizontalAlignment="Left" Margin="447,102,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="151" FontSize="16"/>
         <TextBlock x:Name="TitleTDG" HorizontalAlignment="Left" Margin="160,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="611" Height="29" FontSize="14"/>
         <TextBox HorizontalAlignment="Left" Margin="461,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="176" BorderBrush="#FF0C907D" FontSize="18"/>
         <Label Content="Observaciones" HorizontalAlignment="Left" Margin="461,170,0,0" VerticalAlignment="Top" Width="137" Height="30" FontSize="17" FontFamily="Segoe UI Semibold"/>

@@ -69,6 +69,13 @@ namespace Proyecto_base_de_datos.Pages
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                 }
+                using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET codigoc = @n1 WHERE ncorrelativo = @n2", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", commiteId);
+                    command.Parameters.AddWithValue("n2", degreeWorks.CorrelativeNumber.ToString());
+                    int nRows = command.ExecuteNonQuery();
+                    Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
+                }
                 this.Close();
             }
             else

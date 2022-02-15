@@ -18,6 +18,12 @@ namespace Proyecto_base_de_datos.Class
         {
         }
 
+        public Students(string id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
+
         public Students(string id, string name, string personalEmail, string ucabMail, string phoneNumber, string bonusAttribute, bool haveDegreeWork)
         {
             this.Id = id;

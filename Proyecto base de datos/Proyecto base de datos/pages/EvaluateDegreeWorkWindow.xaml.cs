@@ -24,12 +24,14 @@ namespace Proyecto_base_de_datos.Pages
         bool isTutor;
         String studentId;
         private List<EvaluationCriteria> evaluationCriteriaList;
-        public EvaluateDegreeWorkWindow(DegreeWorks degreeWorks, bool isTutor, String studentId)
+        public EvaluateDegreeWorkWindow(DegreeWorks degreeWorks, bool isTutor, Students student)
         {
             InitializeComponent();
             this.degreeWorks = degreeWorks;
             this.isTutor = isTutor;
-            this.studentId = studentId;
+            this.studentId = student.Id;
+            this.TitleTDG.Text = degreeWorks.Title;
+            this.StudentName.Text = student.Name;
             evaluationCriteriaList = new List<EvaluationCriteria>();
             var conn = new Connection();
             conn.openConnection();
