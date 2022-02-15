@@ -8,7 +8,7 @@
         Title="FailedSequenceWindow" Height="200" Width="300">
     <Grid>
         <Button x:Name="AcceptButton" Content="Aceptar" HorizontalAlignment="Center" Margin="0,140,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
-        <TextBlock x:Name="ErrorText" HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="100" Width="216"/>
+        <TextBlock x:Name="ErrorText" HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="100" Width="216" FontSize="14"/>
 
     </Grid>
 </Window>

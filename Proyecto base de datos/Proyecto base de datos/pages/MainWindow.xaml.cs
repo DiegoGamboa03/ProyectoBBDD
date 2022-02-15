@@ -125,6 +125,10 @@ namespace Proyecto_base_de_datos
             RegisterStudent window = new RegisterStudent();
             window.Owner = this;
             window.ShowDialog();
+            student = RegisterStudent.Student;
+            StudentWindow window2 = new StudentWindow();
+            window2.Show();
+            this.Close();
         }
 
         private void RegisterTeacherButton_Click(object sender, RoutedEventArgs e)
@@ -132,6 +136,10 @@ namespace Proyecto_base_de_datos
             RegisterTeacher window = new RegisterTeacher();
             window.Owner = this;
             window.ShowDialog();
+            teachers = RegisterTeacher.Teacher;
+            TeacherWindow window2 = new TeacherWindow();
+            window2.Show();
+            this.Close();
         }
 
         private void idTextBox_TextChanged(object sender, TextChangedEventArgs e)

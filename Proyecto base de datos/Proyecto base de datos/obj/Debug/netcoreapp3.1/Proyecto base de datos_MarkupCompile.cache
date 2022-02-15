@@ -16,5 +16,5 @@ C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\
 193-534073013
 pages\AddEvaluationCriteriaDegreeWork.xaml;pages\AddEvaluationCriteriaReviewer.xaml;pages\CommiteAprobation.xaml;pages\CouncilAprobation.xaml;pages\EvaluateDegreeWorkWindow.xaml;pages\EvaluationCriteriaAprobation.xaml;pages\FailedSequenceWindow.xaml;pages\MainWindow.xaml;pages\RegisterStudent.xaml;pages\RegisterTeacher.xaml;pages\ReviewerAprobationWindow.xaml;pages\ReviewerWindow.xaml;pages\StudentWindow.xaml;pages\TeacherWindow.xaml;pages\ViewDetailCommitte.xaml;pages\ViewDetailCouncil.xaml;pages\ViewDetailProposal.xaml;SecundaryPage\committeePage.xaml;SecundaryPage\CreateCouncil.xaml;SecundaryPage\CreateProposal.xaml;SecundaryPage\CreateSpecialty.xaml;SecundaryPage\EvaluateDegreeWorkxaml.xaml;SecundaryPage\PageEvaluationCriteria.xaml;SecundaryPage\ViewAllProposalsSt.xaml;SecundaryPage\ViewCommittee.xaml;SecundaryPage\ViewCouncils.xaml;SecundaryPage\ViewerTeacherPage.xaml;SecundaryPage\ViewProposals.xaml;
 
-False
+True
 

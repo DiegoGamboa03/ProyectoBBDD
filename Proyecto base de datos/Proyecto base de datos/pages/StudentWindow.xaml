@@ -70,5 +70,6 @@
                 </Frame>
             </TabItem>
         </TabControl>
+        <Image HorizontalAlignment="Left" Height="207" Margin="24,293,0,0" VerticalAlignment="Top" Width="207" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
     </Grid>
 </Window>

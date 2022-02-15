@@ -19,6 +19,7 @@ namespace Proyecto_base_de_datos.pages
     /// </summary>
     public partial class RegisterStudent : Window
     {
+        public static Students Student;
         public RegisterStudent()
         {
             InitializeComponent();
@@ -40,7 +41,12 @@ namespace Proyecto_base_de_datos.pages
                 command.Parameters.AddWithValue("n5", false);
                 int nRows = command.ExecuteNonQuery();
                 Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                Student = new Students(idTextBox.Text, nameTextBox.Text, mailTextBox.Text, ucabMailTextBox.Text, phoneNumberTextBox.Text, bonusAtributteTextBox.Text, false);
             }
+
+            string ConfirmationMessage = "Se ha registrado exitosamente el alumno.";
+            FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+            window.ShowDialog();
             this.Close();
         }
 

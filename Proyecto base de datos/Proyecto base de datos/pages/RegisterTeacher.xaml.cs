@@ -19,6 +19,7 @@ namespace Proyecto_base_de_datos.pages
     /// </summary>
     public partial class RegisterTeacher : Window
     {
+        public static Teachers Teacher;
         public RegisterTeacher()
         {
             InitializeComponent();
@@ -38,6 +39,9 @@ namespace Proyecto_base_de_datos.pages
                 command.Parameters.AddWithValue("q2", phoneNumberTextBox.Text);
                 command.Parameters.AddWithValue("n3", institutionTextBox.Text);
                 command.Parameters.AddWithValue("q3", passwordTextBox.Text);
+
+                Teacher = new Teachers(idTextBox.Text, nameTextBox.Text, directionTextBox.Text, phoneNumberTextBox.Text, institutionTextBox.Text);
+
                 if (TeacherTypeListComboBox.SelectedItem.Equals("Interno"))
                 {
                     command.Parameters.AddWithValue("n4", "I");
@@ -66,6 +70,11 @@ namespace Proyecto_base_de_datos.pages
                     command.ExecuteNonQuery();
                 }
             }
+
+            string ConfirmationMessage = "Se ha registrado exitosamente el profesor.";
+            FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+            window.ShowDialog();
+            this.Close();
         }
     }
 }
