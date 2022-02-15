@@ -123,7 +123,76 @@ namespace Proyecto_base_de_datos.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var conn = new Connection();
+            conn.openConnection();
+            long finalNote = 0;
+            if (isTutor)
+            {
+                if (degreeWorks.Modality == "I")
+                {
+                    using (var command = new NpgsqlCommand("SELECT SUM(nota) as notaTotal FROM evaluacriteriota_i WHERE cedulap = '"+ MainWindow.teachers.Id +"' AND cedulae = '"+ studentId + "'", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            finalNote = (long)reader["notaTotal"];
+                        }
+                        reader.Close();
+                    }
+                }
+                else if (degreeWorks.Modality == "E")
+                {
+                    using (var command = new NpgsqlCommand("SELECT SUM(nota) as notaTotal FROM evaluacriteriota_i WHERE cedulap = '" + MainWindow.teachers.Id + "' AND cedulae = '" + studentId + "'", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            finalNote = (long)reader["notaTotal"];
+                        }
+                        reader.Close();
+                    }
+                }
+            }
+            else
+            {
+                if (degreeWorks.Modality == "I")
+                {
+                    using (var command = new NpgsqlCommand("SELECT SUM(nota) as notaTotal FROM evaluacriterioj_i WHERE cedulap = '" + MainWindow.teachers.Id + "' AND cedulae = '" + studentId + "'", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            finalNote = (long)reader["notaTotal"];
+                        }
+                        reader.Close();
+                    }
+                }
+                else if (degreeWorks.Modality == "E")
+                {
+                    using (var command = new NpgsqlCommand("SELECT SUM(nota) as notaTotal FROM evaluacriterioj_e WHERE cedulap = '" + MainWindow.teachers.Id + "' AND cedulae = '" + studentId + "'", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            finalNote = (long)reader["notaTotal"];
+                        }
+                        reader.Close();
+                    }
+                }
+            }
 
+            using (var command = new NpgsqlCommand("INSERT INTO defensas (cedulae, codigod,notaf,fechap,horap) VALUES (@n1,nextval('secuenciaDefensaPK'), @n3,@n4,@n5)", conn.conn))
+            {
+                String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                DateTime dateTime = DateTime.Parse(dateTimeString);
+                String dateHourString = DateTime.Now.ToString("HH:mm:ss");
+                DateTime dateHour = DateTime.Parse(dateHourString);
+                command.Parameters.AddWithValue("n1", studentId);
+                command.Parameters.AddWithValue("n3", finalNote);
+                command.Parameters.AddWithValue("n4", dateTime);
+                command.Parameters.AddWithValue("n5", dateHour);
+                command.ExecuteNonQuery();
+            }
         }
     }
 }
