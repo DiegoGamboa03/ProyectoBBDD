@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="DegreeWorkEvaluationCriteriaCalification" Height="450" Width="800">
     <Grid>
-        <Button x:Name="ApprobationButton" Content="Aprobar" HorizontalAlignment="Left" Height="48" Margin="517,330,0,0" VerticalAlignment="Top" Width="198" Click="ApprobationButton_Click" Background="#FF0C907D" FontFamily="Segoe UI Semibold" FontSize="24" Foreground="#FFF2F4B2"/>
+        <Button x:Name="ApprobationButton" Content="Evaluar" HorizontalAlignment="Left" Height="48" Margin="517,330,0,0" VerticalAlignment="Top" Width="198" Click="ApprobationButton_Click" Background="#FF0C907D" FontFamily="Segoe UI Semibold" FontSize="24" Foreground="#FFF2F4B2"/>
         <TextBlock HorizontalAlignment="Left" Height="32" Margin="86,132,0,0" Text="Titulo:" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold"/>
         <TextBlock HorizontalAlignment="Left" Height="32" Margin="227,132,0,0" Text="Modalidad:" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="42" Margin="458,132,0,0" Text="Numero correlativo:" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Segoe UI Semibold" FontSize="20"/>

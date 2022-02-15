@@ -61,15 +61,23 @@
     </Window.Resources>
     <Grid>
         <TabControl Style="{DynamicResource TabControlStyle1}">
-            <TabItem Header="System Information">
+            <TabItem Header="Información Personal">
                 <Frame x:Name="Frame1">
                 </Frame>
             </TabItem>
-            <TabItem Header="Something else">
+            <TabItem Header="Crear Propuesta">
                 <Frame x:Name="Frame2">
                 </Frame>
             </TabItem>
+            <TabItem Header="Ver Consejos de Escuela">
+                <Frame x:Name="Frame3">
+                </Frame>
+            </TabItem>
+            <TabItem Header="Ver Trabajos de Grado">
+                <Frame x:Name="Frame4">
+                </Frame>
+            </TabItem>
         </TabControl>
-        <Image HorizontalAlignment="Left" Height="207" Margin="24,293,0,0" VerticalAlignment="Top" Width="207" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        <Image HorizontalAlignment="Left" Height="161" Margin="-5,272,0,0" VerticalAlignment="Top" Width="251" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png" Stretch="Fill"/>
     </Grid>
 </Window>
