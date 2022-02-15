@@ -22,6 +22,9 @@
     <Compile Update="Pages\CouncilAprobation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\DegreeWorkEvaluationCriteriaCalification.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\EvaluateDegreeWorkWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +100,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CouncilAprobation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\DegreeWorkEvaluationCriteriaCalification.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\EvaluateDegreeWorkWindow.xaml">

@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "O5ZBXMShoO/8iJdXTu8siY2fYVTyLVZzOaDUQ3kJb8ufVgdXagMzMCH59Npt5FO7saTrptzZIGIKamjAR54oiw==",
+  "dgSpecHash": "Q2hQYio857nL4nmIGhQmVMQJWRrNEOTNu1+IIntcqQ0vJ/jjLYgCxwXh3hef5CM6VrOv/eXnt7evawEL9cGZsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rober\\Desktop\\NuevoProyecto\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
+  "projectFilePath": "D:\\Diego\\Programacion\\6to semestre\\Proyecto BBDD\\ProyectoBBDD\\Proyecto base de datos\\Proyecto base de datos\\Proyecto base de datos.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rober\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
-    "C:\\Users\\rober\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\rober\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\rober\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\diego\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
+    "C:\\Users\\diego\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\diego\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\diego\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

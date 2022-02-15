@@ -112,8 +112,8 @@ namespace Proyecto_base_de_datos.Pages
 
             // This is your selected item
             int item = list.SelectedIndex;
-            /*ReviewerAprobationWindow page = new ReviewerAprobationWindow(degreeWorks, evaluationCriteriaList[item]);
-            page.ShowDialog();*/
+            DegreeWorkEvaluationCriteriaCalification page = new DegreeWorkEvaluationCriteriaCalification(degreeWorks, evaluationCriteriaList[item],studentId,isTutor);
+            page.ShowDialog();
         }
 
         private void criteriaEvaluationListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

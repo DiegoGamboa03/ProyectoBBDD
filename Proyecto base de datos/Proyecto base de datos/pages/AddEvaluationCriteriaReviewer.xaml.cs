@@ -28,6 +28,7 @@ namespace Proyecto_base_de_datos.Pages
             this.degreeWorks = degreeWorks;
             var conn = new Connection();
             conn.openConnection();
+            listIDCriteria = new List<string>();
             if (degreeWorks.Modality == "I")
             {
                 using (var command = new NpgsqlCommand("SELECT * FROM criteriosevpr_i WHERE estatus = 'A'", conn.conn))
