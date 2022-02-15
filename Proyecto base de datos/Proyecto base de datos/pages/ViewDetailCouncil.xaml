@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_base_de_datos.pages"
         mc:Ignorable="d"
-        Title="ViewDetailCouncil" Height="450" Width="800">
+        Title="ViewDetailCouncil" Height="500" Width="600">
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Semibold" Foreground="#FF0C907D"><Run Text="Lista de Propuestas"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Semibold" Foreground="#FF0C907D"><Run Text="Lista de Propuestas del Comité Nro: "/><Run/><Run Name="ccode"></Run></TextBlock>
         <ListView x:Name="proposalsList" Margin="0,80,0,0" SelectionMode="Single" MouseDoubleClick="OnClickItem">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock FontSize="20"><LineBreak></LineBreak><Run Text="{Binding CorrelativeNumber}"></Run><Run Text=". "></Run><Run Text="{Binding Title}"></Run></TextBlock>
-                        <TextBlock FontSize="20"><Run Text="Modalidad: "></Run><Run Text="{Binding Modality}"></Run><Run Language="es-ve" Text="        Fecha de Creación: "></Run><Run Text="{Binding CreationDate}"></Run><LineBreak></LineBreak></TextBlock>
+                        <TextBlock FontSize="20" HorizontalAlignment="Left" FontFamily="Segoe UI Semibold" Margin="50,10,0,0" VerticalAlignment="Center"><LineBreak></LineBreak><Run Text="{Binding CorrelativeNumber}"></Run><Run Text=". "></Run><Run Text="{Binding Title}"></Run></TextBlock>
+                        <TextBlock FontSize="20" HorizontalAlignment="Left" FontFamily="Segoe UI Semibold" Margin="50,0,0,0" VerticalAlignment="Center"><Run Text="Modalidad: "></Run><Run Text="{Binding Modality}"></Run><Run Language="es-ve" Text="        Fecha de Creación: "></Run><Run Text="{Binding CreationDate}"></Run></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

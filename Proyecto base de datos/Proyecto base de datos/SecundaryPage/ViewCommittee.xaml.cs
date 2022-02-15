@@ -41,15 +41,20 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     committes.Add(new Commite(ccommitte,datep));
                 }
                 reader.Close();
-                committeList.ItemsSource = committes;
+
+                if(committes.Count > 0)
+                    committeList.ItemsSource = committes;
             }
         }
 
         private void DetailCommitte(object sender, RoutedEventArgs e)
         {
-            var selectedItem = committeList.Items.IndexOf(committeList.SelectedItem);
-            ViewDetailCommitte detailccommitte = new ViewDetailCommitte(committes[selectedItem]);
-            detailccommitte.ShowDialog();
+            if( committeList != null && committeList.SelectedItem != null)
+            {
+                var selectedItem = committeList.Items.IndexOf(committeList.SelectedItem);
+                ViewDetailCommitte detailccommitte = new ViewDetailCommitte(committes[selectedItem]);
+                detailccommitte.ShowDialog();
+            }            
         }
     }
 }

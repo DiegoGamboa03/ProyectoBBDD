@@ -23,7 +23,7 @@ namespace Proyecto_base_de_datos.pages
             InitializeComponent();
             CreateProposal createProposal = new CreateProposal();
             Frame1.Content = createProposal;
-            ViewProposals v = new ViewProposals();
+            ViewCouncils v = new ViewCouncils();
             Frame2.Content = v;
         }
     }

@@ -9,13 +9,13 @@
       Title="ViewCommittee">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"><Run Language="es-ve" Text="Lista de los Comités de trabajo de grado"/><LineBreak/><Run/></TextBlock>
-        <ListView x:Name="committeList" Margin="0,80,0,0" SelectionMode="Single" MouseDoubleClick="DetailCommitte" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <TextBlock HorizontalAlignment="Center" Margin="0,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"><Run Language="es-ve" Text="Lista de los Comités de trabajo de grado"/><LineBreak/><Run/></TextBlock>
+        <ListView x:Name="committeList" Margin="0,70,0,10" SelectionMode="Single" MouseDoubleClick="DetailCommitte" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding CommiteID}" FontSize="20" />
-                        <TextBlock Text="{Binding StDate}" FontSize="20" />
+                        <TextBlock FontSize="20" FontFamily="Segoe UI Semibold" Margin="0,10,0,0"><Run Text="Código: " Language="es-ve"></Run><Run Text="{Binding CommiteID}"></Run></TextBlock>
+                        <TextBlock FontSize="20" FontFamily="Segoe UI Semibold" Margin="0,0,0,0"><Run Text="Fecha: " Language="es-ve"></Run><Run Text="{Binding StDate}"></Run></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

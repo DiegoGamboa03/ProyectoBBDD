@@ -14,8 +14,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"><LineBreak></LineBreak><Run Text="{Binding CorrelativeNumber}"></Run><Run Text=". "></Run><Run Text="{Binding Title}"></Run></TextBlock>
-                        <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Text="Modalidad: "></Run><Run Text="{Binding Modality}"></Run><Run Language="es-ve" Text="        Fecha de Creación: "></Run><Run Text="{Binding CreationDate}"></Run></TextBlock>
+                        <TextBlock FontSize="20" HorizontalAlignment="Left" FontFamily="Segoe UI Semibold" VerticalAlignment="Center"><LineBreak></LineBreak><Run Text="{Binding CorrelativeNumber}"></Run><Run Text=". "></Run><Run Text="{Binding Title}"></Run></TextBlock>
+                        <TextBlock FontSize="20" HorizontalAlignment="Left" FontFamily="Segoe UI Semibold" VerticalAlignment="Center"><Run Text="Modalidad: "></Run><Run Text="{Binding Modality}"></Run><Run Language="es-ve" Text="        Fecha de Creación: "></Run><Run Text="{Binding CreationDate}"></Run></TextBlock>
                         <Button Content="Eliminar" Click="Button_Click_Delete_Proposal" Height="24px" Margin="0,10,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Background="#FFF2F4B2" FontFamily="Segoe UI Semibold" Foreground="#FF0C907D"></Button>
                     </StackPanel>
                 </DataTemplate>

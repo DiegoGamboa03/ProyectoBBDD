@@ -25,6 +25,7 @@ namespace Proyecto_base_de_datos.pages
             String codec = comm.CommiteID;
             InitializeComponent();
             SearchProposals(codec);
+            ccode.Text = codec;
         }
 
         private void SearchProposals(string codec)
@@ -42,7 +43,6 @@ namespace Proyecto_base_de_datos.pages
                     DateTime creationDate = (DateTime)reader["fechacreacion"];
                     String stCreationDate = creationDate.ToString("dd-MM-yyyy");
                     String modality = (String)reader["modalidad"];
-
                     //Pueden ser Null
                     var observations = reader["observaciones"];
                     var councilNumber = reader["nconsejo"];
@@ -58,9 +58,12 @@ namespace Proyecto_base_de_datos.pages
 
         private void OnClickItem(object sender, RoutedEventArgs e)
         {
-            var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
-            ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
-            detailProposal.ShowDialog();
+            if(proposals.Count > 0 && proposalsList!=null)
+            {
+                var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
+                ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
+                detailProposal.ShowDialog();
+            }
         }
     }
 }

@@ -43,14 +43,19 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     councils.Add(new Council(ncoun,datep));
                 }
                 reader.Close();
-                councilsList.ItemsSource = councils;
+                if(councils.Count>0)
+                    councilsList.ItemsSource = councils;
             }
         }
         private void DetailCouncils(object sender, RoutedEventArgs e)
         {
-            var selectedItem = councilsList.Items.IndexOf(councilsList.SelectedItem);
-             ViewDetailCouncil detailCouncil = new ViewDetailCouncil(councils[selectedItem]);
-            detailCouncil.ShowDialog();
+            if( councilsList != null && councilsList.SelectedItem != null)
+            {
+                var selectedItem = councilsList.Items.IndexOf(councilsList.SelectedItem);
+                ViewDetailCouncil detailCouncil = new ViewDetailCouncil(councils[selectedItem]);
+                detailCouncil.ShowDialog();
+            }
+            
         }
     }
 }

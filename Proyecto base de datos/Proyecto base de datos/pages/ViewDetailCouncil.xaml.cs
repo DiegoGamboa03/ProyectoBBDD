@@ -25,6 +25,7 @@ namespace Proyecto_base_de_datos.pages
             String codec = coun.CouncilID;  
             InitializeComponent();
             SearchProposals(codec);
+            ccode.Text = codec;
         }
         private void SearchProposals(string codec)
         {
@@ -57,9 +58,13 @@ namespace Proyecto_base_de_datos.pages
 
         private void OnClickItem(object sender, RoutedEventArgs e)
         {
-            var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
-            ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
-            detailProposal.ShowDialog();
+            if (proposals.Count > 0 && proposalsList != null)
+            {
+                var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
+                ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
+                detailProposal.ShowDialog();
+            }
+
         }
     }
 }
