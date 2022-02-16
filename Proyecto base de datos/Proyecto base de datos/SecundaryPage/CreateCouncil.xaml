@@ -5,14 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Proyecto_base_de_datos.SecundaryPage"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="476" d:DesignWidth="691"
       Title="CreateCouncil">
 
     <Grid Background="White">
 
-        <ListBox x:Name="proposalListBox" HorizontalAlignment="Center" Height="268" Margin="0,71,0,0" VerticalAlignment="Top" Width="672" FontSize="22" BorderBrush="#FF0C907D"/>
-        <Button Content="Siguiente" HorizontalAlignment="Left" Height="44" Margin="624,373,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
-        <Label Content="Creacion de Consejo de escuela" HorizontalAlignment="Center" Height="44" Margin="0,22,0,0" VerticalAlignment="Top" Width="354" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
+        <ListBox x:Name="proposalListBox" HorizontalAlignment="Center" Height="268" Margin="0,71,0,0" VerticalAlignment="Top" Width="608" FontSize="22" BorderBrush="#FF0C907D"/>
+        <Button Content="Siguiente" HorizontalAlignment="Left" Height="44" Margin="518,377,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" Background="#FF0C907D" FontSize="16"/>
+        <Label Content="Creación de Consejo de escuela" HorizontalAlignment="Center" Height="44" Margin="0,22,0,0" VerticalAlignment="Top" Width="354" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
 
     </Grid>
 </Page>

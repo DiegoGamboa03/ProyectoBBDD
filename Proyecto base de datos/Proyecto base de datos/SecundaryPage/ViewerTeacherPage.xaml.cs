@@ -24,6 +24,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
     public partial class ViewerTeacherPage : Page
     {
         private List<DegreeWorks> list;
+
         public ViewerTeacherPage()
         {
             InitializeComponent();

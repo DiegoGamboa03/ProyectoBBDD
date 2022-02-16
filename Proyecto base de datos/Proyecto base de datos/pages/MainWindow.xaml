@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_base_de_datos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
-    <Grid>
-        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="468,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="35" FontSize="14" TextChanged="idTextBox_TextChanged"/>
-        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="468,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="35" TextChanged="passwordTextBox_TextChanged" FontSize="14" TextAlignment="Left" MaxLines="2147483640"/>
-        <Button x:Name="singInButton" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="526,365,0,62" Click="singInButton_Click" Width="185" FontSize="16" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
-        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="468,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="22" TextChanged="TextBox_TextChanged" TextAlignment="Left" FontSize="16" BorderBrush="{x:Null}" Text="Contraseña"/>
-        <Rectangle HorizontalAlignment="Left" Height="493" Margin="-29,-9,0,0" Stroke="Black" VerticalAlignment="Top" Width="429" Fill="#FF0C907D"/>
-        <Button x:Name="RegisterTeacherButton" Content="Profesor" HorizontalAlignment="Left" Margin="139,365,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,-3.427" Click="RegisterTeacherButton_Click" Height="41" Width="108" FontSize="16" FontWeight="Bold" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
-        <Button x:Name="registerStudentButton" Content="Estudiante" HorizontalAlignment="Left" Margin="0,364,0,0" VerticalAlignment="Top" Click="registerButton_Click" Width="118" Height="42" FontSize="16" FontWeight="Bold" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
-        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="468,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="22" TextChanged="TextBox_TextChanged" TextAlignment="Left" FontSize="16" BorderBrush="{x:Null}" Text="Cedula"/>
-        <Label Content="¿No tienes una cuenta? Registrate como:" HorizontalAlignment="Left" Height="36" Margin="-6,296,0,0" VerticalAlignment="Top" Width="398" FontWeight="Normal" FontSize="20" Foreground="#FFF2F4B2"/>
-        <Label Content="Sistema &#xD;&#xA;De &#xD;&#xA;BBDD&#xD;&#xA; &#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Height="227" Margin="21,37,0,0" VerticalAlignment="Top" Width="226" Foreground="#FFF2F4B2" FontSize="48" FontWeight="Bold" FontFamily="Segoe UI Black"/>
-        <Image HorizontalAlignment="Left" Height="207" Margin="193,99,0,0" VerticalAlignment="Top" Width="207" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        Title="MainWindow" Height="500" Width="950">
+    <Grid Margin="0,0,0,-16" Background="White">
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="587,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="35" FontSize="14" TextChanged="idTextBox_TextChanged"/>
+        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="587,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="35" TextChanged="passwordTextBox_TextChanged" FontSize="14" TextAlignment="Left" MaxLines="2147483640"/>
+        <Button x:Name="singInButton" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="586,361,0,80" Click="singInButton_Click" Width="186" FontSize="16" Background="#FFF2F4B2" Foreground="#FF0C907D" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="500" Stroke="Black" VerticalAlignment="Center" Width="400" Fill="#FF0C907D"/>
+        <Button x:Name="RegisterTeacherButton" Content="Profesor" HorizontalAlignment="Left" Margin="219,379,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.389,-3.427" Click="RegisterTeacherButton_Click" Height="41" Width="155" FontSize="16" FontWeight="Bold" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
+        <Button x:Name="registerStudentButton" Content="Estudiante" HorizontalAlignment="Left" Margin="24,380,0,0" VerticalAlignment="Top" Click="registerButton_Click" Width="155" Height="40" FontSize="16" FontWeight="Bold" Background="#FFF2F4B2" Foreground="#FF0C907D"/>
+        <Label Content="¿No tienes una cuenta? Registrate como:" HorizontalAlignment="Left" Height="36" Margin="0,308,0,0" VerticalAlignment="Top" Width="400" FontWeight="Normal" FontSize="20" Foreground="#FFF2F4B2" HorizontalContentAlignment="Center"/>
+        <Label Content="Sistema &#xD;&#xA;De &#xD;&#xA;BBDD&#xD;&#xA; &#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Height="227" Margin="24,25,0,0" VerticalAlignment="Top" Width="226" Foreground="#FFF2F4B2" FontSize="48" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Image HorizontalAlignment="Left" Height="207" Margin="193,76,0,0" VerticalAlignment="Top" Width="207" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        <Label Content="Cédula:" HorizontalAlignment="Left" Margin="587,135,0,0" VerticalAlignment="Top" Width="185" Height="36" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="587,217,0,0" VerticalAlignment="Top" Width="185" Height="36" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Inicia Sesión" HorizontalAlignment="Left" Height="40" Margin="574,52,0,0" VerticalAlignment="Top" Width="210" FontWeight="Bold" FontSize="22" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>

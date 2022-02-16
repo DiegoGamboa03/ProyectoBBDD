@@ -38,7 +38,6 @@ namespace Proyecto_base_de_datos.Pages
                     while (reader.Read())
                     {
                         String id = (String)reader["codigo"];
-                        int topNote = Int32.Parse((String)reader["puntajemax"]);
                         String description = (String)reader["descripcion"];
                         String status = (String)reader["estatus"];
                         listIDCriteria.Add(id);
@@ -56,8 +55,7 @@ namespace Proyecto_base_de_datos.Pages
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        String id = (String)reader["codigo"];
-                        int topNote = Int32.Parse((String)reader["puntajemax"]);
+                        String id = (String)reader["codigo"];                    
                         String description = (String)reader["descripcion"];
                         String status = (String)reader["estatus"];
                         listIDCriteria.Add(id);

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_base_de_datos.pages"
         mc:Ignorable="d"
-        Title="StudentWindow" Height="450" Width="800">
+        Title="StudentWindow" Height="500" Width="950">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <Style x:Key="ItemContainerStyle" TargetType="{x:Type TabItem}">
@@ -62,22 +62,22 @@
     <Grid>
         <TabControl Style="{DynamicResource TabControlStyle1}">
             <TabItem Header="Información Personal">
-                <Frame x:Name="Frame1">
+                <Frame x:Name="FramePrincipal" Margin="-10,0,0,0">
                 </Frame>
             </TabItem>
             <TabItem Header="Crear Propuesta">
-                <Frame x:Name="Frame2">
+                <Frame x:Name="Frame1" Width="690" Height="480">
                 </Frame>
             </TabItem>
             <TabItem Header="Ver Consejos de Escuela">
-                <Frame x:Name="Frame3">
+                <Frame x:Name="Frame2">
                 </Frame>
             </TabItem>
             <TabItem Header="Ver Trabajos de Grado">
-                <Frame x:Name="Frame4">
+                <Frame x:Name="Frame3">
                 </Frame>
             </TabItem>
         </TabControl>
-        <Image HorizontalAlignment="Left" Height="161" Margin="-5,272,0,0" VerticalAlignment="Top" Width="251" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="161" Margin="0,242,0,0" VerticalAlignment="Top" Width="251" Source="/pages/png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png" Stretch="Fill"/>
     </Grid>
 </Window>

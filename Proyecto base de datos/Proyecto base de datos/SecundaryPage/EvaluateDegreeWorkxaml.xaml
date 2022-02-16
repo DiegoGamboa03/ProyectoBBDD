@@ -5,14 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Proyecto_base_de_datos.SecundaryPage"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="476" d:DesignWidth="691"
       Title="EvaluateDegreeWorkxaml">
 
     <Grid Background="White">
-        <ListBox x:Name="degreeWorkTutorListBox" HorizontalAlignment="Left" Height="244" Margin="55,106,0,0" VerticalAlignment="Top" Width="306" SelectionMode="Single" FontSize="22" BorderBrush="#FF0C907D" MouseDoubleClick="OnMouseDoubleClickTutor"/>
-        <Button x:Name="nextButton" Content="Siguiente" HorizontalAlignment="Left" Margin="629,380,0,0" VerticalAlignment="Top" Height="40" Width="116" Click="nextButton_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" IsCancel="True" Background="#FF0C907D"/>
-        <Label Content="Evaluar trabajo de grado" HorizontalAlignment="Left" Height="44" Margin="246,6,0,0" VerticalAlignment="Top" Width="287" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
-        <ListBox x:Name="degreeWorkJuryListBox" HorizontalAlignment="Left" Height="244" Margin="400,106,0,0" VerticalAlignment="Top" Width="306" SelectionMode="Single" FontSize="22" BorderBrush="#FF0C907D" MouseDoubleClick="OnMouseDoubleClickJury"/>
+        <ListBox x:Name="degreeWorkTutorListBox" HorizontalAlignment="Left" Height="218" Margin="26,106,0,0" VerticalAlignment="Top" Width="282" SelectionMode="Single" FontSize="16" BorderBrush="#FF0C907D" MouseDoubleClick="OnMouseDoubleClickTutor"/>
+        <Button x:Name="nextButton" Content="Siguiente" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Height="40" Width="116" Click="nextButton_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" IsCancel="True" Background="#FF0C907D" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Evaluar trabajo de grado" HorizontalAlignment="Center" Height="44" Margin="0,34,0,0" VerticalAlignment="Top" Width="287" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
+        <ListBox x:Name="degreeWorkJuryListBox" HorizontalAlignment="Left" Height="218" Margin="363,106,0,0" VerticalAlignment="Top" Width="298" SelectionMode="Single" FontSize="16" BorderBrush="#FF0C907D" MouseDoubleClick="OnMouseDoubleClickJury"/>
 
     </Grid>
 </Page>

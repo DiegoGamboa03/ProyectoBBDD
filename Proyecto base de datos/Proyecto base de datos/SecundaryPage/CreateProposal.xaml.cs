@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -70,7 +71,9 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
             if (instrumentalRadioButton.IsChecked == false && experimentalRadioButton.IsChecked == false)
             {
-                //Aqui se manda un mensaje de que se tiene que rellenar los botones 
+                string message = "Rellene los campos necesarios para completar la creacion de propuesta";
+                FailedSequenceWindow window = new FailedSequenceWindow(message);
+                window.ShowDialog();
             }
             else
             {
@@ -79,15 +82,12 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     String lastID;
                     var conn = new Connection();
                     conn.openConnection();
-                    //
                     using (var command = new NpgsqlCommand("INSERT INTO trabajos_de_grado (ncorrelativo, titulo, modalidad, fechacreacion,espropuesta) VALUES (nextval('secuenciatrabajosgradopk'), @n2,'E',@n4,true) RETURNING ncorrelativo", conn.conn))
                     {
                         String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
                         DateTime dateTime = DateTime.Parse(dateTimeString);
                         command.Parameters.AddWithValue("n2", titleTextBox.Text.Trim());
                         command.Parameters.AddWithValue("n4", dateTime);
-                        int nRows = command.ExecuteNonQuery();
-                        Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                         var reader = command.ExecuteReader();
                         reader.Read();
                         lastID = (String)reader["ncorrelativo"];

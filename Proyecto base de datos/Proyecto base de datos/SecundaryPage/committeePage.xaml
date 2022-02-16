@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Proyecto_base_de_datos.SecundaryPage"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="476" d:DesignWidth="691"
       Title="committeePage">
 
     <Grid Background="White">
-        <ListBox x:Name="ProposalListView" HorizontalAlignment="Left" Height="295" Margin="55,55,0,0" VerticalAlignment="Top" Width="618" SelectionMode="Multiple" FontSize="22" BorderBrush="#FF0C907D"/>
-        <Button x:Name="nextButton" Content="Siguiente" HorizontalAlignment="Left" Margin="629,380,0,0" VerticalAlignment="Top" Height="40" Width="116" Click="nextButton_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" IsCancel="True" Background="#FF0C907D"/>
-        <Label Content="Creacion de comite" HorizontalAlignment="Left" Height="44" Margin="246,6,0,0" VerticalAlignment="Top" Width="236" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
+        <ListBox x:Name="ProposalListView" HorizontalAlignment="Center" Height="320" Margin="0,55,0,0" VerticalAlignment="Top" Width="617" SelectionMode="Multiple" FontSize="22" BorderBrush="#FF0C907D"/>
+        <Button x:Name="nextButton" Content="Siguiente" HorizontalAlignment="Left" Margin="538,400,0,0" VerticalAlignment="Top" Height="40" Width="116" Click="nextButton_Click" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" IsCancel="True" Background="#FF0C907D" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Creación de comité" HorizontalAlignment="Center" Height="44" Margin="0,6,0,0" VerticalAlignment="Top" Width="236" FontSize="24" FontFamily="Segoe UI Semibold" FontWeight="Normal" Foreground="#FF0C907D"/>
 
     </Grid>
 </Page>

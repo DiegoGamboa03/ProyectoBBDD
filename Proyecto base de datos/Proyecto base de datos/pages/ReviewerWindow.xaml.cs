@@ -22,14 +22,57 @@ namespace Proyecto_base_de_datos.pages
     {
         public List<EvaluationCriteria> evaluationCriteriaList;
         private DegreeWorks degreeWorks;
+        private List<Students> studentsList;
         public ReviewerWindow(DegreeWorks DegreeWork)
         {
             InitializeComponent();
-            this.ResizeMode = ResizeMode.NoResize;
-            this.degreeWorks = DegreeWork;
-            evaluationCriteriaList = new List<EvaluationCriteria>();
-            var conn = new Connection();
+            var conn = new Connection(); //Variables de conexion
             conn.openConnection();
+
+            this.ResizeMode = ResizeMode.NoResize; // Variables de uso del programa.
+            this.degreeWorks = DegreeWork; // Trabajo de grado que se esta evaluando.
+
+            TitleTDG.Text = degreeWorks.Title;
+
+            studentsList = new List<Students>();
+    
+            //Consulta para obtener la informacion de los estudiantes que presentan la propuesta.
+            using (var command = new NpgsqlCommand("SELECT E.* FROM estudiantes AS E, entrega AS EG WHERE E.cedulae = EG.cedulae AND EG.ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    String idStudent = (String)reader["cedulae"];
+                    String StudentName = (String)reader["nombre"];
+                    String StudentCollageEmail = (String)reader["correoucab"];
+                    Students student = new Students(idStudent, StudentName, StudentCollageEmail);
+                    studentsList.Add(student);
+                }
+                reader.Close();
+            }
+            
+            if(studentsList.Count == 1)
+            {
+                StudentName.Text = studentsList[0].Name;
+                idStudent.Text = studentsList[0].Id;
+                StudentEmail.Text = studentsList[0].UcabMail;
+
+                StudentName2.Text = "";
+                idStudent2.Text = "";
+                StudentEmail2.Text = "";
+            }
+            else if (studentsList.Count == 2)
+            {
+                StudentName.Text = studentsList[0].Name;
+                idStudent.Text = studentsList[0].Id;
+                StudentEmail.Text = studentsList[0].UcabMail;
+
+                StudentName2.Text = studentsList[1].Name;
+                idStudent2.Text = studentsList[1].Id;
+                StudentEmail2.Text = studentsList[1].UcabMail; 
+            }
+            evaluationCriteriaList = new List<EvaluationCriteria>();
+ 
             if (this.degreeWorks.Modality == "I")
             {
                 using (var command = new NpgsqlCommand("SELECT * FROM evaluacriterioi as EI, criteriosevpr_i as CEI WHERE EI.ncorrelativo = '" + degreeWorks.CorrelativeNumber +"' AND EI.codigo = CEI.codigo", conn.conn))

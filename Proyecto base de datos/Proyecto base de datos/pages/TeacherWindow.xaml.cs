@@ -35,7 +35,6 @@ namespace Proyecto_base_de_datos.pages
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
         }
     }
 }

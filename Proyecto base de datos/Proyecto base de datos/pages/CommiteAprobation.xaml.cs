@@ -31,7 +31,7 @@ namespace Proyecto_base_de_datos.Pages
             this.degreeWorks = degreeWorks;
             this.commiteId = commiteId;
             titleTextBlock.Text = degreeWorks.Title;
-            modalityTextBlock.Text = degreeWorks.Title;
+            modalityTextBlock.Text = degreeWorks.Modality;
             correlativeNumberTextBlock.Text = degreeWorks.CorrelativeNumber.ToString();
 
             var conn = new Connection();
@@ -58,7 +58,7 @@ namespace Proyecto_base_de_datos.Pages
                 var conn = new Connection();
                 conn.openConnection();
                 //INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi, fechasig,estatus,fecharev) VALUES (@n1,@n2,@n3,@n4,@n5) query completa
-                using (var command = new NpgsqlCommand("INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi) VALUES (@n1,@n2,@n3)", conn.conn))
+                using (var command = new NpgsqlCommand("INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi, fechasig) VALUES (@n1,@n2,@n3,@n4)", conn.conn))
                 {
 
                     String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
@@ -66,6 +66,7 @@ namespace Proyecto_base_de_datos.Pages
                     command.Parameters.AddWithValue("n1", degreeWorks.CorrelativeNumber);
                     command.Parameters.AddWithValue("n2", commiteId);
                     command.Parameters.AddWithValue("n3", TeacherIDlist[InternalTeacherList.SelectedIndex]);
+                    command.Parameters.AddWithValue("n4", dateTime);
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                 }

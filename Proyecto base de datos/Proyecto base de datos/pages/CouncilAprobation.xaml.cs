@@ -186,7 +186,7 @@ namespace Proyecto_base_de_datos.Pages
                 {
                     //Buscamos el resto de sus propuestas menos la que se ha aprobado
                     List<String> correlativeNumberList = new List<string>();
-                    using (var command = new NpgsqlCommand("SELECT * FROM \"entrega\" WHERE \"cedulae\" = '" + studentIdList[i] + "' AND ncorrelativo != " + degreeWorks.CorrelativeNumber + "", conn.conn))
+                    using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE cedulae = '" + studentIdList[i] + "' AND ncorrelativo <> " + degreeWorks.CorrelativeNumber + "", conn.conn))
                     {
                         var reader = command.ExecuteReader();
                         while (reader.Read())

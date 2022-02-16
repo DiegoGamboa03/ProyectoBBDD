@@ -35,6 +35,13 @@ namespace Proyecto_base_de_datos.Class
             this.haveDegreeWork = haveDegreeWork;
         }
 
+        public Students(string id, string name, string ucabEmail)
+        {
+            this.Id = id;
+            this.name = name;
+            this.ucabMail = ucabEmail;
+        }
+
         public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string PersonalEmail { get => personalEmail; set => personalEmail = value; }

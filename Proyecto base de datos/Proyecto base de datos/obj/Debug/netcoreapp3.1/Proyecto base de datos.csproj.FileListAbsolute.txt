@@ -195,7 +195,6 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\AddEvaluationCriteriaDegreeWork.g.cs
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\AddEvaluationCriteriaReviewer.g.cs
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\EvaluateDegreeWorkWindow.g.cs
-C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\EvaluationCriteriaAprobation.g.cs
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewerAprobationWindow.g.cs
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCommitte.g.cs
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCouncil.g.cs
@@ -208,7 +207,6 @@ C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\AddEvaluationCriteriaDegreeWork.baml
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\AddEvaluationCriteriaReviewer.baml
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\EvaluateDegreeWorkWindow.baml
-C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\EvaluationCriteriaAprobation.baml
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ReviewerAprobationWindow.baml
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCommitte.baml
 C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ViewDetailCouncil.baml
@@ -307,3 +305,7 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\ConfirmDeleteProposal.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\DegreeWorkEvaluationCriteriaCalification.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\Pages\FailedSequenceWindow.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ConfirmDeleteProposal.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\DegreeWorkEvaluationCriteriaCalification.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\ConfirmDeleteProposal.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\pages\DegreeWorkEvaluationCriteriaCalification.baml
