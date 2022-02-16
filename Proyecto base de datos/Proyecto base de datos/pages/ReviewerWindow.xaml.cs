@@ -3,6 +3,7 @@ using Proyecto_base_de_datos.Class;
 using Proyecto_base_de_datos.Pages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -91,13 +92,15 @@ namespace Proyecto_base_de_datos.pages
             }
             else if (this.degreeWorks.Modality == "E")
             {
-                using (var command = new NpgsqlCommand("SELECT * FROM evaluacriterioe as EI, criteriosevpr_i as CEI WHERE EI.ncorrelativo = '46' AND EI.codigo = CEI.codigo", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM evaluacriterioe as EI, criteriosevpr_i as CEI WHERE EI.ncorrelativo = '"+ degreeWorks.CorrelativeNumber + "' AND EI.codigo = CEI.codigo", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         String evaluationCriteriaID = (String)reader["codigo"];
                         String description = (String)reader["descripcion"];
+                        EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                        evaluationCriteriaList.Add(evaluationCriteria);
                         criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                     }
                     reader.Close();
@@ -117,10 +120,21 @@ namespace Proyecto_base_de_datos.pages
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        bool approveCriteria = (bool)reader["aprueba"];
-                        if(approveCriteria == false)
+                        String id = (String)reader["codigo"];
+                        if (reader["aprueba"] != DBNull.Value)
                         {
-                            flag = false;
+                            bool approveCriteria = (bool)reader["aprueba"];
+                            if (approveCriteria == false)
+                            {
+                                flag = false;
+                            }
+                        }
+                        else
+                        {
+                            EvaluationCriteria evaluation = evaluationCriteriaList.Find(x => x.Id == id);
+                            string ConfirmationMessage = "Tiene que revisar el criterio " + evaluation.Description;
+                            FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+                            window.ShowDialog();
                         }
                     }
                     reader.Close();
@@ -133,10 +147,21 @@ namespace Proyecto_base_de_datos.pages
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        bool approveCriteria = (bool)reader["aprueba"];
-                        if (approveCriteria == false)
+                        String id = (String)reader["codigo"];
+                        if (reader["aprueba"] != DBNull.Value)
                         {
-                            flag = false;
+                            bool approveCriteria = (bool)reader["aprueba"];
+                            if (approveCriteria == false)
+                            {
+                                flag = false;
+                            }
+                        }
+                        else
+                        {
+                            EvaluationCriteria evaluation = evaluationCriteriaList.Find(x => x.Id == id);
+                            string ConfirmationMessage = "Tiene que revisar el criterio " + evaluation.Description;
+                            FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+                            window.ShowDialog();
                         }
                     }
                     reader.Close();
@@ -175,6 +200,7 @@ namespace Proyecto_base_de_datos.pages
 
             // This is your selected item
             int item = list.SelectedIndex;
+            Trace.WriteLine(item);
             ReviewerAprobationWindow page = new ReviewerAprobationWindow(degreeWorks, evaluationCriteriaList[item]);
             page.ShowDialog();
         }
