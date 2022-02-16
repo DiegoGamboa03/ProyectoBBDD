@@ -17,6 +17,13 @@ namespace Proyecto_base_de_datos.Class
             this.description = description;
         }
 
+        public EvaluationCriteria(string id, string description, int topNote)
+        {
+            this.id = id;
+            this.description = description;
+            this.topNote = topNote;
+        }
+
         public EvaluationCriteria(string id, string description, int topNote, string status)
         {
             this.id = id;

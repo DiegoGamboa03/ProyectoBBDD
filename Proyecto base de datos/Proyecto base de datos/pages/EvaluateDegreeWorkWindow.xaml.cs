@@ -46,8 +46,8 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
-                            Trace.WriteLine(evaluationCriteriaID);
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                            int maxNote = (int)reader["puntajemax"];
+                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                         }
@@ -63,7 +63,8 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                            int maxNote = (int)reader["puntajemax"];
+                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                         }
@@ -82,7 +83,8 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                            int maxNote = (int)reader["puntajemax"];
+                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                         }
@@ -98,7 +100,8 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                            int maxNote = (int)reader["puntajemax"];
+                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                         }

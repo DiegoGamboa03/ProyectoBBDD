@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.pages;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -42,6 +43,7 @@ namespace Proyecto_base_de_datos.Pages
             this.evaluationCriteria = evaluationCriteria;
             this.idStudent = idStudent;
             this.isTutor = isTutor;
+            this.maxNoteTextBlock.Text = evaluationCriteria.TopNote.ToString();
         }
 
         private void numberupdownTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -57,10 +59,11 @@ namespace Proyecto_base_de_datos.Pages
 
         private void upButton_Click(object sender, RoutedEventArgs e)
         {
-            if (NumValue < 20)
+            if (NumValue < evaluationCriteria.TopNote)
             {
                 NumValue++;
             }
+            
         }
 
         private void downButton_Click(object sender, RoutedEventArgs e)

@@ -78,7 +78,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             Trace.WriteLine("Tutor list box" + degreeWorkTutorListBox.SelectedIndex);
             if (degreeWorkJuryListBox.SelectedIndex != -1)
             {
-                using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE ncorrelativo = '" + listJury[degreeWorkJuryListBox.SelectedIndex].CorrelativeNumber + "'", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE ncorrelativo = '" + listJury[degreeWorkJuryListBox.SelectedIndex].CorrelativeNumber + "' AND E.cedulae = ES.cedulae", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
@@ -99,7 +99,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             }else if(degreeWorkTutorListBox.SelectedIndex != -1)
             {
                 Trace.WriteLine("En lista tutor " + listTutor[degreeWorkTutorListBox.SelectedIndex].CorrelativeNumber.ToString());
-                using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE ncorrelativo = '" + listTutor[degreeWorkTutorListBox.SelectedIndex].CorrelativeNumber + "'", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM entrega as E, estudiantes as ES WHERE E.ncorrelativo = '" + listTutor[degreeWorkTutorListBox.SelectedIndex].CorrelativeNumber + "' AND E.cedulae = ES.cedulae", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
