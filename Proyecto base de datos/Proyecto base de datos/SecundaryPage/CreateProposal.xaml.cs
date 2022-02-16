@@ -57,7 +57,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 {
                     String teacherId = (String)reader["cedulap"];
                     String name = (String)reader["nombre"];
-                    Teachers teachers = new Teachers(teacherId, name);
+                    String institution = (String)reader["institucion"];
+                    Teachers teachers = new Teachers(teacherId, name, institution);
                     listBusinessTutor.Add(teachers);
                 }
                 reader.Close();
@@ -135,7 +136,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     using (var comm = new NpgsqlCommand("INSERT INTO experimentales (ncorrelativo,profesorava) VALUES (@n1,@n2)", conn.conn))
                     {
                         comm.Parameters.AddWithValue("n1", lastID);
-                        comm.Parameters.AddWithValue("n2", listInternalTeacher[auxComboBox.SelectedIndex]);
+                        comm.Parameters.AddWithValue("n2",listInternalTeacher[auxComboBox.SelectedIndex].Name);
                         int nRows = comm.ExecuteNonQuery();
                         Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                     }

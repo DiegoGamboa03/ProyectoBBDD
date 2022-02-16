@@ -27,6 +27,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
         {
             InitializeComponent();
             //AddExample();
+            notdg.Visibility = Visibility.Collapsed;
             SearchProposals();
         }
         private void SearchProposals() // Search proposals of a Student
@@ -55,6 +56,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 reader.Close();
                 if (proposals.Count > 0)
                     proposalsList.ItemsSource = proposals;
+                else
+                    notdg.Visibility = Visibility.Visible;
             }
         }
         private void AddExample()  // Add example proposals for test ui
@@ -68,7 +71,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
         private void OnClickItem(object sender, RoutedEventArgs e)
         {
-            if (proposals.Count > 0)
+            if (proposals.Count > 0 && proposalsList.SelectedItem != null)
             {
                 proposalsList.ItemsSource = proposals; var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
                 ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);

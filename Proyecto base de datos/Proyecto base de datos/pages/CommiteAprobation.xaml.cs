@@ -57,7 +57,7 @@ namespace Proyecto_base_de_datos.Pages
             {
                 var conn = new Connection();
                 conn.openConnection();
-                //INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi, fechasig,estatus,fecharev) VALUES (@n1,@n2,@n3,@n4,@n5) query completa
+                //INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi, fechasig,estatus,fecharev) VALUES (@n1,@n2,@n3,@n4,@n5) query completa  // falta el estatus
                 using (var command = new NpgsqlCommand("INSERT INTO esrevisor (ncorrelativo, codigoc, cedulapi, fechasig) VALUES (@n1,@n2,@n3,@n4)", conn.conn))
                 {
 

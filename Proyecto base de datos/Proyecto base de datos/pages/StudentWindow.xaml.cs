@@ -26,6 +26,12 @@ namespace Proyecto_base_de_datos.pages
             Frame1.Content = createProposal;
             ViewCouncils v = new ViewCouncils();
             Frame2.Content = v;
+
+            ViewProposals view = new ViewProposals();
+            Frame3.Content = view;
+
+            StudentInformation st = new StudentInformation();
+            FramePrincipal.Content = st;
         }
     }
 }

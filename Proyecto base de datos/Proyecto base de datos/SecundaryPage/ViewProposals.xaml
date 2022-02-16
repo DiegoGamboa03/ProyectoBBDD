@@ -21,5 +21,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock Text="No tiene trabajos de grado registrados"  FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Name="notdg"></TextBlock>
     </Grid>
 </Page>

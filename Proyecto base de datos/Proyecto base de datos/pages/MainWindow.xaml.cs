@@ -77,7 +77,7 @@ namespace Proyecto_base_de_datos
                     {
                         ErrorMessage = "Usuario o contraseña invalido.";
                         FailedSequenceWindow window = new FailedSequenceWindow(ErrorMessage);
-                        window.ShowDialog();
+                        //window.ShowDialog();
                         Trace.WriteLine("No Existe");
                     }
                     reader.Close();

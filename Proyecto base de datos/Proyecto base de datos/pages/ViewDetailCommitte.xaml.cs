@@ -58,7 +58,7 @@ namespace Proyecto_base_de_datos.pages
 
         private void OnClickItem(object sender, RoutedEventArgs e)
         {
-            if(proposals.Count > 0 && proposalsList!=null)
+            if(proposals.Count > 0 && proposalsList!=null && proposalsList.SelectedItem != null)
             {
                 var selectedItem = proposalsList.Items.IndexOf(proposalsList.SelectedItem);
                 ViewDetailProposal detailProposal = new ViewDetailProposal(proposals[selectedItem]);
