@@ -42,6 +42,7 @@
         <Button x:Name="upButton" Content="▲" HorizontalAlignment="Left" Height="23" Margin="233,110,0,0" VerticalAlignment="Top" Width="43" Click="upButton_Click" Grid.Row="1"/>
         <Button x:Name="downButton" Content="▼" HorizontalAlignment="Left" Margin="233,139,0,0" VerticalAlignment="Top" Width="43" Height="19" Click="downButton_Click" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="32" Margin="81,116,0,0" Text="Nota:" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold" Grid.Row="1"/>
-
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="315,194,0,0" Text="/" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <TextBlock x:Name="maxNoteTextBlock" HorizontalAlignment="Left" Height="32" Margin="315,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold" Grid.RowSpan="2"/>
     </Grid>
 </Window>

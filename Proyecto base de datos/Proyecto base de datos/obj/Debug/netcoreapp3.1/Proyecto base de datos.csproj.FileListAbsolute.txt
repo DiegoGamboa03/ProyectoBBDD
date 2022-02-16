@@ -313,3 +313,7 @@ D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de d
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\TeacherInformation.g.cs
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\StudentInformation.baml
 D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\TeacherInformation.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\StudentInformation.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\TeacherInformation.g.cs
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\StudentInformation.baml
+C:\Users\Rafael A Muñoz\Desktop\Programación\CSHARP\ProyectoBBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\obj\Debug\netcoreapp3.1\SecundaryPage\TeacherInformation.baml
