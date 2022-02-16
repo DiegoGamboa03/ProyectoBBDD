@@ -22,6 +22,8 @@ namespace Proyecto_base_de_datos.pages
         {
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
+            TeacherInformation mainPage = new TeacherInformation();
+            mainFrame.Content = mainPage;
             committeePage page = new committeePage();
             Frame1.Content = page;
             ViewerTeacherPage page2 = new ViewerTeacherPage();

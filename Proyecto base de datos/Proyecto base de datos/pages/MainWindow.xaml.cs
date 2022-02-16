@@ -100,7 +100,8 @@ namespace Proyecto_base_de_datos
                             String TeacherAddress = (String)reader["direccion"];
                             String TeacherPhone = (String)reader["telefono"];
                             String TeacherInstitution = (String)reader["institucion"];
-                            teachers = new Teachers(TeacherID, TeacherName, TeacherAddress, TeacherPhone, TeacherInstitution);
+                            String teacherType = (String)reader["tipo"];
+                            teachers = new Teachers(TeacherID, TeacherName, teacherType, TeacherAddress, TeacherPhone, TeacherInstitution);
                             TeacherWindow window = new TeacherWindow();
                             window.Show();
                             this.Close();
