@@ -78,13 +78,15 @@ namespace Proyecto_base_de_datos.SecundaryPage
             Trace.WriteLine("Tutor list box" + degreeWorkTutorListBox.SelectedIndex);
             if (degreeWorkJuryListBox.SelectedIndex != -1)
             {
-                using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE ncorrelativo = '" + listJury[degreeWorkJuryListBox.SelectedIndex].CorrelativeNumber + "' AND E.cedulae = ES.cedulae", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM entrega AS ET, estudiantes AS E WHERE ET.ncorrelativo = '" + listJury[degreeWorkJuryListBox.SelectedIndex].CorrelativeNumber + "' AND ET.cedulae = E.cedulae", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         String id = (String)reader["cedulae"];
                         String name = (String)reader["nombre"];
+                        Trace.WriteLine(id);
+                        Trace.WriteLine(name);
                         Students students = new Students(id, name);
                         listIDStudents.Add(students);
                     }
@@ -92,14 +94,14 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 }
                 for(int i = 0; i < listIDStudents.Count; i++)
                 {
-                    page = new EvaluateDegreeWorkWindow(listTutor[degreeWorkTutorListBox.SelectedIndex], false, listIDStudents[i]);
+                    page = new EvaluateDegreeWorkWindow(listJury[degreeWorkJuryListBox.SelectedIndex], false, listIDStudents[i]);
                     page.ShowDialog();
                 }
                 Trace.WriteLine("Se metio en jurado");
             }else if(degreeWorkTutorListBox.SelectedIndex != -1)
             {
                 Trace.WriteLine("En lista tutor " + listTutor[degreeWorkTutorListBox.SelectedIndex].CorrelativeNumber.ToString());
-                using (var command = new NpgsqlCommand("SELECT * FROM entrega as E, estudiantes as ES WHERE E.ncorrelativo = '" + listTutor[degreeWorkTutorListBox.SelectedIndex].CorrelativeNumber + "' AND E.cedulae = ES.cedulae", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM entrega AS ET, estudiantes AS E WHERE ET.ncorrelativo = '" + listTutor[degreeWorkTutorListBox.SelectedIndex].CorrelativeNumber + "' AND ET.cedulae = E.cedulae", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
@@ -117,6 +119,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     page = new EvaluateDegreeWorkWindow(listTutor[degreeWorkTutorListBox.SelectedIndex], true, listIDStudents[i]);
                     page.ShowDialog();
                 }
+                Trace.WriteLine("Se metio en tutor");
             }
         }
 
@@ -137,7 +140,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
             // This is your selected item
             int item = list.SelectedIndex;
-            AddEvaluationCriteriaDegreeWork page = new AddEvaluationCriteriaDegreeWork(this.listTutor[item],false);
+            AddEvaluationCriteriaDegreeWork page = new AddEvaluationCriteriaDegreeWork(this.listJury[item],false);
             page.ShowDialog();
         }
     }

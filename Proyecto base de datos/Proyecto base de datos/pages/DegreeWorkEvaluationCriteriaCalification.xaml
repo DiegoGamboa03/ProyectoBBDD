@@ -7,39 +7,41 @@
         mc:Ignorable="d"
         Title="DegreeWorkEvaluationCriteriaCalification" Height="450" Width="800">
     <Grid>
-        <Button x:Name="ApprobationButton" Content="Evaluar" HorizontalAlignment="Left" Height="48" Margin="517,330,0,0" VerticalAlignment="Top" Width="198" Click="ApprobationButton_Click" Background="#FF0C907D" FontFamily="Segoe UI Semibold" FontSize="24" Foreground="#FFF2F4B2"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="110*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ApprobationButton" Content="Evaluar" HorizontalAlignment="Left" Height="48" Margin="517,116,0,0" VerticalAlignment="Top" Width="198" Click="ApprobationButton_Click" Background="#FF0C907D" FontFamily="Segoe UI Semibold" FontSize="24" Foreground="#FFF2F4B2" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="32" Margin="86,132,0,0" Text="Titulo:" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="227,132,0,0" Text="Modalidad:" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Height="42" Margin="458,132,0,0" Text="Numero correlativo:" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Segoe UI Semibold" FontSize="20"/>
-        <TextBlock x:Name="titleTextBlock" HorizontalAlignment="Left" Height="28" Margin="159,130,0,0" Text="A" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="20" FontFamily="Segoe UI Semilight" FontWeight="Normal" FontStyle="Italic" RenderTransformOrigin="0.5,0.5">
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="86,192,0,0" Text="Modalidad:" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="20" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="42" Margin="392,192,0,0" Text="Numero correlativo:" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Segoe UI Semibold" FontSize="20" Grid.RowSpan="2"/>
+        <TextBlock x:Name="titleTextBlock" HorizontalAlignment="Left" Height="33" Margin="172,132,0,0" Text="A" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="20" FontFamily="Segoe UI Semilight" FontWeight="Normal" FontStyle="Italic" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-0.95"/>
+                    <RotateTransform Angle="-0.422"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="modalityTextBlock" HorizontalAlignment="Center" Height="32" Margin="0,132,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontSize="20" FontFamily="Segoe UI Semilight"/>
-        <TextBlock x:Name="correlativeNumberTextBlock" HorizontalAlignment="Left" Height="41" Margin="656,131,0,0" Text="B" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="81,63,0,0" Text="Titulo del criterio de evaluacion:" TextWrapping="Wrap" VerticalAlignment="Top" Width="314" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <TextBlock x:Name="modalityTextBlock" HorizontalAlignment="Left" Height="32" Margin="211,192,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontSize="20" FontFamily="Segoe UI Semilight" Grid.RowSpan="2"/>
+        <TextBlock x:Name="correlativeNumberTextBlock" HorizontalAlignment="Left" Height="40" Margin="583,195,0,0" Text="B" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="20" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="81,63,0,0" Text="Titulo del criterio de evaluacion:" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" FontSize="20" FontFamily="Segoe UI Semibold"/>
         <TextBlock x:Name="evaluationCriteriaTitleTextBlock" HorizontalAlignment="Left" Height="28" Margin="386,64,0,0" Text="A" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="20" FontFamily="Segoe UI Semilight" FontWeight="Normal" FontStyle="Italic" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-0.95"/>
+                    <RotateTransform Angle="0.731"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBox x:Name="numberupdownTextBox" HorizontalAlignment="Left" Height="49" Margin="149,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="numberupdownTextBox_TextChanged" BorderBrush="#FF0C907D"/>
-        <Button x:Name="upButton" Content="▲" HorizontalAlignment="Left" Height="23" Margin="238,188,0,0" VerticalAlignment="Top" Width="43" Click="upButton_Click"/>
-        <Button x:Name="downButton" Content="▼" HorizontalAlignment="Left" Margin="238,217,0,0" VerticalAlignment="Top" Width="43" Height="19" Click="downButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="86,194,0,0" Text="Nota:" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="315,194,0,0" Text="/" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold"/>
-        <TextBlock x:Name="maxNoteTextBlock" HorizontalAlignment="Left" Height="32" Margin="347,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="numberupdownTextBox" HorizontalAlignment="Left" Height="49" Margin="144,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="numberupdownTextBox_TextChanged" BorderBrush="#FF0C907D" Grid.Row="1"/>
+        <Button x:Name="upButton" Content="▲" HorizontalAlignment="Left" Height="23" Margin="233,110,0,0" VerticalAlignment="Top" Width="43" Click="upButton_Click" Grid.Row="1"/>
+        <Button x:Name="downButton" Content="▼" HorizontalAlignment="Left" Margin="233,139,0,0" VerticalAlignment="Top" Width="43" Height="19" Click="downButton_Click" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="81,116,0,0" Text="Nota:" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold" Grid.Row="1"/>
 
     </Grid>
 </Window>
