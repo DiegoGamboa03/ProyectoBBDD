@@ -45,7 +45,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String id = (String)reader["codigo"];
                             Trace.WriteLine(id);
-                            //int topNote = Int32.Parse((String)reader["puntajemax"]);
+                            int topNote = (int)reader["puntajemax"];
                             String description = (String)reader["descripcion"];
                             String status = (String)reader["estatus"];
                             listIDCriteria.Add(id);
@@ -63,7 +63,7 @@ namespace Proyecto_base_de_datos.Pages
                         while (reader.Read())
                         {
                             String id = (String)reader["codigo"];
-                            int topNote = Int32.Parse((String)reader["puntajemax"]);
+                            int topNote = (int)reader["puntajemax"];
                             String description = (String)reader["descripcion"];
                             String status = (String)reader["estatus"];
                             listIDCriteria.Add(id);
@@ -84,7 +84,7 @@ namespace Proyecto_base_de_datos.Pages
                         while (reader.Read())
                         {
                             String id = (String)reader["codigo"];
-                            int topNote = Int32.Parse((String)reader["puntajemax"]);
+                            int topNote = (int)reader["puntajemax"];
                             String description = (String)reader["descripcion"];
                             String status = (String)reader["estatus"];
                             listIDCriteria.Add(id);
@@ -102,7 +102,7 @@ namespace Proyecto_base_de_datos.Pages
                         while (reader.Read())
                         {
                             String id = (String)reader["codigo"];
-                            int topNote = Int32.Parse((String)reader["puntajemax"]);
+                            int topNote = (int)reader["puntajemax"];
                             String description = (String)reader["descripcion"];
                             String status = (String)reader["estatus"];
                             listIDCriteria.Add(id);
@@ -163,26 +163,31 @@ namespace Proyecto_base_de_datos.Pages
             }
             else
             {
-                if (degreeWorks.Modality == "I")
+                for (int i = 0; i < listIDStudents.Count; i++)
                 {
-                    using (var command = new NpgsqlCommand("INSERT INTO evaluacriterioj_i (cedulap, codigo,cedulae) VALUES (@n1, @n2, @n3)", conn.conn))
+                    Trace.WriteLine(i);
+                    Trace.WriteLine(listIDStudents[i]);
+                    if (degreeWorks.Modality == "I")
                     {
-                        command.Parameters.AddWithValue("n1", MainWindow.teachers.Id);
-                        command.Parameters.AddWithValue("n2", listIDCriteria[evaluationCriteriaComboBox.SelectedIndex]);
-                        command.Parameters.AddWithValue("n3", listIDStudents[evaluationCriteriaComboBox.SelectedIndex]);
-                        int nRows = command.ExecuteNonQuery();
-                        Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                        using (var command = new NpgsqlCommand("INSERT INTO evaluacriterioj_i (cedulap, codigo,cedulae) VALUES (@n1, @n2, @n3)", conn.conn))
+                        {
+                            command.Parameters.AddWithValue("n1", MainWindow.teachers.Id);
+                            command.Parameters.AddWithValue("n2", listIDCriteria[evaluationCriteriaComboBox.SelectedIndex]);
+                            command.Parameters.AddWithValue("n3", listIDStudents[i]);
+                            int nRows = command.ExecuteNonQuery();
+                            Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                        }
                     }
-                }
-                else if (degreeWorks.Modality == "E")
-                {
-                    using (var command = new NpgsqlCommand("INSERT INTO evaluacriterioj_e (cedulap, codigo,cedulae) VALUES (@n1, @n2, @n3)", conn.conn))
+                    else if (degreeWorks.Modality == "E")
                     {
-                        command.Parameters.AddWithValue("n1", MainWindow.teachers.Id);
-                        command.Parameters.AddWithValue("n2", listIDCriteria[evaluationCriteriaComboBox.SelectedIndex]);
-                        command.Parameters.AddWithValue("n3", listIDStudents[evaluationCriteriaComboBox.SelectedIndex]);
-                        int nRows = command.ExecuteNonQuery();
-                        Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                        using (var command = new NpgsqlCommand("INSERT INTO evaluacriterioj_e (cedulap, codigo,cedulae) VALUES (@n1, @n2, @n3)", conn.conn))
+                        {
+                            command.Parameters.AddWithValue("n1", MainWindow.teachers.Id);
+                            command.Parameters.AddWithValue("n2", listIDCriteria[evaluationCriteriaComboBox.SelectedIndex]);
+                            command.Parameters.AddWithValue("n3", listIDStudents[i]);
+                            int nRows = command.ExecuteNonQuery();
+                            Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
+                        }
                     }
                 }
             }
