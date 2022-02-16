@@ -22,19 +22,22 @@ namespace Proyecto_base_de_datos.SecundaryPage
     /// </summary>
     public partial class CreateProposal : Page
     {
+        List<Teachers> listBusinessTutor;
+        List<Teachers> listInternalTeacher;
         public CreateProposal()
         {
             InitializeComponent();
             teammatesComboBox.Items.Add("Sin compañero");
+            listBusinessTutor = new List<Teachers>();
+            listInternalTeacher = new List<Teachers>();
             teammatesComboBox.SelectedIndex = 0;
-            auxTextBox.Visibility = Visibility.Collapsed;
+            auxComboBox.Visibility = Visibility.Collapsed;
             endorsedTeacherText.Visibility = Visibility.Collapsed;
             businessTutorText.Visibility = Visibility.Collapsed;
-            companyName.Visibility = Visibility.Collapsed;
-            companyNameTextBox.Visibility = Visibility.Collapsed;
 
             var conn = new Connection();
             conn.openConnection();
+            //Se rellena la combobox con estudiantes disponibles para ser tus compañeros
             using (var command = new NpgsqlCommand("SELECT * FROM \"estudiantes\" WHERE \"tienetg\" = false AND \"cedulae\" != '" + MainWindow.student.Id.ToString() + "'", conn.conn))
             {
                 var reader = command.ExecuteReader();
@@ -46,24 +49,58 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 }
                 reader.Close();
             }
+            //Se rellena una lista de tutores empresariales
+            using (var command = new NpgsqlCommand("SELECT * FROM \"profesores\" WHERE tipo = 'T'", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    String teacherId = (String)reader["cedulap"];
+                    String name = (String)reader["nombre"];
+                    Teachers teachers = new Teachers(teacherId, name);
+                    listBusinessTutor.Add(teachers);
+                }
+                reader.Close();
+            }
+
+            //Se rellena una lista de profesores internos
+            using (var command = new NpgsqlCommand("SELECT * FROM \"profesores\" WHERE tipo = 'I'", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    String teacherId = (String)reader["cedulap"];
+                    String name = (String)reader["nombre"];
+                    String institution = (String)reader["institucion"];
+                    Teachers teachers = new Teachers(teacherId, name,institution);
+                    listInternalTeacher.Add(teachers);
+                }
+                reader.Close();
+            }
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             businessTutorText.Visibility = Visibility.Visible;
-            companyName.Visibility = Visibility.Visible;
-            companyNameTextBox.Visibility = Visibility.Visible;
-            auxTextBox.Visibility = Visibility.Visible;
+            auxComboBox.Visibility = Visibility.Visible;
             endorsedTeacherText.Visibility = Visibility.Collapsed;
+            auxComboBox.Items.Clear();
+            for(int i = 0; i<listBusinessTutor.Count; i++)
+            {
+                auxComboBox.Items.Add(listBusinessTutor[i].Id + ", " + listBusinessTutor[i].Name);
+            }
         }
 
         private void experimentalRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            auxTextBox.Visibility = Visibility.Visible;
+            auxComboBox.Visibility = Visibility.Visible;
             endorsedTeacherText.Visibility = Visibility.Visible;
             businessTutorText.Visibility = Visibility.Collapsed;
-            companyName.Visibility = Visibility.Collapsed;
-            companyNameTextBox.Visibility = Visibility.Collapsed;
+            auxComboBox.Items.Clear();
+            for (int i = 0; i < listInternalTeacher.Count; i++)
+            {
+                auxComboBox.Items.Add(listInternalTeacher[i].Id + ", " + listInternalTeacher[i].Name);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -77,7 +114,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             }
             else
             {
-                if(experimentalRadioButton.IsChecked == true && auxTextBox.Text.Length>0)
+                if(experimentalRadioButton.IsChecked == true && auxComboBox.SelectedIndex != 1)
                 {
                     String lastID;
                     var conn = new Connection();
@@ -98,7 +135,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     using (var comm = new NpgsqlCommand("INSERT INTO experimentales (ncorrelativo,profesorava) VALUES (@n1,@n2)", conn.conn))
                     {
                         comm.Parameters.AddWithValue("n1", lastID);
-                        comm.Parameters.AddWithValue("n2", auxTextBox.Text.Trim());
+                        comm.Parameters.AddWithValue("n2", listInternalTeacher[auxComboBox.SelectedIndex]);
                         int nRows = comm.ExecuteNonQuery();
                         Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                     }
@@ -133,7 +170,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 {
                     //Mostrar mensaje que rellene
                 }
-                if(instrumentalRadioButton.IsChecked == true && auxTextBox.Text.Length > 0 && companyNameTextBox.Text.Length > 0)
+                if(instrumentalRadioButton.IsChecked == true && auxComboBox.SelectedIndex != 1)
                 {
                     String lastID;
                     var conn = new Connection();
@@ -155,8 +192,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     using (var comm = new NpgsqlCommand("INSERT INTO instrumentales (ncorrelativo,nempresa,tutoremp) VALUES (@n1,@n2,@n3)", conn.conn))
                     {
                         comm.Parameters.AddWithValue("n1", lastID);
-                        comm.Parameters.AddWithValue("n2", companyNameTextBox.Text.Trim());
-                        comm.Parameters.AddWithValue("n3", auxTextBox.Text.Trim());
+                        comm.Parameters.AddWithValue("n2", listBusinessTutor[auxComboBox.SelectedIndex].Institution);
+                        comm.Parameters.AddWithValue("n3", listBusinessTutor[auxComboBox.SelectedIndex].Name);
                         int nRows = comm.ExecuteNonQuery();
                         Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
                     }

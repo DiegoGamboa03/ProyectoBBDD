@@ -7,24 +7,28 @@
         mc:Ignorable="d"
         Title="RegisterTeacher" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="162*"/>
+        </Grid.RowDefinitions>
         <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="162,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Margin="162,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <TextBox x:Name="directionTextBox" HorizontalAlignment="Left" Margin="162,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <TextBox x:Name="phoneNumberTextBox" HorizontalAlignment="Left" Margin="162,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <TextBox x:Name="institutionTextBox" HorizontalAlignment="Left" Margin="162,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <ComboBox x:Name="TeacherTypeListComboBox" HorizontalAlignment="Left" Margin="162,346,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
-        <Button x:Name="RegisterButton" Content="Registrarse como Profesor" HorizontalAlignment="Left" Margin="344,361,0,38" Click="RegisterButton_Click" Width="150" Background="#FFF2F4B2" FontFamily="Segoe UI Semibold" Foreground="#FF0C907D"/>
-        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="162,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Margin="162,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" Grid.RowSpan="2"/>
+        <TextBox x:Name="directionTextBox" HorizontalAlignment="Left" Margin="162,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1"/>
+        <TextBox x:Name="phoneNumberTextBox" HorizontalAlignment="Left" Margin="162,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1"/>
+        <TextBox x:Name="institutionTextBox" HorizontalAlignment="Left" Margin="162,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1"/>
+        <ComboBox x:Name="TeacherTypeListComboBox" HorizontalAlignment="Left" Margin="162,236,0,0" VerticalAlignment="Top" Width="150" Height="30" SelectionChanged="TeacherTypeListComboBox_SelectionChanged" Grid.Row="1"/>
+        <Button x:Name="RegisterButton" Content="Registrarse como Profesor" HorizontalAlignment="Left" Margin="344,251,0,38" Click="RegisterButton_Click" Width="150" Background="#FFF2F4B2" FontFamily="Segoe UI Semibold" Foreground="#FF0C907D" Grid.Row="1"/>
+        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="162,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,33,0,0" TextWrapping="Wrap" Text="Cedula" VerticalAlignment="Top" Height="30" Width="136" FontSize="14" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" Text="Nombre" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Direccion"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Telefono"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Institución"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"><Run Language="es-ve" Text="Contraseña"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,346,0,0" TextWrapping="Wrap" Text="Tipo de Profesor" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right"/>
-        <Rectangle HorizontalAlignment="Left" Height="443" Margin="518,-9,0,0" Stroke="Black" VerticalAlignment="Top" Width="287" Fill="#FF0C907D"/>
-        <Label Content="Registrar &#xD;&#xA;Profesor" HorizontalAlignment="Left" Height="119" Margin="571,24,0,0" VerticalAlignment="Top" Width="181" FontFamily="Segoe UI Black" FontSize="36" Foreground="#FFF2F4B2" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Left" Height="207" Margin="558,278,0,0" VerticalAlignment="Top" Width="207" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" Text="Nombre" TextAlignment="Right" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right" Grid.Row="1"><Run Language="es-ve" Text="Direccion"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right" Grid.Row="1"><Run Language="es-ve" Text="Telefono"/></TextBlock>
+        <TextBlock x:Name="institutionLabel" HorizontalAlignment="Left" Margin="10,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right" Grid.Row="1"><Run Language="es-ve" Text="Institución"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right" Grid.Row="1"><Run Language="es-ve" Text="Contraseña"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,236,0,0" TextWrapping="Wrap" Text="Tipo de Profesor" VerticalAlignment="Top" Height="30" Width="136" TextAlignment="Right" Grid.Row="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="443" Margin="518,-9,0,0" Stroke="Black" VerticalAlignment="Top" Width="287" Fill="#FF0C907D" Grid.RowSpan="2"/>
+        <Label Content="Registrar &#xD;&#xA;Profesor" HorizontalAlignment="Left" Height="119" Margin="571,24,0,0" VerticalAlignment="Top" Width="181" FontFamily="Segoe UI Black" FontSize="36" Foreground="#FFF2F4B2" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="207" Margin="558,168,0,0" VerticalAlignment="Top" Width="207" Source="D:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Resources\png-clipart-soni-design-printing-cat-furniture-sandwich-wood-eco-friendly-furniture-food.png" Grid.Row="1"/>
 
     </Grid>
 </Window>

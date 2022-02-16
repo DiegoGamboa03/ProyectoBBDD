@@ -25,6 +25,7 @@ namespace Proyecto_base_de_datos.pages
             InitializeComponent();
             TeacherTypeListComboBox.Items.Add("Interno");
             TeacherTypeListComboBox.Items.Add("Externo");
+            TeacherTypeListComboBox.Items.Add("Tutor Empresarial");
             this.ResizeMode = ResizeMode.NoResize;
         }
 
@@ -51,7 +52,10 @@ namespace Proyecto_base_de_datos.pages
                 {
                     command.Parameters.AddWithValue("n4", "E");
                 }
-
+                else if (TeacherTypeListComboBox.SelectedItem.Equals("Tutor Empresarial"))
+                {
+                    command.Parameters.AddWithValue("n4", "T");
+                }
                 int nRows = command.ExecuteNonQuery();
                 Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
             }
@@ -76,6 +80,18 @@ namespace Proyecto_base_de_datos.pages
             FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
             window.ShowDialog();
             this.Close();
+        }
+
+        private void TeacherTypeListComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TeacherTypeListComboBox.SelectedItem.Equals("Tutor Empresarial"))
+            {
+                institutionLabel.Text = "Nombre empresa";
+            }
+            else
+            {
+                institutionLabel.Text = "Institucion";
+            }
         }
     }
 }

@@ -8,14 +8,21 @@ namespace Proyecto_base_de_datos.Class
     {
         private string id;
         private string name;
+        private string institution;
         private string direction;
         private string phoneNumber;
-        private string institution;
 
         public Teachers(string id, string name)
         {
             this.id = id;
             this.name = name;
+        }
+
+        public Teachers(string id, string name, string institution)
+        {
+            this.id = id;
+            this.name = name;
+            this.institution = institution;
         }
 
         public Teachers(string id, string name, string direction, string phoneNumber, string institution)
