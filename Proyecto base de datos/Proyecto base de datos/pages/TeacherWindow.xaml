@@ -80,7 +80,7 @@
                 <Frame x:Name="Frame4">
                 </Frame>
             </TabItem>
-            <TabItem Header="Crear especialidad" Height="44" VerticalAlignment="Center" Width="224">
+            <TabItem Header="Crear especialidad" Height="44" VerticalAlignment="Bottom" Width="224">
                 <Frame x:Name="Frame5">
                 </Frame>
             </TabItem>

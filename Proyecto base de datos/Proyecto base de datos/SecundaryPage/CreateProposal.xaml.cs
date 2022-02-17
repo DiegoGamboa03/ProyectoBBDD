@@ -115,8 +115,11 @@ namespace Proyecto_base_de_datos.SecundaryPage
             }
             else
             {
-                if(experimentalRadioButton.IsChecked == true && auxComboBox.SelectedIndex != 1)
+                Trace.WriteLine("Se metio en el primer condicional");
+                Trace.WriteLine("AuxComboBox " + auxComboBox.SelectedIndex);
+                if (experimentalRadioButton.IsChecked == true && auxComboBox.SelectedIndex != -1)
                 {
+                    Trace.WriteLine("Se metio despues de darle click al boton");
                     String lastID;
                     var conn = new Connection();
                     conn.openConnection();
@@ -171,7 +174,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 {
                     //Mostrar mensaje que rellene
                 }
-                if(instrumentalRadioButton.IsChecked == true && auxComboBox.SelectedIndex != 1)
+                if(instrumentalRadioButton.IsChecked == true && auxComboBox.SelectedIndex != -1)
                 {
                     String lastID;
                     var conn = new Connection();

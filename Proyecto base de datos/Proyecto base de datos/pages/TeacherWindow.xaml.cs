@@ -1,6 +1,7 @@
 ﻿using Proyecto_base_de_datos.SecundaryPage;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,28 +19,36 @@ namespace Proyecto_base_de_datos.pages
     /// </summary>
     public partial class TeacherWindow : Window
     {
+        public static TeacherInformation mainPage;
+        committeePage page;
+        ViewerTeacherPage page2;
+        CreateCouncil page3;
+        EvaluateDegreeWorkxaml page4;
+        CreateSpecialty page5;
+        PageEvaluationCriteria page6;
         public TeacherWindow()
         {
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
-            TeacherInformation mainPage = new TeacherInformation();
+            mainPage = new TeacherInformation();
             mainFrame.Content = mainPage;
-            committeePage page = new committeePage();
+            page = new committeePage();
             Frame1.Content = page;
-            ViewerTeacherPage page2 = new ViewerTeacherPage();
+            page2 = new ViewerTeacherPage();
             Frame2.Content = page2;
-            CreateCouncil page3 = new CreateCouncil();
+            page3 = new CreateCouncil();
             Frame3.Content = page3;
-            EvaluateDegreeWorkxaml page4 = new EvaluateDegreeWorkxaml();
+            page4 = new EvaluateDegreeWorkxaml();
             Frame4.Content = page4;
-            CreateSpecialty page5 = new CreateSpecialty();
+            page5 = new CreateSpecialty();
             Frame5.Content = page5;
-            PageEvaluationCriteria page6 = new PageEvaluationCriteria();
+            page6 = new PageEvaluationCriteria();
             Frame6.Content = page6;
         }
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
         }
     }
 }
