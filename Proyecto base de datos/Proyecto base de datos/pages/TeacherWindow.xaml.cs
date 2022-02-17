@@ -33,6 +33,9 @@ namespace Proyecto_base_de_datos.pages
             EvaluateDegreeWorkxaml page4 = new EvaluateDegreeWorkxaml();
             Frame4.Content = page4;
             CreateSpecialty page5 = new CreateSpecialty();
+            Frame5.Content = page5;
+            PageEvaluationCriteria page6 = new PageEvaluationCriteria();
+            Frame6.Content = page6;
         }
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

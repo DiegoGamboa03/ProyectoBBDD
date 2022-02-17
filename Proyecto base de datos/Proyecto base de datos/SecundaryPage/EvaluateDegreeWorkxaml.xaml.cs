@@ -32,7 +32,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             var conn = new Connection();
             conn.openConnection();
             //Saco una lista donde el profesor es tutor
-            using (var command = new NpgsqlCommand("SELECT * FROM trabajos_de_grado WHERE cedulapi = '" + MainWindow.teachers.Id + "'", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT * FROM trabajos_de_grado as TG, defensas as DEF,entrega as E WHERE TG.cedulapi = '"+ MainWindow.teachers.Id +"' AND TG.ncorrelativo = E.ncorrelativo AND E.cedulae != DEF.cedulae", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())

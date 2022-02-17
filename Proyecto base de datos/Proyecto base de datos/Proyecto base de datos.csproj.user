@@ -13,6 +13,9 @@
     <Compile Update="Pages\AddEvaluationCriteriaReviewer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\AddSpeciality.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CommiteAprobation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +100,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\AddEvaluationCriteriaReviewer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AddSpeciality.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CommiteAprobation.xaml">

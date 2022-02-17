@@ -68,7 +68,7 @@ namespace Proyecto_base_de_datos.Pages
                 reader.Close();
             }
             //Se sacan todos los profesores disponibles
-            using (var command = new NpgsqlCommand("SELECT * FROM \"profesores\"", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT * FROM \"profesores\" WHERE tipo IN ('I','E')", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -186,7 +186,7 @@ namespace Proyecto_base_de_datos.Pages
                 {
                     //Buscamos el resto de sus propuestas menos la que se ha aprobado
                     List<String> correlativeNumberList = new List<string>();
-                    using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE cedulae = '" + studentIdList[i] + "' AND ncorrelativo <> " + degreeWorks.CorrelativeNumber + "", conn.conn))
+                    using (var command = new NpgsqlCommand("SELECT * FROM entrega WHERE cedulae = '" + studentIdList[i] + "' AND ncorrelativo != '" + degreeWorks.CorrelativeNumber.ToString() + "'", conn.conn))
                     {
                         var reader = command.ExecuteReader();
                         while (reader.Read())
@@ -199,7 +199,7 @@ namespace Proyecto_base_de_datos.Pages
                     //Se desactivan el resto de propuestas del estudiante
                     for (int j = 0; j< correlativeNumberList.Count; j++)
                     {
-                        using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta is null WHERE ncorrelativo = @n1", conn.conn))
+                        using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta = null WHERE ncorrelativo = @n1", conn.conn))
                         {
                             command.Parameters.AddWithValue("n1", correlativeNumberList[j]);
                             int nRows = command.ExecuteNonQuery();  

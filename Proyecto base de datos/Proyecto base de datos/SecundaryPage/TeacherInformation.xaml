@@ -29,10 +29,8 @@
         <TextBlock x:Name="nameTextBlock" HorizontalAlignment="Left" Height="31" Margin="494,112,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontSize="20" FontFamily="Segoe UI Semilight"/>
         <TextBlock x:Name="typeTextBlock" HorizontalAlignment="Left" Height="41" Margin="178,168,0,0" Text="B" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="20" Grid.RowSpan="2"/>
         <Label Content="Datos del profesor" HorizontalAlignment="Left" Height="50" Margin="251,10,0,0" VerticalAlignment="Top" Width="357" FontFamily="Segoe UI Semibold" FontSize="30" FontWeight="Normal"/>
-        <Button x:Name="createCriteriaButton" Content="Crear Criterio" HorizontalAlignment="Left" Height="48" Margin="591,105,0,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
         <Button x:Name="AddCriteriaButton" Content="Agregar Criterio" HorizontalAlignment="Left" Height="43" Margin="591,177,0,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
-        <Button x:Name="createSpecialityButton" Content="Crear especialidad" HorizontalAlignment="Left" Height="43" Margin="197,172,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
-        <Button x:Name="addSpecialtyButton" Content="Agregar especialidad" HorizontalAlignment="Left" Height="44" Margin="400,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
+        <Button x:Name="addSpecialtyButton" Content="Agregar especialidad" HorizontalAlignment="Left" Height="44" Margin="400,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170" Click="addSpecialtyButton_Click"/>
 
     </Grid>
 </Page>

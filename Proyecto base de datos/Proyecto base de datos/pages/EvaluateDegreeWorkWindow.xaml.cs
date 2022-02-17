@@ -133,6 +133,7 @@ namespace Proyecto_base_de_datos.Pages
             long tutorTotalEvaluationCriteria = 0;
             long tutorEvaluationCriteriaEvaluated = 0;
             bool tutorFinished = false;
+            String tutorID = null;
             if (degreeWorks.Modality == "I")
             {
                 //Encontrar cedula del tutor
@@ -141,7 +142,7 @@ namespace Proyecto_base_de_datos.Pages
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        String tutorID = (String)reader["cedulapi"];
+                        tutorID = (String)reader["cedulapi"];
                         Trace.WriteLine("TutorID: " + tutorID);
                     }
                     reader.Close();
@@ -182,7 +183,7 @@ namespace Proyecto_base_de_datos.Pages
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        String tutorID = (String)reader["cedulapi"];
+                        tutorID = (String)reader["cedulapi"];
                         Trace.WriteLine("TutorID: " + tutorID);
                     }
                     reader.Close();
@@ -281,7 +282,7 @@ namespace Proyecto_base_de_datos.Pages
                     }
                 }
 
-                if (juryTotalCriteria == juryEvaluatedCriteria && juryTotalCriteria == 0 && juryEvaluatedCriteria == 0)
+                if (juryTotalCriteria == juryEvaluatedCriteria && juryTotalCriteria != 0 && juryEvaluatedCriteria != 0)
                 {
                     completedJury++;
                     listFinishedJury.Add(listJury[i]);
@@ -293,8 +294,88 @@ namespace Proyecto_base_de_datos.Pages
             }
             if(completedJury == 2 && tutorFinished)
             {
+                float accumulated = 0;
+                for(int i = 0; i< listFinishedJury.Count; i++)
+                {
+                    if(degreeWorks.Modality == "I")
+                    {
+                        using (var command = new NpgsqlCommand("SELECT SUM(nota) FROM evaluacriterioj_i WHERE cedulap = '"+ listFinishedJury[i] +"' AND cedulae = '"+ studentId + "';", conn.conn))
+                        {
+                            var reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                Trace.WriteLine("Jurado: " + listFinishedJury[i]);
+                                long totalNote = (long)reader["sum"];
+                                accumulated = accumulated + totalNote;
+                                Trace.WriteLine("Acumulado hasta ahora: " + accumulated);
+                            }
+                            reader.Close();
+                        }
+                    }
+                    else if(degreeWorks.Modality == "E")
+                    {
+                        using (var command = new NpgsqlCommand("SELECT SUM(nota) FROM evaluacriterioj_e WHERE cedulap = '" + listFinishedJury[i] + "' AND cedulae = '"+ studentId +"';", conn.conn))
+                        {
+                            var reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                long totalNote = (long)reader["sum"];
+                                accumulated = accumulated + totalNote;
+                                Trace.WriteLine("Acumulado hasta ahora: " + accumulated);
+                            }
+                            reader.Close();
+                        }
+                    }
+                }
+                if(degreeWorks.Modality == "I")
+                {
+                    using (var command = new NpgsqlCommand("SELECT SUM(nota) FROM evaluacriteriota_i WHERE cedulap = '"+ tutorID +"' AND cedulae = '"+ studentId +"';", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            long totalNote = (long)reader["sum"];
+                            accumulated = accumulated + totalNote;
+                            Trace.WriteLine("Tutor Acumulado hasta ahora: " + accumulated);
+                        }
+                        reader.Close();
+                    }
+                }
+                else if(degreeWorks.Modality == "E")
+                {
+                    using (var command = new NpgsqlCommand("SELECT SUM(nota) FROM evaluacriteriota_e WHERE cedulap = '" + tutorID + "' AND cedulae = '" + studentId + "';", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            long totalNote = (long)reader["sum"];
+                            accumulated = accumulated + totalNote;
+                            Trace.WriteLine("Tutor Acumulado hasta ahora: " + accumulated);
+                        }
+                        reader.Close();
+                    }
+                }
+
+                float finalNote = accumulated;
+                using (var command = new NpgsqlCommand("INSERT INTO defensas (cedulae, codigod,notaf,fechap,horap) VALUES (@n1,nextval('secuenciaDefensaPK'), @n3,@n4,@n5)", conn.conn))
+                {
+                    String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                    DateTime dateTime = DateTime.Parse(dateTimeString);
+                    String dateHourString = DateTime.Now.ToString("HH:mm:ss");
+                    DateTime dateHour = DateTime.Parse(dateHourString);
+                    command.Parameters.AddWithValue("n1", studentId);
+                    command.Parameters.AddWithValue("n3", finalNote);
+                    command.Parameters.AddWithValue("n4", dateTime);
+                    command.Parameters.AddWithValue("n5", dateHour);
+                    command.ExecuteNonQuery();
+                }
 
             }
+            else
+            {
+                Trace.WriteLine("No la hizo");
+            }
+            this.Close();
         }
     }
 }

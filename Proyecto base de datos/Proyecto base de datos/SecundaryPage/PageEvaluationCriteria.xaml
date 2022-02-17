@@ -10,20 +10,20 @@
 
     <Grid x:Name="grid" Background="White">
 
-        <TextBox x:Name="descriptionTextBox" HorizontalAlignment="Left" Height="83" Margin="145,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" BorderBrush="#FF0C907D"/>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="150,86,0,0" Text="Puntuacion maxima" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Semibold" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Height="25" Margin="150,153,0,0" Text="Descripcion" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontFamily="Segoe UI Semibold" FontSize="16"/>
-        <RadioButton x:Name="reviewerExperimentalRadioButton" Content="Revisor Experimental" HorizontalAlignment="Left" Margin="449,81,0,0" VerticalAlignment="Top" Height="15" Width="220" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <RadioButton x:Name="reviewerInstrumentalRadioButton" Content="Revisor Instrumental" HorizontalAlignment="Left" Margin="449,124,0,0" VerticalAlignment="Top" Height="20" Width="217" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <RadioButton x:Name="JuryExperimentalRadioButton" Content="Jurado Experimental" HorizontalAlignment="Left" Margin="449,169,0,0" VerticalAlignment="Top" Height="17" Width="217" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <RadioButton x:Name="JuryInstrumentalRadioButton" Content="Jurado Instrumental" HorizontalAlignment="Left" Margin="449,221,0,0" VerticalAlignment="Top" Height="23" Width="215" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <RadioButton x:Name="tutorInstrumentalRadioButton" Content="Tutor Instrumental" HorizontalAlignment="Left" Margin="449,264,0,0" VerticalAlignment="Top" Height="21" Width="201" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <RadioButton x:Name="tutorExperimentalRadioButton" Content="Tutor Experimental" HorizontalAlignment="Left" Margin="449,308,0,0" VerticalAlignment="Top" Height="20" Width="205" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <RadioButton x:Name="businessTutorRadioButton" Content="Tutor Empresarial" HorizontalAlignment="Left" Margin="449,345,0,0" VerticalAlignment="Top" Height="19" Width="193" FontSize="16" FontFamily="Segoe UI Semibold"/>
-        <Button Content="Crear" HorizontalAlignment="Left" Height="46" Margin="583,377,0,0" VerticalAlignment="Top" Width="181" Click="Button_Click" Background="#FF0C907D" FontFamily="Segoe UI Semibold" FontSize="18" Foreground="#FFF2F4B2"/>
-        <TextBox x:Name="numberupdownTextBox" HorizontalAlignment="Left" Height="39" Margin="326,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" TextChanged="numberupdownTextBox_TextChanged" BorderBrush="#FF0C907D"/>
-        <Button x:Name="upButton" Content="▲" HorizontalAlignment="Left" Height="18" Margin="376,85,0,0" VerticalAlignment="Top" Width="24" Click="upButton_Click"/>
-        <Button x:Name="downButton" Content="▼" HorizontalAlignment="Left" Margin="376,108,0,0" VerticalAlignment="Top" Width="24" Height="16" Click="downButton_Click"/>
-        <Label Content="Crear Criterio de Evaluacion" HorizontalAlignment="Center" Height="54" Margin="0,22,0,0" VerticalAlignment="Top" Width="318" FontSize="24" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="descriptionTextBox" HorizontalAlignment="Left" Height="83" Margin="34,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" BorderBrush="#FF0C907D"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="39,94,0,0" Text="Puntuacion maxima" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Semibold" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="39,161,0,0" Text="Descripcion" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontFamily="Segoe UI Semibold" FontSize="16"/>
+        <RadioButton x:Name="reviewerExperimentalRadioButton" Content="Revisor Experimental" HorizontalAlignment="Left" Margin="338,89,0,0" VerticalAlignment="Top" Height="15" Width="220" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <RadioButton x:Name="reviewerInstrumentalRadioButton" Content="Revisor Instrumental" HorizontalAlignment="Left" Margin="338,132,0,0" VerticalAlignment="Top" Height="20" Width="217" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <RadioButton x:Name="JuryExperimentalRadioButton" Content="Jurado Experimental" HorizontalAlignment="Left" Margin="338,177,0,0" VerticalAlignment="Top" Height="17" Width="217" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <RadioButton x:Name="JuryInstrumentalRadioButton" Content="Jurado Instrumental" HorizontalAlignment="Left" Margin="338,229,0,0" VerticalAlignment="Top" Height="23" Width="215" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <RadioButton x:Name="tutorInstrumentalRadioButton" Content="Tutor Instrumental" HorizontalAlignment="Left" Margin="338,272,0,0" VerticalAlignment="Top" Height="21" Width="201" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <RadioButton x:Name="tutorExperimentalRadioButton" Content="Tutor Experimental" HorizontalAlignment="Left" Margin="338,316,0,0" VerticalAlignment="Top" Height="20" Width="205" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <RadioButton x:Name="businessTutorRadioButton" Content="Tutor Empresarial" HorizontalAlignment="Left" Margin="338,353,0,0" VerticalAlignment="Top" Height="19" Width="193" FontSize="16" FontFamily="Segoe UI Semibold"/>
+        <Button Content="Crear" HorizontalAlignment="Left" Height="46" Margin="472,385,0,0" VerticalAlignment="Top" Width="181" Click="Button_Click" Background="#FF0C907D" FontFamily="Segoe UI Semibold" FontSize="18" Foreground="#FFF2F4B2"/>
+        <TextBox x:Name="numberupdownTextBox" HorizontalAlignment="Left" Height="39" Margin="215,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" TextChanged="numberupdownTextBox_TextChanged" BorderBrush="#FF0C907D"/>
+        <Button x:Name="upButton" Content="▲" HorizontalAlignment="Left" Height="18" Margin="265,93,0,0" VerticalAlignment="Top" Width="24" Click="upButton_Click"/>
+        <Button x:Name="downButton" Content="▼" HorizontalAlignment="Left" Margin="265,116,0,0" VerticalAlignment="Top" Width="24" Height="16" Click="downButton_Click"/>
+        <Label Content="Crear Criterio de Evaluacion" HorizontalAlignment="Left" Height="54" Margin="130,30,0,0" VerticalAlignment="Top" Width="318" FontSize="24" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"/>
     </Grid>
 </Page>

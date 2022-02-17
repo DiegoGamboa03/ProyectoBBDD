@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_base_de_datos.Pages;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -36,6 +37,12 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 typeTextBlock.Text = "Tutor Empresarial";
             }
 
+        }
+
+        private void addSpecialtyButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddSpeciality page = new AddSpeciality();
+            page.ShowDialog();
         }
     }
 }

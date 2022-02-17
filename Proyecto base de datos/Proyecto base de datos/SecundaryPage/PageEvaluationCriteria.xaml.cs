@@ -46,9 +46,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
 
             if (reviewerExperimentalRadioButton.IsChecked == true)
             {
-                using (var command = new NpgsqlCommand("INSERT INTO criteriosevpr_e (codigo,puntajemax,descripcion,estatus) VALUES (nextval('secuenciacriteriosevpr_e'), @n1,@n2,'A')", conn.conn))
+                using (var command = new NpgsqlCommand("INSERT INTO criteriosevpr_e (codigo,descripcion,estatus) VALUES (nextval('secuenciacriteriosevpr_e'),@n2,'A')", conn.conn))
                 {
-                    command.Parameters.AddWithValue("n1", Int32.Parse(numberupdownTextBox.Text.Trim()));
                     command.Parameters.AddWithValue("n2", descriptionTextBox.Text.Trim());
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
@@ -56,9 +55,8 @@ namespace Proyecto_base_de_datos.SecundaryPage
             }
             else if(reviewerInstrumentalRadioButton.IsChecked == true)
             {
-                using (var command = new NpgsqlCommand("INSERT INTO criteriosevpr_i (codigo,puntajemax,descripcion,estatus) VALUES (nextval('secuenciacriteriosevpr_i'), @n1,@n2,'A')", conn.conn))
+                using (var command = new NpgsqlCommand("INSERT INTO criteriosevpr_i (codigo,descripcion,estatus) VALUES (nextval('secuenciacriteriosevpr_i'),@n2,'A')", conn.conn))
                 {
-                    command.Parameters.AddWithValue("n1", Int32.Parse(numberupdownTextBox.Text.Trim()));
                     command.Parameters.AddWithValue("n2", descriptionTextBox.Text.Trim());
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows inserted={0}", nRows));
