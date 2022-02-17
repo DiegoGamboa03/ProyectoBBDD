@@ -49,7 +49,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 reader.Close();
             }
             //Saco una lista donde el profesor es jurado
-            using (var command = new NpgsqlCommand("SELECT TG.* FROM asignaj as AJ, trabajos_de_grado as TG WHERE AJ.cedulap = '" + MainWindow.teachers.Id + "' AND TG.ncorrelativo = AJ.ncorrelativo;", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT TG.* FROM asignaj as AJ, trabajos_de_grado as TG, defensas as DEF, entrega as E WHERE AJ.cedulap = '" + MainWindow.teachers.Id + "' AND TG.ncorrelativo = AJ.ncorrelativo AND TG.ncorrelativo = E.ncorrelativo AND E.cedulae != DEF.cedulae;", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())

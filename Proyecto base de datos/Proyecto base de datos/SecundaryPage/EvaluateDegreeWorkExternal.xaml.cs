@@ -30,7 +30,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
             var conn = new Connection();
             conn.openConnection();
             //Saco una lista donde el profesor es jurado
-            using (var command = new NpgsqlCommand("SELECT TG.* FROM instrumentales as I, trabajos_de_grado as TG WHERE I.tutoremp = '"+ MainWindow.teachers.Name.Trim() +"' AND TG.ncorrelativo = I.ncorrelativo;", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT TG.* FROM instrumentales as I, trabajos_de_grado as TG,  defensas as DEF, entrega as E WHERE I.tutoremp = '" + MainWindow.teachers.Name.Trim() + "' AND TG.ncorrelativo = I.ncorrelativo AND TG.ncorrelativo = E.ncorrelativo AND E.cedulae != DEF.cedulae;", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())

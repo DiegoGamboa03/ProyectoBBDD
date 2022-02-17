@@ -17,7 +17,6 @@ namespace Proyecto_base_de_datos.Pages
         DegreeWorks degreeWorks;
 
         bool isTutor;
-        bool isBuissnesTutor;
 
         String studentId;
 
@@ -31,7 +30,6 @@ namespace Proyecto_base_de_datos.Pages
             InitializeComponent();
             this.degreeWorks = degreeWorks;
             this.isTutor = isTutor;
-            this.isBuissnesTutor = isBuissnesTutor;
             this.studentId = student.Id;
             this.TitleTDG.Text = degreeWorks.Title;
             this.StudentName.Text = student.Name;
