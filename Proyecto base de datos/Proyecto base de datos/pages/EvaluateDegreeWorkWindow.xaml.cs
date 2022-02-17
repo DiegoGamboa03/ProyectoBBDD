@@ -314,6 +314,8 @@ namespace Proyecto_base_de_datos.Pages
             //Por profesor, ver si ya corrigieron todos los criterios de evaluación del estudiante.
             for (int i = 0; i < EvaluatedTeachersList.Count; i++)
             {
+                CriteriaToBeEvaluatedTuthor = 0;
+                CriteriaToBeEvaluatedJury = 0;
                 //Revisa el tipo de propuesta para los jurados.
                 if (degreeWorks.Modality == "I")
                 {
@@ -329,7 +331,7 @@ namespace Proyecto_base_de_datos.Pages
                         reader.Close();
                     }
                 }
-                else
+                else if (degreeWorks.Modality == "E")
                 {
                     using (var command = new NpgsqlCommand("SELECT COUNT(DISTINCT codigo) AS criteriosevaluados FROM evaluacriterioj_e WHERE cedulap = '" + EvaluatedTeachersList[i] + "' AND  cedulae = '" + studentId + "' AND nota IS NOT NULL GROUP BY cedulap HAVING COUNT(DISTINCT codigo) = COUNT(nota)", conn.conn))
                     {
