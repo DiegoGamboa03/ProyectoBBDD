@@ -199,7 +199,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
                         }
-                        Trace.WriteLine("Criterios evaluados: " + EvaluatedCriteriasTuthor);
+                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
                         reader.Close();
                     }
                 }
@@ -213,7 +213,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
                         }
-                        Trace.WriteLine("Criterios evaluados: " + EvaluatedCriteriasTuthor);
+                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
                         reader.Close();
                     }
                 }
@@ -231,7 +231,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
                         }
-                        Trace.WriteLine("Criterios evaluados: " + EvaluatedCriteriasTuthor);
+                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
                         reader.Close();
                     }
                 }
@@ -245,7 +245,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
                         }
-                        Trace.WriteLine("Criterios evaluados: " + EvaluatedCriteriasTuthor);
+                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
                         reader.Close();
                     }
                 }
@@ -263,7 +263,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar: " + CriteriaToBeEvaluatedTuthor);
+                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
                         reader.Close();
                     }
                 }
@@ -276,7 +276,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar: " + CriteriaToBeEvaluatedTuthor);
+                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
                         reader.Close();
                     }
                 }
@@ -292,7 +292,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar: " + CriteriaToBeEvaluatedTuthor);
+                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
                         reader.Close();
                     }
                 }
@@ -305,7 +305,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar: " + CriteriaToBeEvaluatedTuthor);
+                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
                         reader.Close();
                     }
                 }
@@ -325,7 +325,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             EvaluatedCriteriasJury = (long)reader["criteriosevaluados"];
                         }
-                        Trace.WriteLine("Criterios evaluados: " + EvaluatedCriteriasJury);
+                        Trace.WriteLine("Criterios evaluados por el jurado [ " + i + " ]: " + EvaluatedCriteriasJury);
                         reader.Close();
                     }
                 }
@@ -339,7 +339,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             EvaluatedCriteriasJury = (long)reader["criteriosevaluados"];
                         }
-                        Trace.WriteLine("Criterios evaluados: " + EvaluatedCriteriasJury);
+                        Trace.WriteLine("Criterios evaluados por el jurado [ " + i + " ]: " + EvaluatedCriteriasJury);
                         reader.Close();
                     }
                 }
@@ -354,7 +354,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             CriteriaToBeEvaluatedJury = (long)reader["criteriosporevaluar"];
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar: " + CriteriaToBeEvaluatedJury);
+                        Trace.WriteLine("Cantidad de criterios a evaluar por el jurado[ " + i + " ]: " + CriteriaToBeEvaluatedJury);
                         reader.Close();
                     }
                 }
@@ -367,7 +367,7 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             CriteriaToBeEvaluatedJury = (long)reader["criteriosporevaluar"];
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar: " + CriteriaToBeEvaluatedJury);
+                        Trace.WriteLine("Cantidad de criterios a evaluar por el jurado[ " + i + " ]: " + CriteriaToBeEvaluatedJury);
                         reader.Close();
                     }
                 }
