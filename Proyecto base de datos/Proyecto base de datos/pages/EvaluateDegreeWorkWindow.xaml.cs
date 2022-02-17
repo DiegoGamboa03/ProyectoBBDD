@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -473,6 +474,9 @@ namespace Proyecto_base_de_datos.Pages
                 {
                     Trace.WriteLine("No Inserto un dato");
                 }
+                string ConfirmationMessage = "Se ingreso el dato";
+                FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+                window.ShowDialog();
             }
             else
             {

@@ -41,8 +41,29 @@ namespace Proyecto_base_de_datos.SecundaryPage
                     String title = (String)reader["titulo"];
                     String modality = (String)reader["modalidad"];
                     DateTime dateTime = (DateTime)reader["fechacreacion"];
-                    Trace.WriteLine(title);
-                    Trace.WriteLine("AAAAAAA");
+                    DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
+                    list.Add(degreeWorks);
+                    ViewerTeacherList.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
+                }
+                reader.Close();
+            }
+        }
+
+        public static void refresh(ListBox ViewerTeacherList)
+        {
+            List<DegreeWorks> list = new List<DegreeWorks>();
+            var conn = new Connection();
+            conn.openConnection();
+
+            using (var command = new NpgsqlCommand("SELECT \"T\".* FROM \"trabajos_de_grado\" AS \"T\", \"esrevisor\" AS \"ER\" WHERE \"T\".ncorrelativo = \"ER\".ncorrelativo AND \"ER\".cedulapi = '" + MainWindow.teachers.Id.ToString() + "' AND \"ER\".fecharev IS NULL ", conn.conn))
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
+                    String title = (String)reader["titulo"];
+                    String modality = (String)reader["modalidad"];
+                    DateTime dateTime = (DateTime)reader["fechacreacion"];
                     DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
                     list.Add(degreeWorks);
                     ViewerTeacherList.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);

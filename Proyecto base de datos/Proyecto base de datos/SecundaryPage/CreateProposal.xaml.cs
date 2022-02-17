@@ -115,8 +115,6 @@ namespace Proyecto_base_de_datos.SecundaryPage
             }
             else
             {
-                Trace.WriteLine("Se metio en el primer condicional");
-                Trace.WriteLine("AuxComboBox " + auxComboBox.SelectedIndex);
                 if (experimentalRadioButton.IsChecked == true && auxComboBox.SelectedIndex != -1)
                 {
                     Trace.WriteLine("Se metio despues de darle click al boton");
@@ -168,7 +166,9 @@ namespace Proyecto_base_de_datos.SecundaryPage
                         }
 
                     }
-                   
+                    string ConfirmationMessage = "Se ingreso el dato";
+                    FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+                    window.ShowDialog();
                 }
                 else
                 {
@@ -226,6 +226,9 @@ namespace Proyecto_base_de_datos.SecundaryPage
                         }
 
                     }
+                    string ConfirmationMessage = "Se ingreso el dato";
+                    FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+                    window.ShowDialog();
                 }
                 else
                 {

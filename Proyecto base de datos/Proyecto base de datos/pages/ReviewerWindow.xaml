@@ -17,7 +17,7 @@
         <TextBlock x:Name="idStudent" HorizontalAlignment="Left" Margin="377,145,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="150" FontSize="16" Height="33"/>
         <TextBlock x:Name="StudentEmail" HorizontalAlignment="Left" Margin="616,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="246" FontSize="16" Height="37"/>
         <TextBlock x:Name="TitleTDG" HorizontalAlignment="Left" Margin="215,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="611" Height="29" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" Margin="584,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="176" BorderBrush="#FF0C907D" FontSize="18"/>
+        <TextBox x:Name="observationsTextBox" HorizontalAlignment="Left" Margin="584,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="176" BorderBrush="#FF0C907D" FontSize="18"/>
         <Label Content="Observaciones" HorizontalAlignment="Left" Margin="584,238,0,0" VerticalAlignment="Top" Width="137" Height="30" FontSize="17" FontFamily="Segoe UI Semibold"/>
         <Button Content="Enviar revisión" HorizontalAlignment="Left" Margin="657,453,0,0" VerticalAlignment="Top" Height="39" Width="180" Click="Button_Click" FontSize="16" FontFamily="Segoe UI Semibold" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
         <ListBox x:Name="criteriaEvaluationListBox" HorizontalAlignment="Left" Height="176" Margin="51,275,0,0" VerticalAlignment="Top" Width="408" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OnMouseDoubleClick" BorderBrush="#FF0C907D" FontSize="20"/>

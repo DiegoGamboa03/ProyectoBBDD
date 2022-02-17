@@ -23,7 +23,7 @@ namespace Proyecto_base_de_datos.SecundaryPage
     /// </summary>
     public partial class committeePage : Page
     {
-        private List<DegreeWorks> list;
+        private static List<DegreeWorks> list;
         public committeePage()
         {
             InitializeComponent();

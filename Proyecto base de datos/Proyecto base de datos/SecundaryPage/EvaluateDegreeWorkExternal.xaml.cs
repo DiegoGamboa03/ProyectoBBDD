@@ -30,21 +30,43 @@ namespace Proyecto_base_de_datos.SecundaryPage
             var conn = new Connection();
             conn.openConnection();
             //Saco una lista donde el profesor es jurado
-            using (var command = new NpgsqlCommand("SELECT TG.* FROM instrumentales as I, trabajos_de_grado as TG,  defensas as DEF, entrega as E WHERE I.tutoremp = '" + MainWindow.teachers.Name.Trim() + "' AND TG.ncorrelativo = I.ncorrelativo AND TG.ncorrelativo = E.ncorrelativo AND E.cedulae != DEF.cedulae;", conn.conn))
+            if(MainWindow.teachers.Type == "T")
             {
-                var reader = command.ExecuteReader();
-                while (reader.Read())
+                using (var command = new NpgsqlCommand("SELECT TG.* FROM instrumentales as I, trabajos_de_grado as TG,  defensas as DEF, entrega as E WHERE I.tutoremp = '" + MainWindow.teachers.Name.Trim() + "' AND TG.ncorrelativo = I.ncorrelativo AND TG.ncorrelativo = E.ncorrelativo AND E.cedulae != DEF.cedulae;", conn.conn))
                 {
-                    int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
-                    String title = (String)reader["titulo"];
-                    String modality = (String)reader["modalidad"];
-                    DateTime dateTime = (DateTime)reader["fechacreacion"];
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
+                        String title = (String)reader["titulo"];
+                        String modality = (String)reader["modalidad"];
+                        DateTime dateTime = (DateTime)reader["fechacreacion"];
 
-                    DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
-                    listJury.Add(degreeWorks);
-                    degreeWorkListBox.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
+                        DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
+                        listJury.Add(degreeWorks);
+                        degreeWorkListBox.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
+                    }
+                    reader.Close();
                 }
-                reader.Close();
+            }
+            else
+            {
+                using (var command = new NpgsqlCommand("SELECT DISTINCT(TG.*) FROM asignaj as AJ, trabajos_de_grado as TG, defensas as DEF, entrega as E WHERE AJ.cedulap = '" + MainWindow.teachers.Id + "' AND TG.ncorrelativo = AJ.ncorrelativo AND TG.ncorrelativo = E.ncorrelativo AND E.cedulae != DEF.cedulae;", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int correlativeNumber = Int32.Parse((String)reader["ncorrelativo"]);
+                        String title = (String)reader["titulo"];
+                        String modality = (String)reader["modalidad"];
+                        DateTime dateTime = (DateTime)reader["fechacreacion"];
+
+                        DegreeWorks degreeWorks = new DegreeWorks(correlativeNumber, title, dateTime.ToString(), modality);
+                        listJury.Add(degreeWorks);
+                        degreeWorkListBox.Items.Add(degreeWorks.CorrelativeNumber.ToString() + ", " + degreeWorks.Title);
+                    }
+                    reader.Close();
+                }
             }
 
         }

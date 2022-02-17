@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using Proyecto_base_de_datos.Class;
 using Proyecto_base_de_datos.Pages;
+using Proyecto_base_de_datos.SecundaryPage;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -177,11 +178,22 @@ namespace Proyecto_base_de_datos.pages
                     int nRows = command.ExecuteNonQuery();
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
                 }
+                using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET observaciones = @n1 WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", observationsTextBox.Text);
+                    command.ExecuteNonQuery();
+                }
+                string ConfirmationMessage = "Se ingreso el dato";
+                FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+                window.ShowDialog();
             }
             else //Si el alumno reprobo alguno de los criterios de evaluacion
             {
-                using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta = null WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
+                using (var command = new NpgsqlCommand("UPDATE trabajos_de_grado SET espropuesta = null, observaciones = @n1 WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
+                {
+                    command.Parameters.AddWithValue("n1", observationsTextBox.Text);
                     command.ExecuteNonQuery();
+                }
                 using (var command = new NpgsqlCommand("UPDATE esrevisor SET estatus = 'PRR', fecharev = @n2 WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
                 {
                     String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
@@ -191,7 +203,7 @@ namespace Proyecto_base_de_datos.pages
                     Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
                 }
             }
-
+            this.Close();
             //Aqui tengo que revisar en las tablas de evaluacriterioi y evaluacriterioe, que todos los criterios de este tg sean aprobados
         }
         void OnMouseDoubleClick(object sender, MouseEventArgs e)
@@ -203,6 +215,11 @@ namespace Proyecto_base_de_datos.pages
             Trace.WriteLine(item);
             ReviewerAprobationWindow page = new ReviewerAprobationWindow(degreeWorks, evaluationCriteriaList[item]);
             page.ShowDialog();
+        }
+
+        private void criteriaEvaluationListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

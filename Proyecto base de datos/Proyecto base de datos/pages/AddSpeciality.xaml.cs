@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using Proyecto_base_de_datos.Class;
+using Proyecto_base_de_datos.pages;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -49,6 +50,9 @@ namespace Proyecto_base_de_datos.Pages
                 command.Parameters.AddWithValue("n2",listIdSpeciality[specialityComboBox.SelectedIndex]);
                 command.ExecuteNonQuery();
             }
+            string ConfirmationMessage = "Se ingreso el dato";
+            FailedSequenceWindow window = new FailedSequenceWindow(ConfirmationMessage);
+            window.ShowDialog();
             this.Close();
         }
     }
