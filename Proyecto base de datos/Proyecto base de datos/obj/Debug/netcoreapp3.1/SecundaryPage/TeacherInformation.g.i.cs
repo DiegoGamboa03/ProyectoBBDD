@@ -93,7 +93,7 @@ namespace Proyecto_base_de_datos.SecundaryPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;component/secundarypage/teacherinformation.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Proyecto base de datos;V1.0.0.0;component/secundarypage/teacherinformation.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SecundaryPage\TeacherInformation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
