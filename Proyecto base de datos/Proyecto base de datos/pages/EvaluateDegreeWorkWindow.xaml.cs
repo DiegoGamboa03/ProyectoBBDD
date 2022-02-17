@@ -22,9 +22,6 @@ namespace Proyecto_base_de_datos.Pages
 
         private List<EvaluationCriteria> evaluationCriteriaList;
 
-        private List<string> EvaluatedTeachersList;
-
-        private List<string> EvaluatedTeachersListAux;
         public EvaluateDegreeWorkWindow(DegreeWorks degreeWorks, bool isTutor, Students student)
         {
             InitializeComponent();
@@ -47,8 +44,9 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
+                            int maxNote = (int)reader["puntajemax"];
                             Trace.WriteLine(evaluationCriteriaID + "  " + description);
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                         }
@@ -64,8 +62,9 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
+                            int maxNote = (int)reader["puntajemax"];
                             Trace.WriteLine(evaluationCriteriaID + "  " + description);
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                         }
@@ -86,8 +85,9 @@ namespace Proyecto_base_de_datos.Pages
                             {
                                 String evaluationCriteriaID = (String)reader["codigo"];
                                 String description = (String)reader["descripcion"];
+                                int maxNote = (int)reader["puntajemax"];
                                 Trace.WriteLine(evaluationCriteriaID + "  " + description);
-                                EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                                EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                                 evaluationCriteriaList.Add(evaluationCriteria);
                                 criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                             }
@@ -103,8 +103,9 @@ namespace Proyecto_base_de_datos.Pages
                             {
                                 String evaluationCriteriaID = (String)reader["codigo"];
                                 String description = (String)reader["descripcion"];
+                                int maxNote = (int)reader["puntajemax"];
                                 Trace.WriteLine(evaluationCriteriaID + "  " + description);
-                                EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                                EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                                 evaluationCriteriaList.Add(evaluationCriteria);
                                 criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                             }
@@ -121,7 +122,8 @@ namespace Proyecto_base_de_datos.Pages
                         {
                             String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                            int maxNote = (int)reader["puntajemax"];
+                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description,maxNote);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
                         }
