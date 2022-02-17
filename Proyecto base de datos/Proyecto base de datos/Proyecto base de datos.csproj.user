@@ -31,6 +31,9 @@
     <Compile Update="Pages\EvaluateDegreeWorkWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\ExternalTeacherWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="pages\FailedSequenceWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -68,6 +71,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SecundaryPage\CreateSpecialty.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SecundaryPage\EvaluateDegreeWorkExternal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SecundaryPage\EvaluateDegreeWorkxaml.xaml.cs">
@@ -120,6 +126,9 @@
     <Page Update="Pages\EvaluateDegreeWorkWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\ExternalTeacherWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="pages\FailedSequenceWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -160,6 +169,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SecundaryPage\CreateSpecialty.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecundaryPage\EvaluateDegreeWorkExternal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SecundaryPage\EvaluateDegreeWorkxaml.xaml">

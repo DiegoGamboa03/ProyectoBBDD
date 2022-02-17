@@ -17,6 +17,7 @@ namespace Proyecto_base_de_datos.Pages
         DegreeWorks degreeWorks;
 
         bool isTutor;
+        bool isBuissnesTutor;
 
         String studentId;
 
@@ -30,6 +31,7 @@ namespace Proyecto_base_de_datos.Pages
             InitializeComponent();
             this.degreeWorks = degreeWorks;
             this.isTutor = isTutor;
+            this.isBuissnesTutor = isBuissnesTutor;
             this.studentId = student.Id;
             this.TitleTDG.Text = degreeWorks.Title;
             this.StudentName.Text = student.Name;
@@ -77,19 +79,39 @@ namespace Proyecto_base_de_datos.Pages
             {
                 if (degreeWorks.Modality == "I")
                 {
-                    using (var command = new NpgsqlCommand("SELECT * FROM evaluacriterioj_i as ETI, criteriosevj_i as CTI WHERE ETI.codigo = CTI.codigo AND ETI.cedulap = '" + MainWindow.teachers.Id + "' AND ETI.cedulae = '" + studentId + "'", conn.conn))
+                    if (MainWindow.teachers.Type == "T")
                     {
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
+                        using (var command = new NpgsqlCommand("SELECT * FROM evaluacriteriote_i as ETI, criteriosevte_i as CTI WHERE ETI.codigo = CTI.codigo AND ETI.cedulap = '" + MainWindow.teachers.Id + "' AND ETI.cedulae = '" + studentId + "'", conn.conn))
                         {
-                            String evaluationCriteriaID = (String)reader["codigo"];
-                            String description = (String)reader["descripcion"];
-                            Trace.WriteLine(evaluationCriteriaID + "  " + description);
-                            EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
-                            evaluationCriteriaList.Add(evaluationCriteria);
-                            criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
+                            var reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                String evaluationCriteriaID = (String)reader["codigo"];
+                                String description = (String)reader["descripcion"];
+                                Trace.WriteLine(evaluationCriteriaID + "  " + description);
+                                EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                                evaluationCriteriaList.Add(evaluationCriteria);
+                                criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
+                            }
+                            reader.Close();
                         }
-                        reader.Close();
+                    }
+                    else
+                    {
+                        using (var command = new NpgsqlCommand("SELECT * FROM evaluacriterioj_i as ETI, criteriosevj_i as CTI WHERE ETI.codigo = CTI.codigo AND ETI.cedulap = '" + MainWindow.teachers.Id + "' AND ETI.cedulae = '" + studentId + "'", conn.conn))
+                        {
+                            var reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                String evaluationCriteriaID = (String)reader["codigo"];
+                                String description = (String)reader["descripcion"];
+                                Trace.WriteLine(evaluationCriteriaID + "  " + description);
+                                EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
+                                evaluationCriteriaList.Add(evaluationCriteria);
+                                criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
+                            }
+                            reader.Close();
+                        }
                     }
                 }
                 else if (degreeWorks.Modality == "E")
@@ -132,8 +154,12 @@ namespace Proyecto_base_de_datos.Pages
             conn.openConnection();
             long tutorTotalEvaluationCriteria = 0;
             long tutorEvaluationCriteriaEvaluated = 0;
+            long empresarialTutorTotalEvaluationCriteria = 0;
+            long empresarialTutorEvaluationCriteriaEvaluated = 0;
             bool tutorFinished = false;
+            bool buissnesTutorFinished = false;
             String tutorID = null;
+            String empresarialTutorID = null;
             if (degreeWorks.Modality == "I")
             {
                 //Encontrar cedula del tutor
@@ -171,8 +197,41 @@ namespace Proyecto_base_de_datos.Pages
                     }
                     reader.Close();
                 }
+                //Tutor empresarial
+                using (var command = new NpgsqlCommand("SELECT PR.cedulap FROM instrumentales as I, profesores PR WHERE I.tutoremp = PR.nombre AND I.ncorrelativo = '"+ degreeWorks.CorrelativeNumber +"';", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        empresarialTutorID = (String)reader["cedulap"];
+                        Trace.WriteLine("Tutor empresarial: " + empresarialTutorID);
+                    }
+                    reader.Close();
+                }
+                using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM profesores as PR, evaluacriteriote_i as EC, instrumentales as I WHERE PR.cedulap = EC.cedulap AND EC.cedulae = '"+ studentId +"' AND I.tutoremp = PR.nombre;", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        empresarialTutorTotalEvaluationCriteria = (long)reader["count"];
+                        Trace.WriteLine("Total de criterios que tiene este profesor tutor empresarial" + empresarialTutorTotalEvaluationCriteria);
 
+                    }
+                    reader.Close();
+                }
+                using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM profesores as PR, evaluacriteriote_i as EC, instrumentales as I WHERE PR.cedulap = EC.cedulap AND EC.cedulae = '"+ studentId +"' AND I.tutoremp = PR.nombre AND EC.nota IS NOT NULL;", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        empresarialTutorEvaluationCriteriaEvaluated = (long)reader["count"];
+                        Trace.WriteLine("Total de criterios evaluados por este profesor" + empresarialTutorEvaluationCriteriaEvaluated);
 
+                    }
+                    reader.Close();
+                }
+                if (empresarialTutorTotalEvaluationCriteria == empresarialTutorEvaluationCriteriaEvaluated && empresarialTutorTotalEvaluationCriteria != 0 && empresarialTutorEvaluationCriteriaEvaluated != 0)
+                    buissnesTutorFinished = true;
             }
             
             else if(degreeWorks.Modality == "E")
@@ -212,6 +271,7 @@ namespace Proyecto_base_de_datos.Pages
                     }
                     reader.Close();
                 }
+
             }
 
             if (tutorTotalEvaluationCriteria == tutorEvaluationCriteriaEvaluated && tutorEvaluationCriteriaEvaluated != 0 && tutorTotalEvaluationCriteria != 0)
@@ -229,6 +289,7 @@ namespace Proyecto_base_de_datos.Pages
                 }
                 reader.Close();
             }
+            
             int completedJury = 0;
             List<String> listFinishedJury = new List<string>();
             for (int i = 0; i<listJury.Count; i++)
@@ -237,6 +298,7 @@ namespace Proyecto_base_de_datos.Pages
                 long juryEvaluatedCriteria = 0;
                 if (degreeWorks.Modality == "I")
                 {
+                    
                     using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM evaluacriterioj_i as EC WHERE EC.cedulap = '" + listJury[i] + "' AND EC.cedulae = '" + studentId + "';", conn.conn))
                     {
                         var reader = command.ExecuteReader();
@@ -257,6 +319,10 @@ namespace Proyecto_base_de_datos.Pages
                         }
                         reader.Close();
                     }
+
+
+
+
                 }
                 else if(degreeWorks.Modality == "E")
                 {
@@ -292,6 +358,7 @@ namespace Proyecto_base_de_datos.Pages
                     break;
                 }
             }
+            
             if(completedJury == 2 && tutorFinished)
             {
                 float accumulated = 0;
@@ -340,6 +407,20 @@ namespace Proyecto_base_de_datos.Pages
                         }
                         reader.Close();
                     }
+                    if (buissnesTutorFinished)
+                    {
+                        using (var command = new NpgsqlCommand("SELECT SUM(nota) FROM evaluacriteriote_i WHERE cedulap = '"+ empresarialTutorID + "' AND cedulae = '"+ studentId +"';", conn.conn))
+                        {
+                            var reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                long totalNote = (long)reader["sum"];
+                                accumulated = accumulated + totalNote;
+                                Trace.WriteLine("Tutor Acumulado hasta ahora: " + accumulated);
+                            }
+                            reader.Close();
+                        }
+                    }
                 }
                 else if(degreeWorks.Modality == "E")
                 {
@@ -355,21 +436,42 @@ namespace Proyecto_base_de_datos.Pages
                         reader.Close();
                     }
                 }
-
                 float finalNote = accumulated;
-                using (var command = new NpgsqlCommand("INSERT INTO defensas (cedulae, codigod,notaf,fechap,horap) VALUES (@n1,nextval('secuenciaDefensaPK'), @n3,@n4,@n5)", conn.conn))
+                if (degreeWorks.Modality == "I" && buissnesTutorFinished)
                 {
-                    String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
-                    DateTime dateTime = DateTime.Parse(dateTimeString);
-                    String dateHourString = DateTime.Now.ToString("HH:mm:ss");
-                    DateTime dateHour = DateTime.Parse(dateHourString);
-                    command.Parameters.AddWithValue("n1", studentId);
-                    command.Parameters.AddWithValue("n3", finalNote);
-                    command.Parameters.AddWithValue("n4", dateTime);
-                    command.Parameters.AddWithValue("n5", dateHour);
-                    command.ExecuteNonQuery();
-                }
+                    using (var command = new NpgsqlCommand("INSERT INTO defensas (cedulae, codigod,notaf,fechap,horap) VALUES (@n1,nextval('secuenciaDefensaPK'), @n3,@n4,@n5)", conn.conn))
+                    {
+                        String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                        DateTime dateTime = DateTime.Parse(dateTimeString);
+                        String dateHourString = DateTime.Now.ToString("HH:mm:ss");
+                        DateTime dateHour = DateTime.Parse(dateHourString);
+                        command.Parameters.AddWithValue("n1", studentId);
+                        command.Parameters.AddWithValue("n3", finalNote);
+                        command.Parameters.AddWithValue("n4", dateTime);
+                        command.Parameters.AddWithValue("n5", dateHour);
+                        command.ExecuteNonQuery();
+                    }
+                    Trace.WriteLine("Inserto un dato");
+                }else if(degreeWorks.Modality == "E")
+                {
+                    using (var command = new NpgsqlCommand("INSERT INTO defensas (cedulae, codigod,notaf,fechap,horap) VALUES (@n1,nextval('secuenciaDefensaPK'), @n3,@n4,@n5)", conn.conn))
+                    {
+                        String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+                        DateTime dateTime = DateTime.Parse(dateTimeString);
+                        String dateHourString = DateTime.Now.ToString("HH:mm:ss");
+                        DateTime dateHour = DateTime.Parse(dateHourString);
+                        command.Parameters.AddWithValue("n1", studentId);
+                        command.Parameters.AddWithValue("n3", finalNote);
+                        command.Parameters.AddWithValue("n4", dateTime);
+                        command.Parameters.AddWithValue("n5", dateHour);
+                        command.ExecuteNonQuery();
+                    }
 
+                }
+                else
+                {
+                    Trace.WriteLine("No Inserto un dato");
+                }
             }
             else
             {

@@ -103,12 +103,25 @@ namespace Proyecto_base_de_datos.Pages
             {
                 if (degreeWorks.Modality == "I")
                 {
-                    using (var command = new NpgsqlCommand("UPDATE evaluacriterioj_i SET nota = @n1 WHERE cedulae = '" + idStudent + "' AND codigo = @n2", conn.conn))
+                    if (MainWindow.teachers.Type == "T")
                     {
-                        command.Parameters.AddWithValue("n1", Int32.Parse(numberupdownTextBox.Text.Trim()));
-                        command.Parameters.AddWithValue("n2", evaluationCriteria.Id);
-                        int nRows = command.ExecuteNonQuery();
-                        Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
+                        using (var command = new NpgsqlCommand("UPDATE evaluacriteriote_i SET nota = @n1 WHERE cedulae = '" + idStudent + "' AND codigo = @n2", conn.conn))
+                        {
+                            command.Parameters.AddWithValue("n1", Int32.Parse(numberupdownTextBox.Text.Trim()));
+                            command.Parameters.AddWithValue("n2", evaluationCriteria.Id);
+                            int nRows = command.ExecuteNonQuery();
+                            Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
+                        }
+                    }
+                    else
+                    {
+                        using (var command = new NpgsqlCommand("UPDATE evaluacriterioj_i SET nota = @n1 WHERE cedulae = '" + idStudent + "' AND codigo = @n2", conn.conn))
+                        {
+                            command.Parameters.AddWithValue("n1", Int32.Parse(numberupdownTextBox.Text.Trim()));
+                            command.Parameters.AddWithValue("n2", evaluationCriteria.Id);
+                            int nRows = command.ExecuteNonQuery();
+                            Console.Out.WriteLine(String.Format("Number of rows updated={0}", nRows));
+                        }
                     }
                 }
                 else if (degreeWorks.Modality == "E")

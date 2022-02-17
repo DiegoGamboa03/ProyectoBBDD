@@ -65,8 +65,6 @@ namespace Proyecto_base_de_datos.SecundaryPage
                 }
                 reader.Close();
             }
-
-
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)

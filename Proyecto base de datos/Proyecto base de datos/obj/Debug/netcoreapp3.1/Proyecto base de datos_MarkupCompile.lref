@@ -2,11 +2,13 @@
 
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\AddEvaluationCriteriaDegreeWork.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\AddEvaluationCriteriaReviewer.xaml;;
+FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\AddSpeciality.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\CommiteAprobation.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\ConfirmDeleteProposal.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\CouncilAprobation.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\DegreeWorkEvaluationCriteriaCalification.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\EvaluateDegreeWorkWindow.xaml;;
+FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\ExternalTeacherWindow.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\FailedSequenceWindow.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\MainWindow.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\RegisterStudent.xaml;;
@@ -22,6 +24,7 @@ FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de 
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\CreateCouncil.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\CreateProposal.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\CreateSpecialty.xaml;;
+FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\EvaluateDegreeWorkExternal.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\EvaluateDegreeWorkxaml.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\PageEvaluationCriteria.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\StudentInformation.xaml;;
@@ -31,5 +34,4 @@ FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de 
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\ViewCouncils.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\ViewerTeacherPage.xaml;;
 FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\SecundaryPage\ViewProposals.xaml;;
-FD:\Diego\Programacion\6to semestre\Proyecto BBDD\ProyectoBBDD\Proyecto base de datos\Proyecto base de datos\Pages\AddSpeciality.xaml;;
 

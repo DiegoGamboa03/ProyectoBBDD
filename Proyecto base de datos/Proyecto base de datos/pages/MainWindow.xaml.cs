@@ -17,7 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Proyecto_base_de_datos.Pages;
 
 namespace Proyecto_base_de_datos
 {
@@ -102,8 +102,16 @@ namespace Proyecto_base_de_datos
                             String TeacherInstitution = (String)reader["institucion"];
                             String teacherType = (String)reader["tipo"];
                             teachers = new Teachers(TeacherID, TeacherName, teacherType, TeacherAddress, TeacherPhone, TeacherInstitution);
-                            TeacherWindow window = new TeacherWindow();
-                            window.Show();
+                            if(teachers.Type == "I")
+                            {
+                                TeacherWindow window = new TeacherWindow();
+                                window.Show();
+                            }
+                            else
+                            {
+                                ExternalTeacherWindow window = new ExternalTeacherWindow();
+                                window.Show();
+                            }
                             this.Close();
                             Trace.WriteLine("Existe");
                         }
