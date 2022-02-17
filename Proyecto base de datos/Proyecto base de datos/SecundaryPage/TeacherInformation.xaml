@@ -9,9 +9,13 @@
       Title="TeacherInformation">
 
     <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="91*"/>
+            <RowDefinition Height="134*"/>
+        </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Left" Height="31" Margin="98,112,0,0" Text="Cedula" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="20" FontFamily="Segoe UI Semibold"/>
         <TextBlock HorizontalAlignment="Left" Height="31" Margin="374,112,0,0" Text="Nombre" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Height="41" Margin="98,168,0,0" Text="Tipo:" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Segoe UI Semibold" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="41" Margin="98,168,0,0" Text="Tipo:" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Segoe UI Semibold" FontSize="20" Grid.RowSpan="2"/>
         <TextBlock x:Name="idTextBlock" HorizontalAlignment="Left" Height="28" Margin="171,110,0,0" Text="A" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="20" FontFamily="Segoe UI Semilight" FontWeight="Normal" FontStyle="Italic" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -23,8 +27,12 @@
             </TextBlock.RenderTransform>
         </TextBlock>
         <TextBlock x:Name="nameTextBlock" HorizontalAlignment="Left" Height="31" Margin="494,112,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontSize="20" FontFamily="Segoe UI Semilight"/>
-        <TextBlock x:Name="typeTextBlock" HorizontalAlignment="Left" Height="41" Margin="178,168,0,0" Text="B" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="20"/>
+        <TextBlock x:Name="typeTextBlock" HorizontalAlignment="Left" Height="41" Margin="178,168,0,0" Text="B" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="20" Grid.RowSpan="2"/>
         <Label Content="Datos del profesor" HorizontalAlignment="Left" Height="50" Margin="251,10,0,0" VerticalAlignment="Top" Width="357" FontFamily="Segoe UI Semibold" FontSize="30" FontWeight="Normal"/>
+        <Button x:Name="createCriteriaButton" Content="Crear Criterio" HorizontalAlignment="Left" Height="48" Margin="591,105,0,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
+        <Button x:Name="AddCriteriaButton" Content="Agregar Criterio" HorizontalAlignment="Left" Height="43" Margin="591,177,0,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
+        <Button x:Name="createSpecialityButton" Content="Crear especialidad" HorizontalAlignment="Left" Height="43" Margin="197,172,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
+        <Button x:Name="addSpecialtyButton" Content="Agregar especialidad" HorizontalAlignment="Left" Height="44" Margin="400,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
 
     </Grid>
 </Page>

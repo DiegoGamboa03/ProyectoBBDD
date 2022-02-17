@@ -3,15 +3,9 @@ using Proyecto_base_de_datos.Class;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Proyecto_base_de_datos.Pages
 {
@@ -88,9 +82,9 @@ namespace Proyecto_base_de_datos.Pages
                         var reader = command.ExecuteReader();
                         while (reader.Read())
                         {
-                            String evaluationCriteriaID = (String)reader["codigo"];                           
+                            String evaluationCriteriaID = (String)reader["codigo"];
                             String description = (String)reader["descripcion"];
-                            Trace.WriteLine(evaluationCriteriaID + "  " +description);
+                            Trace.WriteLine(evaluationCriteriaID + "  " + description);
                             EvaluationCriteria evaluationCriteria = new EvaluationCriteria(evaluationCriteriaID, description);
                             evaluationCriteriaList.Add(evaluationCriteria);
                             criteriaEvaluationListBox.Items.Add(evaluationCriteriaID + ", " + description);
@@ -134,342 +128,172 @@ namespace Proyecto_base_de_datos.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Variables de conexión.
             var conn = new Connection();
             conn.openConnection();
-
-            //Variable de notaFinal.
-            long finalNote = 0;
-
-            //Inicialización de las listas.
-            EvaluatedTeachersList = new List<string>();
-            EvaluatedTeachersListAux = new List<string>();
-
-            //Indica la cantidad de criterios evaluados.
-            long EvaluatedCriteriasTuthor = 0;
-            long EvaluatedCriteriasJury = 0;
-
-            //Indica la cantidad de criterios con los que se quiere evaluar al estudiante.
-            long CriteriaToBeEvaluatedTuthor = 0;
-            long CriteriaToBeEvaluatedJury = 0;
-
-            //Variable de uso del tutor
-            Teachers tuthor;
-
-            //Se obtiene el profesor tutor del trabajo de grado.
-            if (isTutor == false)
+            long tutorTotalEvaluationCriteria = 0;
+            long tutorEvaluationCriteriaEvaluated = 0;
+            bool tutorFinished = false;
+            if (degreeWorks.Modality == "I")
             {
-                using (var command = new NpgsqlCommand("SELECT * FROM profesores AS P, trabajos_de_grado as TDG WHERE TDG.ncorrelativo = '" + degreeWorks.CorrelativeNumber + "' AND P.cedulap = TDG.cedulapi", conn.conn))
+                //Encontrar cedula del tutor
+                using (var command = new NpgsqlCommand("SELECT DISTINCT(cedulapi) FROM trabajos_de_grado as TG, evaluacriteriota_i as EC WHERE TG.cedulapi = EC.cedulap AND EC.cedulae = '" + studentId + "';", conn.conn))
                 {
                     var reader = command.ExecuteReader();
-                    reader.Read();
-                    string TeacherID = (String)reader["cedulap"];
-                    string TeacherName = (String)reader["nombre"];
-                    tuthor = new Teachers(TeacherID, TeacherName);
+                    while (reader.Read())
+                    {
+                        String tutorID = (String)reader["cedulapi"];
+                        Trace.WriteLine("TutorID: " + tutorID);
+                    }
+                    reader.Close();
+                }
+                //Encontrar el total de criterios asociados a ese profesor
+                using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM trabajos_de_grado as TG, evaluacriteriota_i as EC WHERE TG.cedulapi = EC.cedulap AND EC.cedulae = '" + studentId + "';", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        tutorTotalEvaluationCriteria = (long)reader["count"];
+                        Trace.WriteLine("Total de criterios que tiene este profesor tutor" + tutorTotalEvaluationCriteria);
+
+                    }
+                    reader.Close();
+                }
+
+                using (var command = new NpgsqlCommand("SELECT COUNT(EC.codigo) FROM trabajos_de_grado as TG, evaluacriteriota_i as EC WHERE TG.cedulapi = EC.cedulap AND EC.cedulae = '" + studentId + "' AND EC.nota is NOT NULL;", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        tutorEvaluationCriteriaEvaluated = (long)reader["count"];
+                        Trace.WriteLine("Total de criterios evaluados por este profesor" + tutorEvaluationCriteriaEvaluated);
+
+                    }
+                    reader.Close();
+                }
+
+
+            }
+            
+            else if(degreeWorks.Modality == "E")
+            {
+                //Encontrar cedula del tutor
+                using (var command = new NpgsqlCommand("SELECT DISTINCT(cedulapi) FROM trabajos_de_grado as TG, evaluacriteriota_e as EC WHERE TG.cedulapi = EC.cedulap AND EC.cedulae = '" + studentId + "';", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        String tutorID = (String)reader["cedulapi"];
+                        Trace.WriteLine("TutorID: " + tutorID);
+                    }
+                    reader.Close();
+                }
+                //Encontrar el total de criterios asociados a ese profesor
+                using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM trabajos_de_grado as TG, evaluacriteriota_e as EC WHERE TG.cedulapi = EC.cedulap AND EC.cedulae = '" + studentId + "';", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        tutorTotalEvaluationCriteria = (long)reader["count"];
+                        Trace.WriteLine("Total de criterios que tiene este profesor tutor" + tutorTotalEvaluationCriteria);
+
+                    }
+                    reader.Close();
+                }
+
+                using (var command = new NpgsqlCommand("SELECT COUNT(EC.codigo) FROM trabajos_de_grado as TG, evaluacriteriota_e as EC WHERE TG.cedulapi = EC.cedulap AND EC.cedulae = '" + studentId + "' AND EC.nota is NOT NULL;", conn.conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        tutorEvaluationCriteriaEvaluated = (long)reader["count"];
+                        Trace.WriteLine("Total de criterios evaluados por este profesor" + tutorEvaluationCriteriaEvaluated);
+
+                    }
+                    reader.Close();
                 }
             }
-            else
-            {
-                tuthor = MainWindow.teachers;
-            }
 
-            //Se obtiene todos los profesores que son jurados de ese trabajo de grado.
-            using (var command = new NpgsqlCommand("SELECT * FROM asignaj WHERE ncorrelativo = '" + degreeWorks.CorrelativeNumber + "'", conn.conn))
+            if (tutorTotalEvaluationCriteria == tutorEvaluationCriteriaEvaluated && tutorEvaluationCriteriaEvaluated != 0 && tutorTotalEvaluationCriteria != 0)
+                tutorFinished = true;
+
+            List<String> listJury = new List<string>();
+            using (var command = new NpgsqlCommand("SELECT AJ.cedulap FROM trabajos_de_grado as TG, asignaj as AJ WHERE TG.cedulapi != AJ.cedulap AND AJ.ncorrelativo = TG.ncorrelativo AND AJ.ncorrelativo = '"+ degreeWorks.CorrelativeNumber  +"'", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    //Guarda las cedulas de los profesores que son jurados de ese trabajo de grado.
-                    String idTeacher = (String)reader["cedulap"];
-                    EvaluatedTeachersList.Add(idTeacher);
+                    String jury= (String)reader["cedulap"];
+                    listJury.Add(jury);
+
                 }
                 reader.Close();
             }
-
-            //Revisa si el profesor tutor ha revisado
-            if (isTutor)
+            int completedJury = 0;
+            List<String> listFinishedJury = new List<string>();
+            for (int i = 0; i<listJury.Count; i++)
             {
+                long juryTotalCriteria = 0;
+                long juryEvaluatedCriteria = 0;
                 if (degreeWorks.Modality == "I")
                 {
-                    using (var command = new NpgsqlCommand("SELECT COUNT(DISTINCT codigo) AS criteriosevaluados FROM evaluacriteriota_i WHERE cedulap = '" + MainWindow.teachers.Id + "' AND  cedulae = '" + studentId + "' AND nota IS NOT NULL GROUP BY cedulap HAVING COUNT(DISTINCT codigo) = COUNT(nota)", conn.conn))
-                    {
-                        //Determina la cantidad de criterios evaluados por el profesor
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
-                        }
-                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
-                        reader.Close();
-                    }
-                }
-                else
-                {
-                    using (var command = new NpgsqlCommand("SELECT COUNT(DISTINCT codigo) AS criteriosevaluados FROM evaluacriteriota_e WHERE cedulap = '" + MainWindow.teachers.Id + "' AND  cedulae = '" + studentId + "' AND nota IS NOT NULL GROUP BY cedulap HAVING COUNT(DISTINCT codigo) = COUNT(nota)", conn.conn))
-                    {
-                        //Determina la cantidad de criterios evaluados por el profesor
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
-                        }
-                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
-                        reader.Close();
-                    }
-                }
-            }
-            else
-            {
-
-                if (degreeWorks.Modality == "I")
-                {
-                    using (var command = new NpgsqlCommand("SELECT COUNT(DISTINCT codigo) AS criteriosevaluados FROM evaluacriteriota_i WHERE cedulap = '" + tuthor.Id + "' AND  cedulae = '" + studentId + "' AND nota IS NOT NULL GROUP BY cedulap HAVING COUNT(DISTINCT codigo) = COUNT(nota)", conn.conn))
-                    {
-                        //Determina la cantidad de criterios evaluados por el profesor
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
-                        }
-                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
-                        reader.Close();
-                    }
-                }
-                else
-                {
-                    using (var command = new NpgsqlCommand("SELECT COUNT(DISTINCT codigo) AS criteriosevaluados FROM evaluacriteriota_e WHERE cedulap = '" + tuthor.Id + "' AND  cedulae = '" + studentId + "' AND nota IS NOT NULL GROUP BY cedulap HAVING COUNT(DISTINCT codigo) = COUNT(nota)", conn.conn))
-                    {
-                        //Determina la cantidad de criterios evaluados por el profesor
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            EvaluatedCriteriasTuthor = (long)reader["criteriosevaluados"];
-                        }
-                        Trace.WriteLine("Criterios evaluados por el tutor: " + EvaluatedCriteriasTuthor);
-                        reader.Close();
-                    }
-                }
-            }
-
-            //Revissa los criterios que debe revisar el tutor
-            if (isTutor)
-            {
-                if (degreeWorks.Modality == "I")
-                {
-                    using (var command = new NpgsqlCommand("SELECT Count(codigo) AS criteriosporevaluar FROM evaluacriteriota_i WHERE cedulap = '" + MainWindow.teachers.Id + "' AND cedulae = '" + studentId + "'", conn.conn))
+                    using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM evaluacriterioj_i as EC WHERE EC.cedulap = '" + listJury[i] + "' AND EC.cedulae = '" + studentId + "';", conn.conn))
                     {
                         var reader = command.ExecuteReader();
                         while (reader.Read())
                         {
-                            CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
+                            juryTotalCriteria = (long)reader["count"];
+                            Trace.WriteLine("Jurado " + listJury[i] + " criterios totales de este jurado " + juryTotalCriteria );
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
                         reader.Close();
                     }
-                }
-                else if (degreeWorks.Modality == "E")
-                {
-                    using (var command = new NpgsqlCommand("SELECT Count(codigo) AS criteriosporevaluar FROM evaluacriteriota_e WHERE cedulap = '" + MainWindow.teachers.Id + "' AND cedulae = '" + studentId + "'", conn.conn))
+                    using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM evaluacriterioj_i as EC WHERE EC.cedulap = '" + listJury[i] + "' AND EC.cedulae = '"+ studentId +"' AND EC.nota IS NOT NULL;", conn.conn))
                     {
                         var reader = command.ExecuteReader();
                         while (reader.Read())
                         {
-                            CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
+                            juryEvaluatedCriteria = (long)reader["count"];
+                            Trace.WriteLine("Jurado " + listJury[i] + " criterios totales evaluados de este jurado " + juryEvaluatedCriteria);
                         }
-                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
                         reader.Close();
                     }
                 }
-            }
-            else
-            {
-                if (degreeWorks.Modality == "I")
-                {
-                    using (var command = new NpgsqlCommand("SELECT Count(codigo) AS criteriosporevaluar FROM evaluacriteriota_i WHERE cedulap = '" + tuthor.Id + "' AND cedulae = '" + studentId + "'", conn.conn))
-                    {
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
-                        }
-                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
-                        reader.Close();
-                    }
-                }
-                else if (degreeWorks.Modality == "E")
-                {
-                    using (var command = new NpgsqlCommand("SELECT Count(codigo) AS criteriosporevaluar FROM evaluacriteriota_e WHERE cedulap = '" + tuthor.Id + "' AND cedulae = '" + studentId + "'", conn.conn))
-                    {
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            CriteriaToBeEvaluatedTuthor = (long)reader["criteriosporevaluar"];
-                        }
-                        Trace.WriteLine("Cantidad de criterios a evaluar por el tutor: " + CriteriaToBeEvaluatedTuthor);
-                        reader.Close();
-                    }
-                }
-            }
-
-            //Por profesor, ver si ya corrigieron todos los criterios de evaluación del estudiante.
-            for (int i = 0; i < EvaluatedTeachersList.Count; i++)
-            {
-                CriteriaToBeEvaluatedTuthor = 0;
-                CriteriaToBeEvaluatedJury = 0;
-                //Revisa el tipo de propuesta para los jurados.
-                if (degreeWorks.Modality == "I")
-                {
-                    using (var command = new NpgsqlCommand("SELECT COUNT(DISTINCT codigo) AS criteriosevaluados FROM evaluacriterioj_i WHERE cedulap = '" + EvaluatedTeachersList[i] + "' AND  cedulae = '" + studentId + "' AND nota IS NOT NULL GROUP BY cedulap HAVING COUNT(DISTINCT codigo) = COUNT(nota)", conn.conn))
-                    {
-                        //Determina la cantidad de criterios evaluados por el profesor
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            EvaluatedCriteriasJury = (long)reader["criteriosevaluados"];
-                        }
-                        Trace.WriteLine("Criterios evaluados por el jurado [ " + i + " ]: " + EvaluatedCriteriasJury);
-                        reader.Close();
-                    }
-                }
-                else if (degreeWorks.Modality == "E")
-                {
-                    using (var command = new NpgsqlCommand("SELECT COUNT(DISTINCT codigo) AS criteriosevaluados FROM evaluacriterioj_e WHERE cedulap = '" + EvaluatedTeachersList[i] + "' AND  cedulae = '" + studentId + "' AND nota IS NOT NULL GROUP BY cedulap HAVING COUNT(DISTINCT codigo) = COUNT(nota)", conn.conn))
-                    {
-                        //Determina la cantidad de criterios evaluados por el profesor
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            EvaluatedCriteriasJury = (long)reader["criteriosevaluados"];
-                        }
-                        Trace.WriteLine("Criterios evaluados por el jurado [ " + i + " ]: " + EvaluatedCriteriasJury);
-                        reader.Close();
-                    }
-                }
-
-                //Comparar la cantidad de criterios evaluados con los criterios seleccionados parsa cada estudiante de los jurados.
-                if (degreeWorks.Modality == "I")
-                {
-                    using (var command = new NpgsqlCommand("SELECT Count(codigo) AS criteriosporevaluar FROM evaluacriterioj_i WHERE cedulap = '" + EvaluatedTeachersList[i] + "' AND cedulae = '" + studentId + "'", conn.conn))
-                    {
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            CriteriaToBeEvaluatedJury = (long)reader["criteriosporevaluar"];
-                        }
-                        Trace.WriteLine("Cantidad de criterios a evaluar por el jurado[ " + i + " ]: " + CriteriaToBeEvaluatedJury);
-                        reader.Close();
-                    }
-                }
-                else if (degreeWorks.Modality == "E")
-                {
-                    using (var command = new NpgsqlCommand("SELECT Count(codigo) AS criteriosporevaluar FROM evaluacriterioj_e WHERE cedulap = '" + EvaluatedTeachersList[i] + "' AND cedulae = '" + studentId + "'", conn.conn))
-                    {
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            CriteriaToBeEvaluatedJury = (long)reader["criteriosporevaluar"];
-                        }
-                        Trace.WriteLine("Cantidad de criterios a evaluar por el jurado[ " + i + " ]: " + CriteriaToBeEvaluatedJury);
-                        reader.Close();
-                    }
-                }
-
-                if(EvaluatedCriteriasJury == CriteriaToBeEvaluatedJury)
-                {
-                    EvaluatedTeachersListAux.Add(EvaluatedTeachersList[i]);
-                }
-            }
-
-            //Condicion unica para la consulta de inserción
-            if((EvaluatedTeachersListAux.Count >= 2) && (EvaluatedCriteriasTuthor == CriteriaToBeEvaluatedTuthor))
-            {
-                //Variables para las notas.
-                long notaAcum = 0, notaPorProfesor = 0;
-
-                //Variable para el promedio.
-                float promedio = 0;
-
-                //Consultas para obtener las notas.
-
-                //Notas del tutor.
-                if(degreeWorks.Modality == "I")
-                {
-                    // Suma total de la nota del tutor.
-                    using (var command = new NpgsqlCommand("SELECT SUM(nota) AS notatotal FROM evaluacriteriota_i WHERE cedulae = '" + studentId + "' AND cedulae = '" + tuthor.Id + "'", conn.conn))
-                    {
-                        var reader = command.ExecuteReader();
-                        reader.Read();
-                        notaPorProfesor = (long)reader["notatotal"];
-                        reader.Close();
-                    }
-                    
-                } 
                 else if(degreeWorks.Modality == "E")
                 {
-
-                    // Suma total de la nota del tutor.
-                    using (var command = new NpgsqlCommand("SELECT SUM(nota) AS notatotal FROM evaluacriteriota_e WHERE cedulae = '" + studentId + "' AND cedulae = '" + tuthor.Id + "'", conn.conn))
+                    using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM evaluacriterioj_e as EC WHERE EC.cedulap = '" + listJury[i] + "' AND EC.cedulae = '" + studentId + "';", conn.conn))
                     {
                         var reader = command.ExecuteReader();
-                        reader.Read();
-                        notaPorProfesor = (long)reader["notatotal"];
+                        while (reader.Read())
+                        {
+                            juryTotalCriteria = (long)reader["count"];
+                            Trace.WriteLine("Jurado " + listJury[i] + " criterios totales de este jurado " + juryTotalCriteria);
+                        }
                         reader.Close();
                     }
-
+                    using (var command = new NpgsqlCommand("SELECT COUNT(codigo) FROM evaluacriterioj_e as EC WHERE EC.cedulap = '" + listJury[i] + "' AND EC.cedulae = '" + studentId + "' AND EC.nota IS NOT NULL;", conn.conn))
+                    {
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            juryEvaluatedCriteria = (long)reader["count"];
+                            Trace.WriteLine("Jurado " + listJury[i] + " criterios totales evaluados de este jurado " + juryEvaluatedCriteria);
+                        }
+                        reader.Close();
+                    }
                 }
 
-                notaAcum = notaAcum + notaPorProfesor;
-
-                for(int i = 0; i < 2; i++)
+                if (juryTotalCriteria == juryEvaluatedCriteria && juryTotalCriteria == 0 && juryEvaluatedCriteria == 0)
                 {
-                    if (degreeWorks.Modality == "I")
-                    {
-                        // Suma total de la nota del tutor.
-                        using (var command = new NpgsqlCommand("SELECT SUM(nota) AS notatotal FROM evaluacriterioj_i WHERE cedulae = '" + studentId + "' AND cedulae = '" + EvaluatedTeachersListAux[i] + "'", conn.conn))
-                        {
-                            var reader = command.ExecuteReader();
-                            reader.Read();
-                            notaPorProfesor = (long)reader["notatotal"];
-                            reader.Close();
-                        }
-
-                    }
-                    else if (degreeWorks.Modality == "E")
-                    {
-
-                        // Suma total de la nota del tutor.
-                        using (var command = new NpgsqlCommand("SELECT SUM(nota) AS notatotal FROM evaluacriterioj_e WHERE cedulae = '" + studentId + "' AND cedulae = '" + EvaluatedTeachersListAux[i] + "'", conn.conn))
-                        {
-                            var reader = command.ExecuteReader();
-                            reader.Read();
-                            notaPorProfesor = (long)reader["notatotal"];
-                            reader.Close();
-                        }
-
-                    }
-
-                    notaAcum = notaAcum + notaPorProfesor;
+                    completedJury++;
+                    listFinishedJury.Add(listJury[i]);
                 }
-
-                promedio = notaAcum / 3;
-
-                finalNote = (long)promedio;
-                using (var command = new NpgsqlCommand("INSERT INTO defensas (cedulae, codigod,notaf,fechap,horap) VALUES (@n1,nextval('secuenciaDefensaPK'), @n3,@n4,@n5)", conn.conn))
+                if(completedJury == 2)
                 {
-                    String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
-                    DateTime dateTime = DateTime.Parse(dateTimeString);
-                    String dateHourString = DateTime.Now.ToString("HH:mm:ss");
-                    DateTime dateHour = DateTime.Parse(dateHourString);
-                    command.Parameters.AddWithValue("n1", studentId);
-                    command.Parameters.AddWithValue("n3", finalNote);
-                    command.Parameters.AddWithValue("n4", dateTime);
-                    command.Parameters.AddWithValue("n5", dateHour);
-                    command.ExecuteNonQuery();
+                    break;
                 }
             }
-            else
+            if(completedJury == 2 && tutorFinished)
             {
-                //Agregar casos
+
             }
         }
     }
