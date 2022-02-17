@@ -439,8 +439,10 @@ namespace Proyecto_base_de_datos.Pages
                     }
                 }
                 float finalNote = accumulated;
+
                 if (degreeWorks.Modality == "I" && buissnesTutorFinished)
                 {
+                    Trace.WriteLine("Se metio en este condicional de aqui");
                     using (var command = new NpgsqlCommand("INSERT INTO defensas (cedulae, codigod,notaf,fechap,horap) VALUES (@n1,nextval('secuenciaDefensaPK'), @n3,@n4,@n5)", conn.conn))
                     {
                         String dateTimeString = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
