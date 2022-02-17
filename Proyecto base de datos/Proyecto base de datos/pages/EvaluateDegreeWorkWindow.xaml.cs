@@ -30,6 +30,7 @@ namespace Proyecto_base_de_datos.Pages
             this.studentId = student.Id;
             this.TitleTDG.Text = degreeWorks.Title;
             this.StudentName.Text = student.Name;
+            this.idStudent.Text = student.Id;
             evaluationCriteriaList = new List<EvaluationCriteria>();
             var conn = new Connection();
             conn.openConnection();

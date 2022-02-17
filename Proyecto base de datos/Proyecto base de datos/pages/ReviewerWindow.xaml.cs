@@ -92,7 +92,7 @@ namespace Proyecto_base_de_datos.pages
             }
             else if (this.degreeWorks.Modality == "E")
             {
-                using (var command = new NpgsqlCommand("SELECT * FROM evaluacriterioe as EI, criteriosevpr_i as CEI WHERE EI.ncorrelativo = '"+ degreeWorks.CorrelativeNumber + "' AND EI.codigo = CEI.codigo", conn.conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM evaluacriterioe as EI, criteriosevpr_e as CEI WHERE EI.ncorrelativo = '"+ degreeWorks.CorrelativeNumber + "' AND EI.codigo = CEI.codigo", conn.conn))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())

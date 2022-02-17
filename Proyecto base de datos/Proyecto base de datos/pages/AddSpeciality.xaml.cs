@@ -25,7 +25,7 @@ namespace Proyecto_base_de_datos.Pages
             InitializeComponent();
             var conn = new Connection();
             conn.openConnection();
-            using (var command = new NpgsqlCommand("SELECT * FROM especialidades", conn.conn))
+            using (var command = new NpgsqlCommand("SELECT * FROM especialidades as E, tiene as TI WHERE TI.codesp= E.codesp AND TI.cedulap != '"+ MainWindow.teachers.Id +"'", conn.conn))
             {
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -49,6 +49,7 @@ namespace Proyecto_base_de_datos.Pages
                 command.Parameters.AddWithValue("n2",listIdSpeciality[specialityComboBox.SelectedIndex]);
                 command.ExecuteNonQuery();
             }
+            this.Close();
         }
     }
 }

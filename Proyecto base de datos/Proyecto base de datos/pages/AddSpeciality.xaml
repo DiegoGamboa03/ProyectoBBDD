@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="AddSpeciality" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="specialityComboBox" HorizontalAlignment="Left" Height="57" Margin="123,160,0,0" VerticalAlignment="Top" Width="317"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="46" Margin="396,315,0,0" VerticalAlignment="Top" Width="218" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="46" Margin="347,317,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click" FontFamily="Segoe UI Semibold" FontSize="18" Foreground="#FFF2F4B2" Background="#FF0C907D"/>
+        <Label Content="Agregar especialidad" HorizontalAlignment="Left" Height="54" Margin="244,28,0,0" VerticalAlignment="Top" Width="261" FontSize="24" Foreground="#FF0C907D" FontFamily="Segoe UI Semibold"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="36,180,0,0" Text="Especialidad:" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontFamily="Segoe UI Semibold" FontSize="20"/>
+        <ComboBox x:Name="specialityComboBox" HorizontalAlignment="Left" Height="37" Margin="197,180,0,0" VerticalAlignment="Top" Width="308"/>
 
     </Grid>
 </Window>
